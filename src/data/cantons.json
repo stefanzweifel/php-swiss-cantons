@@ -1,0 +1,22 @@
+[
+    {
+        "abbreviation": "ZH",
+        "name": {
+            "de": "Zürich",
+            "fr": "Zürich",
+            "it": "Zürich",
+            "rm": "Zürich",
+            "en": "Zürich"
+        }
+    },
+    {
+        "abbreviation": "SH",
+        "name": {
+            "de": "Schaffhausen",
+            "fr": "Schaffhausen",
+            "it": "Schaffhausen",
+            "rm": "Schaffhausen",
+            "en": "Schaffhausen"
+        }
+    }
+]

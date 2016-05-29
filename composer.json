@@ -12,5 +12,8 @@
         "psr-4": {
             "Wnx\\SwissCantons\\Tests\\": "tests/"
         }
+    },
+    "require": {
+        "tightenco/collect": "^5.2"
     }
 }
