@@ -1,22 +1,262 @@
 [
     {
-        "abbreviation": "ZH",
+        "abbreviation": "AG",
         "name": {
-            "de": "Zürich",
-            "fr": "Zürich",
-            "it": "Zürich",
-            "rm": "Zürich",
-            "en": "Zürich"
+            "de": "Aargau",
+            "fr": "Argovie",
+            "it": "Argovia",
+            "rm": "Appenzell dador",
+            "en": "Argovia"
+        }
+    },
+    {
+        "abbreviation": "AI",
+        "name": {
+            "de": "Appenzell Innerrhoden",
+            "fr": "Appenzell Rhodes-Intérieures",
+            "it": "Appenzello Interno",
+            "rm": "Appenzell dadens",
+            "en": "Appenzell Inner-Rhodes"
+        }
+    },
+    {
+        "abbreviation": "AR",
+        "name": {
+            "de": "Appenzell Ausserrhoden",
+            "fr": "Appenzell Rhodes-Extérieures",
+            "it": "Appenzello Esterno",
+            "rm": "Appenzell dador",
+            "en": "Appenzell Outer-Rhodes"
+        }
+    },
+    {
+        "abbreviation": "BE",
+        "name": {
+            "de": "Bern",
+            "fr": "Berne",
+            "it": "Berna",
+            "rm": "Berna",
+            "en": "Berne"
+        }
+    },
+    {
+        "abbreviation": "BL",
+        "name": {
+            "de": "Basel-Landschaft",
+            "fr": "Bâle-Campagne",
+            "it": "Basilea Campagna",
+            "rm": "Basilea-Champagna",
+            "en": "Basle-Country"
+        }
+    },
+    {
+        "abbreviation": "BS",
+        "name": {
+            "de": "Basel-Stadt",
+            "fr": "Bâle-Ville",
+            "it": "Basilea Città",
+            "rm": "Basilea-Citad",
+            "en": "Basle-City"
+        }
+    },
+    {
+        "abbreviation": "FR",
+        "name": {
+            "de": "Freiburg",
+            "fr": "Fribourg",
+            "it": "Friburgo",
+            "rm": "Friburg",
+            "en": "Friburg"
+        }
+    },
+    {
+        "abbreviation": "GE",
+        "name": {
+            "de": "Genf",
+            "fr": "Genève",
+            "it": "Ginevra",
+            "rm": "Genevra",
+            "en": "Geneva"
+        }
+    },
+    {
+        "abbreviation": "GL",
+        "name": {
+            "de": "Glarus",
+            "fr": "Glaris",
+            "it": "Glarona",
+            "rm": "Glaruna",
+            "en": "Glaris"
+        }
+    },
+    {
+        "abbreviation": "GR",
+        "name": {
+            "de": "Graubünden",
+            "fr": "Grisons",
+            "it": "Grigioni",
+            "rm": "Grischun",
+            "en": "Grisons"
+        }
+    },
+    {
+        "abbreviation": "JU",
+        "name": {
+            "de": "Jura",
+            "fr": "Jura",
+            "it": "Giura",
+            "rm": "Giura",
+            "en": "Jura"
+        }
+    },
+    {
+        "abbreviation": "LU",
+        "name": {
+            "de": "Luzern",
+            "fr": "Lucerne",
+            "it": "Lucerna",
+            "rm": "Lucerna",
+            "en": "Lucerne"
+        }
+    },
+    {
+        "abbreviation": "NE",
+        "name": {
+            "de": "Neuenburg",
+            "fr": "Neuchâtel",
+            "it": "Neuchâtel",
+            "rm": "Neuchâtel",
+            "en": "Neuchâtel"
+        }
+    },
+    {
+        "abbreviation": "NW",
+        "name": {
+            "de": "Nidwalden",
+            "fr": "Nidwald",
+            "it": "Nidvaldo",
+            "rm": "Sutsilvania",
+            "en": "Nidwald"
+        }
+    },
+    {
+        "abbreviation": "OW",
+        "name": {
+            "de": "Obwalden",
+            "fr": "Obwald",
+            "it": "Obvaldo",
+            "rm": "Sursilvania",
+            "en": "Obwald"
+        }
+    },
+    {
+        "abbreviation": "SG",
+        "name": {
+            "de": "St. Gallen",
+            "fr": "Saint-Gall",
+            "it": "San Gallo",
+            "rm": "Son Gagl",
+            "en": "St. Gall"
         }
     },
     {
         "abbreviation": "SH",
         "name": {
             "de": "Schaffhausen",
-            "fr": "Schaffhausen",
-            "it": "Schaffhausen",
-            "rm": "Schaffhausen",
-            "en": "Schaffhausen"
+            "fr": "Schaffhouse",
+            "it": "Sciaffusa",
+            "rm": "Schaffusa",
+            "en": "Schaffhouse"
+        }
+    },
+    {
+        "abbreviation": "SO",
+        "name": {
+            "de": "Solothurn",
+            "fr": "Soleure",
+            "it": "Soletta",
+            "rm": "Soloturn",
+            "en": "Soleure"
+        }
+    },
+    {
+        "abbreviation": "SZ",
+        "name": {
+            "de": "Schwyz",
+            "fr": "Schwytz",
+            "it": "Svitto",
+            "rm": "Sviz",
+            "en": "Schwyz"
+        }
+    },
+    {
+        "abbreviation": "TG",
+        "name": {
+            "de": "Thurgau",
+            "fr": "Thurgovie",
+            "it": "Turgovia",
+            "rm": "Turgovia",
+            "en": "Thurgovia"
+        }
+    },
+    {
+        "abbreviation": "TI",
+        "name": {
+            "de": "Tessin",
+            "fr": "Tessin",
+            "it": "Ticino",
+            "rm": "Tessin",
+            "en": "Ticino"
+        }
+    },
+    {
+        "abbreviation": "UR",
+        "name": {
+            "de": "Uri",
+            "fr": "Uri",
+            "it": "Uri",
+            "rm": "Uri",
+            "en": "Uri"
+        }
+    },
+    {
+        "abbreviation": "VD",
+        "name": {
+            "de": "Waadt",
+            "fr": "Vaud",
+            "it": "Vaud",
+            "rm": "Vad",
+            "en": "Vaud"
+        }
+    },
+    {
+        "abbreviation": "VS",
+        "name": {
+            "de": "Wallis",
+            "fr": "Valais",
+            "it": "Vallese",
+            "rm": "Vallais",
+            "en": "Valais"
+        }
+    },
+    {
+        "abbreviation": "ZG",
+        "name": {
+            "de": "Zug",
+            "fr": "Zoug",
+            "it": "Zugo",
+            "rm": "Zug",
+            "en": "Zug"
+        }
+    },
+    {
+        "abbreviation": "ZH",
+        "name": {
+            "de": "Zürich",
+            "fr": "Zürich",
+            "it": "Zurigo",
+            "rm": "Turitg",
+            "en": "Zurich"
         }
     }
 ]
