@@ -7,21 +7,25 @@ use Exception;
 class CantonManager
 {
     /**
-     * CantonSearch Instance
+     * CantonSearch Instance.
+     *
      * @var Wnx\SwissCantons\CantonSerach
      */
     protected $search;
 
     public function __construct()
     {
-        $this->search = new CantonSearch;
+        $this->search = new CantonSearch();
     }
 
     /**
-     * Get Canton by abbreviation
-     * @param  string $abbreviation
-     * @return Canton
+     * Get Canton by abbreviation.
+     *
+     * @param string $abbreviation
+     *
      * @throws Exception Throws Exception if no Canton was found
+     *
+     * @return Canton
      */
     public function getByAppreviation($abbreviation)
     {
@@ -35,10 +39,13 @@ class CantonManager
     }
 
     /**
-     * Get Canton by Name
-     * @param  string $name
-     * @return Canton
+     * Get Canton by Name.
+     *
+     * @param string $name
+     *
      * @throws Exception Throws Exception if not Canton was found
+     *
+     * @return Canton
      */
     public function getByName($name)
     {

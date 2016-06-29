@@ -7,25 +7,29 @@ use Exception;
 class Canton
 {
     /**
-     * Abbreviation for given Canton
+     * Abbreviation for given Canton.
+     *
      * @var string
      */
     protected $appreviation;
 
     /**
-     * Array of available Names for given Canton
+     * Array of available Names for given Canton.
+     *
      * @var array
      */
-    protected $names = array();
+    protected $names = [];
 
     /**
-     * Default Language used
+     * Default Language used.
+     *
      * @var string
      */
     protected $displayLanguage = 'en';
 
     /**
-     * Array of supported Languages
+     * Array of supported Languages.
+     *
      * @var array
      */
     protected $availableLanguages = ['de', 'fr', 'it', 'en', 'rm'];
@@ -37,7 +41,8 @@ class Canton
     }
 
     /**
-     * Set the abbreviation for given Canton
+     * Set the abbreviation for given Canton.
+     *
      * @param string $abbreviation
      */
     public function setAbbreviation($abbreviation)
@@ -46,7 +51,8 @@ class Canton
     }
 
     /**
-     * Return Abbreviation for Canton
+     * Return Abbreviation for Canton.
+     *
      * @return string
      */
     public function getAbbreviation()
@@ -55,7 +61,8 @@ class Canton
     }
 
     /**
-     * Add Name Array to Property
+     * Add Name Array to Property.
+     *
      * @param array $name
      */
     public function setNames(array $name)
@@ -64,7 +71,8 @@ class Canton
     }
 
     /**
-     * Return Display Name for given Language
+     * Return Display Name for given Language.
+     *
      * @return string
      */
     public function getName()
@@ -73,7 +81,8 @@ class Canton
     }
 
     /**
-     * It Returns the Raw Name Array
+     * It Returns the Raw Name Array.
+     *
      * @return array
      */
     public function getNamesArray()
@@ -82,24 +91,28 @@ class Canton
     }
 
     /**
-     * Set Language used to Display Canton Name
+     * Set Language used to Display Canton Name.
+     *
      * @param string $language
+     *
      * @throws Exception Throws Exception if a not supported language string was provided
      */
     public function setLanguage($language)
     {
         $language = strtolower($language);
 
-        if (! in_array($language, $this->availableLanguages)) {
-            throw new Exception("Invalid Language Provided. Supported languages: " . implode(",", $this->availableLanguages));
+        if (!in_array($language, $this->availableLanguages)) {
+            throw new Exception('Invalid Language Provided. Supported languages: '.implode(',', $this->availableLanguages));
         }
 
         $this->displayLanguage = $language;
+
         return $this;
     }
 
     /**
-     * Return Language used to Display Canton Name
+     * Return Language used to Display Canton Name.
+     *
      * @return string
      */
     public function getLanguage()
