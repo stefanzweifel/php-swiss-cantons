@@ -2,28 +2,29 @@
 
 namespace Wnx\SwissCantons\Tests;
 
-use Wnx\SwissCantons\Canton;
 use Illuminate\Support\Collection;
+use Wnx\SwissCantons\Canton;
 
 class CantonTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Build an Example Dataset
+     * Build an Example Dataset.
+     *
      * @return object
      */
     protected function getExampleCanton()
     {
         $namesCollection = new Collection([
-            "de" => "Zürich",
-            "fr" => "Zürich",
-            "it" => "Zürich",
-            "en" => "Zürich",
-            "rm" => "Zürich"
+            'de' => 'Zürich',
+            'fr' => 'Zürich',
+            'it' => 'Zürich',
+            'en' => 'Zürich',
+            'rm' => 'Zürich',
         ]);
 
         $canton = new Collection([[
-            "abbreviation" => "ZH",
-            "name" => $namesCollection->all()
+            'abbreviation' => 'ZH',
+            'name'         => $namesCollection->all(),
         ]]);
 
         return (object) $canton->first();
@@ -62,7 +63,7 @@ class CantonTest extends \PHPUnit_Framework_TestCase
     {
         $canton = new Canton($this->getExampleCanton());
 
-        $this->assertEquals("ZH", $canton->getAbbreviation());
+        $this->assertEquals('ZH', $canton->getAbbreviation());
     }
 
     /** @test */
@@ -78,8 +79,7 @@ class CantonTest extends \PHPUnit_Framework_TestCase
     {
         $canton = new Canton($this->getExampleCanton());
 
-        $this->assertEquals("Zürich", $canton->getName());
-        $this->assertEquals("Zürich", $canton->setLanguage('de')->getName());
+        $this->assertEquals('Zürich', $canton->getName());
+        $this->assertEquals('Zürich', $canton->setLanguage('de')->getName());
     }
-
 }
