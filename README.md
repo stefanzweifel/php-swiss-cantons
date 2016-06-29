@@ -1,6 +1,8 @@
 # 🇨🇭 Swiss Cantons
 
 [![Build Status](https://travis-ci.org/stefanzweifel/php-swiss-cantons.svg?branch=master)](https://travis-ci.org/stefanzweifel/php-swiss-cantons)
+[![Code Climate](https://codeclimate.com/github/stefanzweifel/php-swiss-cantons/badges/gpa.svg)](https://codeclimate.com/github/stefanzweifel/php-swiss-cantons)
+[![Test Coverage](https://codeclimate.com/github/stefanzweifel/php-swiss-cantons/badges/coverage.svg)](https://codeclimate.com/github/stefanzweifel/php-swiss-cantons/coverage)
 
 ## Installation
 
