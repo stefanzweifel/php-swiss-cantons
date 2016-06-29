@@ -13,8 +13,8 @@ class CantonManagerTest extends \PHPUnit_Framework_TestCase
         $canton = $canton->getByAppreviation('ZH');
 
         $this->assertEquals(
-            "Zürich",
-            $canton->setLanguage("de")->getName()
+            'Zürich',
+            $canton->setLanguage('de')->getName()
         );
     }
 
@@ -34,7 +34,7 @@ class CantonManagerTest extends \PHPUnit_Framework_TestCase
         $canton = new CantonManager();
         $result = $canton->getByName('Zürich');
 
-        $this->assertEquals("ZH", $result->getAbbreviation());
+        $this->assertEquals('ZH', $result->getAbbreviation());
     }
 
     /**
