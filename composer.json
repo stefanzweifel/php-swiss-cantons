@@ -1,9 +1,28 @@
 {
     "name": "wnx/php-swiss-cantons",
+    "description": "Search for Swiss Cantons by name or abbreviation.",
+    "homepage": "https://github.com/stefanzweifel/php-swiss-cantons",
+    "keywords":
+    [
+        "swiss",
+        "cantons",
+        "canton"
+    ],
+    "authors": [
+        {
+            "name": "Stefan Zweifel",
+            "email": "hello@stefanzweifel.io",
+            "homepage": "https://stefanzweifel.io",
+            "role": "Developer"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Wnx\\SwissCantons\\": "src/"
         }
+    },
+    "require": {
+        "tightenco/collect": "^5.2"
     },
     "require-dev": {
         "phpunit/phpunit": "4.*"
@@ -13,7 +32,5 @@
             "Wnx\\SwissCantons\\Tests\\": "tests/"
         }
     },
-    "require": {
-        "tightenco/collect": "^5.2"
-    }
+    "license": "MIT"
 }
