@@ -1,4 +1,4 @@
-# Swiss Cantons
+# 🇨🇭 Swiss Cantons
 
 [![Build Status](https://travis-ci.org/stefanzweifel/php-swiss-cantons.svg?branch=master)](https://travis-ci.org/stefanzweifel/php-swiss-cantons)
 
