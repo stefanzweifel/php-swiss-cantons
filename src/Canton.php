@@ -34,7 +34,7 @@ class Canton
      */
     protected $availableLanguages = ['de', 'fr', 'it', 'en', 'rm'];
 
-    public function __construct($data)
+    public function __construct(\stdClass $data)
     {
         $this->setAbbreviation($data->abbreviation);
         $this->setNames((array) $data->name);
