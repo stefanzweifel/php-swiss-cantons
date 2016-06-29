@@ -38,6 +38,15 @@ class CantonTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('fr', $canton->getLanguage());
     }
 
+    /** @test */
+    public function it_transformers_uppercase_language_string_to_lowercase()
+    {
+        $canton = new Canton($this->getExampleCanton());
+        $canton->setLanguage('DE');
+
+        $this->assertEquals('de', $canton->getLanguage());
+    }
+
     /**
      * @test
      * @expectedException     Exception
