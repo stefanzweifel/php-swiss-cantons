@@ -13,9 +13,9 @@ class CantonManager
      */
     protected $search;
 
-    public function __construct(CantonSearch $cantonSearch)
+    public function __construct()
     {
-        $this->search = $cantonSearch;
+        $this->search = new CantonSearch;
     }
 
     public function getByAppreviation($abbreviation)
