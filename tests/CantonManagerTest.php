@@ -36,4 +36,14 @@ class CantonManagerTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals("ZH", $result->getAbbreviation());
     }
+
+    /**
+     * @test
+     * @expectedException     Exception
+     */
+    public function it_throws_exception_if_not_canton_for_name_is_found()
+    {
+        $canton = new CantonManager();
+        $result = $canton->getByName('FOO');
+    }
 }
