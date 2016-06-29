@@ -2,7 +2,6 @@
 
 namespace Wnx\SwissCantons;
 
-use Illuminate\Support\Collection;
 use Exception;
 
 class CantonManager
@@ -18,26 +17,37 @@ class CantonManager
         $this->search = new CantonSearch;
     }
 
+    /**
+     * Get Canton by abbreviation
+     * @param  string $abbreviation
+     * @return Canton
+     * @throws Exception Throws Exception if no Canton was found
+     */
     public function getByAppreviation($abbreviation)
     {
         $result = $this->search->findByAppreviation($abbreviation);
 
         if (is_null($result)) {
-            throw new Exception("Couldn't find Canton for appreviation");
+            throw new Exception("Couldn't find Canton for given appreviation.");
         }
 
         return new Canton($result);
     }
 
+    /**
+     * Get Canton by Name
+     * @param  string $name
+     * @return Canton
+     * @throws Exception Throws Exception if not Canton was found
+     */
     public function getByName($name)
     {
         $result = $this->search->findByName($name);
 
         if (is_null($result)) {
-            throw new Exception("Couldn't find Canton for given Name {$name}");
+            throw new Exception("Couldn't find Canton for given Name {$name}.");
         }
 
         return new Canton($result);
     }
-
 }
