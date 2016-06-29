@@ -5,6 +5,11 @@
 [![Code Climate](https://codeclimate.com/github/stefanzweifel/php-swiss-cantons/badges/gpa.svg)](https://codeclimate.com/github/stefanzweifel/php-swiss-cantons)
 [![Test Coverage](https://codeclimate.com/github/stefanzweifel/php-swiss-cantons/badges/coverage.svg)](https://codeclimate.com/github/stefanzweifel/php-swiss-cantons/coverage)
 
+[![Latest Stable Version](https://poser.pugx.org/wnx/php-swiss-cantons/v/stable)](https://packagist.org/packages/wnx/php-swiss-cantons)
+[![Total Downloads](https://poser.pugx.org/wnx/php-swiss-cantons/downloads)](https://packagist.org/packages/wnx/php-swiss-cantons)
+[![Latest Unstable Version](https://poser.pugx.org/wnx/php-swiss-cantons/v/unstable)](https://packagist.org/packages/wnx/php-swiss-cantons)
+[![License](https://poser.pugx.org/wnx/php-swiss-cantons/license)](https://packagist.org/packages/wnx/php-swiss-cantons)
+
 ## Installation
 
 ```
