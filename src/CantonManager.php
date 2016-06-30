@@ -9,7 +9,7 @@ class CantonManager
     /**
      * CantonSearch Instance.
      *
-     * @var Wnx\SwissCantons\CantonSerach
+     * @var Wnx\SwissCantons\CantonSearch
      */
     protected $search;
 
