@@ -101,7 +101,7 @@ class Canton
      *
      * @throws Exception Throws Exception if a not supported language string was provided
      *
-     * @return  Canton
+     * @return Canton
      */
     public function setLanguage($language)
     {
