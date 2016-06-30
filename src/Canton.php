@@ -44,6 +44,8 @@ class Canton
      * Set the abbreviation for given Canton.
      *
      * @param string $abbreviation
+     *
+     * @return string
      */
     public function setAbbreviation($abbreviation)
     {
@@ -64,6 +66,8 @@ class Canton
      * Add Name Array to Property.
      *
      * @param array $name
+     *
+     * @return array
      */
     public function setNames(array $name)
     {
@@ -96,6 +100,8 @@ class Canton
      * @param string $language
      *
      * @throws Exception Throws Exception if a not supported language string was provided
+     *
+     * @return  Canton
      */
     public function setLanguage($language)
     {
