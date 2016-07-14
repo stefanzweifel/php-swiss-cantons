@@ -4,7 +4,6 @@
 [![StyleCI](https://styleci.io/repos/62249401/shield)](https://styleci.io/repos/62249401)
 [![Code Climate](https://codeclimate.com/github/stefanzweifel/php-swiss-cantons/badges/gpa.svg)](https://codeclimate.com/github/stefanzweifel/php-swiss-cantons)
 [![Test Coverage](https://codeclimate.com/github/stefanzweifel/php-swiss-cantons/badges/coverage.svg)](https://codeclimate.com/github/stefanzweifel/php-swiss-cantons/coverage)
-
 [![Latest Stable Version](https://poser.pugx.org/wnx/php-swiss-cantons/v/stable)](https://packagist.org/packages/wnx/php-swiss-cantons)
 [![Total Downloads](https://poser.pugx.org/wnx/php-swiss-cantons/downloads)](https://packagist.org/packages/wnx/php-swiss-cantons)
 [![Latest Unstable Version](https://poser.pugx.org/wnx/php-swiss-cantons/v/unstable)](https://packagist.org/packages/wnx/php-swiss-cantons)
@@ -12,12 +11,12 @@
 
 ## Installation
 
-```
+```shell
 composer require "wnx/php-swiss-cantons"
 ```
 
 ## Usage
-Use the `CantonManager`  Class to interact with this package. Below you find an example how you can use this package in the Laravel Framework. Further you find all the public API for `CantonManager` and `Canton`
+Use the `CantonManager`  Class to interact with this package. Below you find an example how you can use with in the Laravel Framework. Further you find all public API methods for `CantonManager` and `Canton`.
 
 ```php
 Route::get('/', function (Wnx\SwissCantons\CantonManager $cantonManager) {
@@ -29,6 +28,8 @@ Route::get('/', function (Wnx\SwissCantons\CantonManager $cantonManager) {
 
 });
 ```
+
+> This example would work on http://localhost/?canton=BE. It would search for a canton with the abbreviation „BE“ and would  pass the German Canton name (Bern) to the view `welcome.blade`.
 
 ## `CantonManager`
 
@@ -42,6 +43,7 @@ Find a Canton by its abbreviation. See [this list](https://en.wikipedia.org/wiki
 $cantonManager = new Wnx\SwissCantons\CantonManager();
 
 $canton = $cantonManager->getByAppreviation('GR');
+// $canton is an instance of Wnx\SwissCantons\Canton
 ```
 
 ### `getByName()`
@@ -52,6 +54,7 @@ Search for a Canton by it's name. The name must exactly match one of the transla
 $cantonManager = new Wnx\SwissCantons\CantonManager();
 
 $canton = $cantonManager->getByName('Zürich');
+// $canton is an instance of Wnx\SwissCantons\Canton
 ```
 
 
@@ -78,7 +81,7 @@ $canton->setLanguage('fr')->getName();
 
 
 ### `getName()`
-Return the Name for the given Canton. If this method is used without calling the `setLanguage()` Method before, it will return the name in English.
+Return the Name for the given Canton. If the method is used without calling the `setLanguage()` Method first it will return the name in English.
 
 ```php
 $canton->getName(); // Grisons
@@ -95,7 +98,19 @@ $canton->getAbbreviation(); // e.g. ZH
 
 ## Security
 
-If you discover a security vulnerability within this package, please e-mail us at hello@stefanzweifel.io. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this package, please send an e-mail to hello@stefanzweifel.io. All security vulnerabilities will be promptly addressed.
+
+## Build Docs
+
+Docs are available [here](https://stefanzweifel.github.io/php-swiss-cantons/). They can be built with the following command.
+
+```shell
+composer build:docs
+```
+
+## Data Sources
+
+[https://en.wikipedia.org/wiki/Cantons_of_Switzerland](https://en.wikipedia.org/wiki/Cantons_of_Switzerland)
 
 ## License
 
