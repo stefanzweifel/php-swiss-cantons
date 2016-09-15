@@ -19,9 +19,11 @@ class ZipcodeSearch
     }
 
     /**
-     * Find Data Set for a City by Zipcode
-     * @param  integer $zipcode
-     * @return mixed          Returns an object or null if no result was found
+     * Find Data Set for a City by Zipcode.
+     *
+     * @param int $zipcode
+     *
+     * @return mixed Returns an object or null if no result was found
      */
     public function findbyZipcode($zipcode)
     {
@@ -31,7 +33,7 @@ class ZipcodeSearch
     }
 
     /**
-     * Read Zipcode JSON Data
+     * Read Zipcode JSON Data.
      *
      * @return Collection
      */
