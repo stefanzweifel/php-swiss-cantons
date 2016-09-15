@@ -57,6 +57,16 @@ $canton = $cantonManager->getByName('Zürich');
 // $canton is an instance of Wnx\SwissCantons\Canton
 ```
 
+### `getByZipcode()`
+
+Search for a Canton by a zipcode.
+
+```php
+$cantonManager = new Wnx\SwissCantons\CantonManager();
+
+$canton = $cantonManager->getByZipcode(8000);
+// $canton is an instance of Wnx\SwissCantons\Canton
+```
 
 ## `Canton`
 
@@ -110,7 +120,8 @@ composer build:docs
 
 ## Data Sources
 
-[https://en.wikipedia.org/wiki/Cantons_of_Switzerland](https://en.wikipedia.org/wiki/Cantons_of_Switzerland)
+- [https://en.wikipedia.org/wiki/Cantons_of_Switzerland](https://en.wikipedia.org/wiki/Cantons_of_Switzerland)
+- [Zipcodes / Amtliches Ortschaftenverzeichnis der Schweiz](http://www.cadastre.ch/internet/kataster/de/home/services/service/plz.html)
 
 ## License
 
