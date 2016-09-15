@@ -13,9 +13,16 @@ class CantonManager
      */
     protected $search;
 
+    /**
+     * ZipcodeSearch Instance
+     * @var Wnx\SwissCantons\ZipcodeSearch
+     */
+    protected $zipcodeSearch;
+
     public function __construct()
     {
         $this->search = new CantonSearch();
+        $this->zipcodeSearch = new ZipcodeSearch();
     }
 
     /**
@@ -56,5 +63,22 @@ class CantonManager
         }
 
         return new Canton($result);
+    }
+
+    /**
+     * Get Canton by Zipcode
+     * @param  integer $zipcode
+     * @throws Exception if not Canton was found
+     * @return Canton
+     */
+    public function getByZipcode($zipcode)
+    {
+        $result = $this->zipcodeSearch->findByZipcode($zipcode);
+
+        if (is_null($result)) {
+            throw new Exception("Couldn't find Canton for given Zipcode: {$zipcode}.");
+        }
+
+        return $this->getByAppreviation($result->canton);
     }
 }
