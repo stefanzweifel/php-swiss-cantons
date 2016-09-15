@@ -14,7 +14,8 @@ class CantonManager
     protected $search;
 
     /**
-     * ZipcodeSearch Instance
+     * ZipcodeSearch Instance.
+     *
      * @var Wnx\SwissCantons\ZipcodeSearch
      */
     protected $zipcodeSearch;
@@ -66,9 +67,12 @@ class CantonManager
     }
 
     /**
-     * Get Canton by Zipcode
-     * @param  integer $zipcode
+     * Get Canton by Zipcode.
+     *
+     * @param int $zipcode
+     *
      * @throws Exception if not Canton was found
+     *
      * @return Canton
      */
     public function getByZipcode($zipcode)

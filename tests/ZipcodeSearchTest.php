@@ -2,7 +2,6 @@
 
 namespace Wnx\SwissCantons\Tests;
 
-use Illuminate\Support\Collection;
 use Wnx\SwissCantons\ZipcodeSearch;
 
 class ZipcodeSearchTest extends \PHPUnit_Framework_TestCase
