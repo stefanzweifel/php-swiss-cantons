@@ -14,20 +14,16 @@ class CantonTest extends \PHPUnit_Framework_TestCase
      */
     protected function getExampleCanton()
     {
-        $namesCollection = new Collection([
-            'de' => 'Zürich',
-            'fr' => 'Zürich',
-            'it' => 'Zürich',
-            'en' => 'Zürich',
-            'rm' => 'Zürich',
-        ]);
-
-        $canton = new Collection([[
+        return (object) [
             'abbreviation' => 'ZH',
-            'name'         => $namesCollection->all(),
-        ]]);
-
-        return (object) $canton->first();
+            'name'         => [
+                'de' => 'Zürich',
+                'fr' => 'Zürich',
+                'it' => 'Zürich',
+                'en' => 'Zürich',
+                'rm' => 'Zürich',
+            ],
+        ];
     }
 
     /** @test */
