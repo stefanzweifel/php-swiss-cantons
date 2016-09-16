@@ -2,7 +2,6 @@
 
 namespace Wnx\SwissCantons\Tests;
 
-use Illuminate\Support\Collection;
 use Wnx\SwissCantons\Canton;
 
 class CantonTest extends \PHPUnit_Framework_TestCase
