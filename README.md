@@ -11,9 +11,15 @@
 
 ## Installation
 
+### Composer
+
 ```shell
 composer require "wnx/php-swiss-cantons"
 ```
+
+### Download
+
+If you don't have access to `composer` you can also download the latest release from the [releases tab](https://github.com/stefanzweifel/php-swiss-cantons/releases). Place the unzipped files in your project. **Don't forget to autoload all files within the `src` directory.**
 
 ## Usage
 Use the `CantonManager`  Class to interact with this package. Below you find an example how you can use with in the Laravel Framework. Further you find all public API methods for `CantonManager` and `Canton`.
