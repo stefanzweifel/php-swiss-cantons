@@ -2,14 +2,12 @@
 
 namespace Wnx\SwissCantons;
 
-use Illuminate\Support\Collection;
-
 class CantonSearch
 {
     /**
      * Data Set used to search a Canton.
      *
-     * @var Collection
+     * @var stdClass
      */
     protected $data;
 
@@ -27,9 +25,15 @@ class CantonSearch
      */
     public function findByAppreviation($abbreviation)
     {
-        return $this->data->first(function (\stdClass $value) use ($abbreviation) {
+        $result = array_filter($this->data, function (\stdClass $value) use ($abbreviation) {
             return $value->abbreviation === $abbreviation;
         });
+
+        if (empty($result)) {
+            return;
+        }
+
+        return reset($result);
     }
 
     /**
@@ -41,25 +45,37 @@ class CantonSearch
      */
     public function findByName($name)
     {
-        return $this->data->filter(function (\stdClass $item) use ($name) {
+        $result = array_filter($this->data, function ($item) use ($name) {
 
             // Transform a dump array to a smart collection
-            $itemNames = new Collection($item->name);
+            $itemNames = (array) $item->name;
 
             // Return the current Canton, if it contains the name
-            return $itemNames->contains($name);
-        })->first();
+            // Copied from illuminate/support
+            // https://github.com/illuminate/support/blob/master/Collection.php#L168-L172
+            if (!is_string($name) && is_callable($name)) {
+                return !is_null(reset($name));
+            }
+
+            return in_array($name, $itemNames);
+        });
+
+        if (empty($result)) {
+            return;
+        }
+
+        return reset($result);
     }
 
     /**
      * Read JSON Data.
      *
-     * @return Collection
+     * @return stdClass
      */
     public function getDataSet()
     {
         $cantons = file_get_contents(__DIR__.'/data/cantons.json');
 
-        return new Collection(json_decode($cantons));
+        return json_decode($cantons);
     }
 }
