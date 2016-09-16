@@ -30,7 +30,7 @@ class ZipcodeSearch
         });
 
         if (empty($result)) {
-            return;
+            return null;
         }
 
         return reset($result);

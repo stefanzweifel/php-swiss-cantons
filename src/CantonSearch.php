@@ -30,7 +30,7 @@ class CantonSearch
         });
 
         if (empty($result)) {
-            return;
+            return null;
         }
 
         return reset($result);
@@ -46,22 +46,11 @@ class CantonSearch
     public function findByName($name)
     {
         $result = array_filter($this->data, function ($item) use ($name) {
-
-            // Transform a dump array to a smart collection
-            $itemNames = (array) $item->name;
-
-            // Return the current Canton, if it contains the name
-            // Copied from illuminate/support
-            // https://github.com/illuminate/support/blob/master/Collection.php#L168-L172
-            if (!is_string($name) && is_callable($name)) {
-                return !is_null(reset($name));
-            }
-
-            return in_array($name, $itemNames);
+            return in_array($name, (array) $item->name);
         });
 
         if (empty($result)) {
-            return;
+            return null;
         }
 
         return reset($result);
