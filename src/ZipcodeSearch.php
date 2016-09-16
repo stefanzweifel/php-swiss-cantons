@@ -27,7 +27,7 @@ class ZipcodeSearch
      */
     public function findbyZipcode($zipcode)
     {
-        return $this->data->first(function ($key, $value) use ($zipcode) {
+        return $this->data->first(function (\stdClass $value) use ($zipcode) {
             return $value->zipcode === $zipcode;
         });
     }

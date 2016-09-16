@@ -27,7 +27,7 @@ class CantonSearch
      */
     public function findByAppreviation($abbreviation)
     {
-        return $this->data->first(function ($key, $value) use ($abbreviation) {
+        return $this->data->first(function (\stdClass $value) use ($abbreviation) {
             return $value->abbreviation === $abbreviation;
         });
     }
@@ -41,7 +41,7 @@ class CantonSearch
      */
     public function findByName($name)
     {
-        return $this->data->filter(function ($item) use ($name) {
+        return $this->data->filter(function (\stdClass $item) use ($name) {
 
             // Transform a dump array to a smart collection
             $itemNames = new Collection($item->name);
