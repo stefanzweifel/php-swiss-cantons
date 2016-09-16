@@ -25,12 +25,12 @@ class CantonSearch
      */
     public function findByAppreviation($abbreviation)
     {
-        $result = array_filter($this->data, function(\stdClass $value) use ($abbreviation) {
+        $result = array_filter($this->data, function (\stdClass $value) use ($abbreviation) {
             return $value->abbreviation === $abbreviation;
         });
 
         if (empty($result)) {
-            return null;
+            return;
         }
 
         return reset($result);
@@ -45,7 +45,7 @@ class CantonSearch
      */
     public function findByName($name)
     {
-        $result = array_filter($this->data, function($item) use ($name) {
+        $result = array_filter($this->data, function ($item) use ($name) {
 
             // Transform a dump array to a smart collection
             $itemNames = (array) $item->name;
@@ -53,14 +53,15 @@ class CantonSearch
             // Return the current Canton, if it contains the name
             // Copied from illuminate/support
             // https://github.com/illuminate/support/blob/master/Collection.php#L168-L172
-            if (! is_string($name) && is_callable($name)) {
-                return ! is_null(reset($name));
+            if (!is_string($name) && is_callable($name)) {
+                return !is_null(reset($name));
             }
+
             return in_array($name, $itemNames);
         });
 
         if (empty($result)) {
-            return null;
+            return;
         }
 
         return reset($result);
