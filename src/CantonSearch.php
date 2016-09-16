@@ -30,7 +30,7 @@ class CantonSearch
         });
 
         if (empty($result)) {
-            return null;
+            return;
         }
 
         return reset($result);
@@ -50,7 +50,7 @@ class CantonSearch
         });
 
         if (empty($result)) {
-            return null;
+            return;
         }
 
         return reset($result);
