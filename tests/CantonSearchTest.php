@@ -2,16 +2,15 @@
 
 namespace Wnx\SwissCantons\Tests;
 
-use Illuminate\Support\Collection;
 use Wnx\SwissCantons\CantonSearch;
 
 class CantonSearchTest extends \PHPUnit_Framework_TestCase
 {
     /** @test */
-    public function it_returns_json_source_as_colection()
+    public function it_returns_json_source_as_array()
     {
         $cantonSearch = new CantonSearch();
-        $this->assertInstanceOf(Collection::class, $cantonSearch->getDataSet());
+        $this->assertTrue(is_array($cantonSearch->getDataSet()));
     }
 
     /** @test */

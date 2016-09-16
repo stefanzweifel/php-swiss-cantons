@@ -6,6 +6,14 @@ use Wnx\SwissCantons\ZipcodeSearch;
 
 class ZipcodeSearchTest extends \PHPUnit_Framework_TestCase
 {
+
+    /** @test */
+    public function it_returns_dataset_as_array()
+    {
+        $cantonSearch = new ZipcodeSearch();
+        $this->assertTrue(is_array($cantonSearch->getDataSet()));
+    }
+
     /** @test */
     public function it_finds_canton_by_zipcode()
     {
