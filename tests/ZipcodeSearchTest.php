@@ -6,7 +6,6 @@ use Wnx\SwissCantons\ZipcodeSearch;
 
 class ZipcodeSearchTest extends \PHPUnit_Framework_TestCase
 {
-
     /** @test */
     public function it_returns_dataset_as_array()
     {
