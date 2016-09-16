@@ -64,7 +64,7 @@ Search for a Canton by a zipcode.
 ```php
 $cantonManager = new Wnx\SwissCantons\CantonManager();
 
-$canton = $cantonManager->getByZipcode(8000);
+$canton = $cantonManager->getByZipcode(3005);
 // $canton is an instance of Wnx\SwissCantons\Canton
 ```
 
