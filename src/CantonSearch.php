@@ -27,7 +27,7 @@ class CantonSearch
      */
     public function findByAppreviation($abbreviation)
     {
-        return $this->data->first(function ($key, \stdClass $value) use ($abbreviation) {
+        return $this->data->first(function (\stdClass $value) use ($abbreviation) {
             return $value->abbreviation === $abbreviation;
         });
     }
