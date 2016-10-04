@@ -18,6 +18,31 @@ class CantonManagerTest extends \PHPUnit_Framework_TestCase
         );
     }
 
+    /** @test */
+    public function it_returns_correct_canton_if_abbreviation_is_lowercase()
+    {
+        $cantonManager = new CantonManager();
+
+
+        $canton = $cantonManager->getByAppreviation('zh');
+        $this->assertEquals(
+            'Zürich',
+            $canton->setLanguage('de')->getName()
+        );
+
+        $canton = $cantonManager->getByAppreviation('gr');
+        $this->assertEquals(
+            'Graubünden',
+            $canton->setLanguage('de')->getName()
+        );
+
+        $canton = $cantonManager->getByAppreviation('sh');
+        $this->assertEquals(
+            'Schaffhausen',
+            $canton->setLanguage('de')->getName()
+        );
+    }
+
     /**
      * @test
      * @expectedException     Exception

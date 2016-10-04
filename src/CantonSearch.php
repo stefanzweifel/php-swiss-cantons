@@ -26,7 +26,7 @@ class CantonSearch
     public function findByAppreviation($abbreviation)
     {
         $result = array_filter($this->data, function (\stdClass $value) use ($abbreviation) {
-            return $value->abbreviation === $abbreviation;
+            return $value->abbreviation === strtoupper($abbreviation);
         });
 
         if (empty($result)) {
