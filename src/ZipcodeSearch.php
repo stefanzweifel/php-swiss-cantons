@@ -26,7 +26,7 @@ class ZipcodeSearch
     public function findbyZipcode($zipcode)
     {
         $result = array_filter($this->data, function (\stdClass $value) use ($zipcode) {
-            return $value->zipcode === $zipcode;
+            return $value->zipcode === intval($zipcode);
         });
 
         if (empty($result)) {
