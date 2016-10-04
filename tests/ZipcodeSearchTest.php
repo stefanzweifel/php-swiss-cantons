@@ -25,6 +25,17 @@ class ZipcodeSearchTest extends \PHPUnit_Framework_TestCase
     }
 
     /** @test */
+    public function it_finds_canton_if_zipcode_is_passed_as_a_string()
+    {
+        $zipcodeSearch = new ZipcodeSearch();
+        $result = $zipcodeSearch->findByZipcode('3005');
+
+        $this->assertInstanceOf(\stdClass::class, $result);
+        $this->assertEquals('BE', $result->canton);
+        $this->assertEquals('Bern', $result->community_name);
+    }
+
+    /** @test */
     public function it_does_not_find_result_for_not_available_zipcode()
     {
         $zipcodeSearch = new ZipcodeSearch();
