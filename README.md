@@ -1,3 +1,5 @@
+![Bünderspitz, Adelboden](https://cloud.githubusercontent.com/assets/1080923/20579057/c5b79272-b1ca-11e6-9f60-d8c40e0f41ab.png)
+
 # 🇨🇭 Swiss Cantons
 
 [![Build Status](https://travis-ci.org/stefanzweifel/php-swiss-cantons.svg?branch=master)](https://travis-ci.org/stefanzweifel/php-swiss-cantons)
@@ -8,6 +10,7 @@
 [![Total Downloads](https://poser.pugx.org/wnx/php-swiss-cantons/downloads)](https://packagist.org/packages/wnx/php-swiss-cantons)
 [![Latest Unstable Version](https://poser.pugx.org/wnx/php-swiss-cantons/v/unstable)](https://packagist.org/packages/wnx/php-swiss-cantons)
 [![License](https://poser.pugx.org/wnx/php-swiss-cantons/license)](https://packagist.org/packages/wnx/php-swiss-cantons)
+
 
 ## Installation
 
