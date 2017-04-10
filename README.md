@@ -12,9 +12,9 @@
 [![License](https://poser.pugx.org/wnx/php-swiss-cantons/license)](https://packagist.org/packages/wnx/php-swiss-cantons)
 
 
-## Installation
+## Installation
 
-### Composer
+### Composer
 
 ```shell
 composer require "wnx/php-swiss-cantons"
