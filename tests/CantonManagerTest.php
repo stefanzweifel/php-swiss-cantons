@@ -23,7 +23,6 @@ class CantonManagerTest extends \PHPUnit_Framework_TestCase
     {
         $cantonManager = new CantonManager();
 
-
         $canton = $cantonManager->getByAppreviation('zh');
         $this->assertEquals(
             'Zürich',
