@@ -9,6 +9,8 @@
 [![Latest Unstable Version](https://poser.pugx.org/wnx/php-swiss-cantons/v/unstable)](https://packagist.org/packages/wnx/php-swiss-cantons)
 [![License](https://poser.pugx.org/wnx/php-swiss-cantons/license)](https://packagist.org/packages/wnx/php-swiss-cantons)
 
+Using Javascript? There's a [port of this package available](https://github.com/stefanzweifel/js-swiss-cantons).
+
 ## Installation
 
 ### Composer
