@@ -1,3 +1,5 @@
+![Bünderspitz, Adelboden](https://cloud.githubusercontent.com/assets/1080923/20579057/c5b79272-b1ca-11e6-9f60-d8c40e0f41ab.png)
+
 # 🇨🇭 Swiss Cantons
 
 [![Build Status](https://travis-ci.org/stefanzweifel/php-swiss-cantons.svg?branch=master)](https://travis-ci.org/stefanzweifel/php-swiss-cantons)
@@ -11,9 +13,9 @@
 
 Using Javascript? There's a [port of this package available](https://github.com/stefanzweifel/js-swiss-cantons).
 
-## Installation
+## Installation
 
-### Composer
+### Composer
 
 ```shell
 composer require "wnx/php-swiss-cantons"
