@@ -2,7 +2,7 @@
 
 ## V1.3.0 (2017-05-03)
 
-- Fix wrong translations (#16)
+- Fix wrong translations ([#16](https://github.com/stefanzweifel/php-swiss-cantons/pull/16))
 
 ## V1.2.1 (2016-10-04)
 
