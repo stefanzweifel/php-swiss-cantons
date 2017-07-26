@@ -13,7 +13,7 @@ class CantonSearch
 
     public function __construct()
     {
-        $this->data = (new Cantons)->getAll();
+        $this->data = (new Cantons())->getAll();
     }
 
     /**

@@ -2,8 +2,8 @@
 
 namespace Wnx\SwissCantons\Tests;
 
-use Wnx\SwissCantons\Cantons;
 use Exception;
+use Wnx\SwissCantons\Cantons;
 
 class CantonsTest extends \PHPUnit_Framework_TestCase
 {
@@ -53,6 +53,4 @@ class CantonsTest extends \PHPUnit_Framework_TestCase
 
         $cantons = (new Cantons())->getAllAsArray('foo');
     }
-
-
 }

@@ -5,7 +5,8 @@ namespace Wnx\SwissCantons;
 class Cantons
 {
     /**
-     * Array of Cantons
+     * Array of Cantons.
+     *
      * @var array
      */
     protected $cantons;
@@ -16,7 +17,8 @@ class Cantons
     }
 
     /**
-     * Return all Cantons
+     * Return all Cantons.
+     *
      * @return array of Wnx\SwissCantons\Canton
      */
     public function getAll()
@@ -25,7 +27,6 @@ class Cantons
         $resultArray = [];
 
         foreach ($cantons as $canton) {
-
             $canton = new Canton($canton);
 
             $resultArray[] = $canton;
@@ -35,9 +36,11 @@ class Cantons
     }
 
     /**
-     * Return all Cantons as a one dimensional array of abbreviation and names
-     * @param  string $defaultLanguage
-     * @return Array
+     * Return all Cantons as a one dimensional array of abbreviation and names.
+     *
+     * @param string $defaultLanguage
+     *
+     * @return array
      */
     public function getAllAsArray($defaultLanguage = 'en')
     {
@@ -51,5 +54,4 @@ class Cantons
 
         return $resultArray;
     }
-
 }
