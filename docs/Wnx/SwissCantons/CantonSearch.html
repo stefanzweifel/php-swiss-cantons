@@ -23,7 +23,10 @@
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
-                <form id="search-form" action="../../search.html" method="GET">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../search.html" method="GET">
             <span class="glyphicon glyphicon-search"></span>
             <input name="search"
                    class="typeahead form-control"
@@ -63,10 +66,7 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                                                            <li><a href="../../Wnx.html">Wnx</a></li>
-                                        <li><a href="../../Wnx/SwissCantons.html">SwissCantons</a></li>
-    
-                <li>CantonSearch</li>
+                        <li><a href="../../Wnx.html">Wnx</a></li><li class="backslash">\</li><li><a href="../../Wnx/SwissCantons.html">SwissCantons</a></li><li class="backslash">\</li><li>CantonSearch</li>
             </ol>
         </div>
                 <div id="page-content">
@@ -88,6 +88,19 @@
     
     
     
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_data">
+                                        protected                                        <abbr title="Wnx\SwissCantons\stdClass">stdClass</abbr>
+                </td>
+                <td>$data</td>
+                <td class="last">Data Set used to search a Canton.</td>
+                <td></td>
+            </tr>
+            </table>
+
     
             <h2>Methods</h2>
 
@@ -123,16 +136,6 @@
                                             <p>Find Canton by Name.</p>                </div>
                 <div class="col-md-2"></div>
             </div>
-                    <div class="row">
-                <div class="col-md-2 type">
-                    <abbr title="Wnx\SwissCantons\stdClass">stdClass</abbr>
-                </div>
-                <div class="col-md-8 type">
-                    <a href="#method_getDataSet">getDataSet</a>()
-        
-                                            <p>Read JSON Data.</p>                </div>
-                <div class="col-md-2"></div>
-            </div>
             </div>
 
 
@@ -141,7 +144,7 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/CantonSearchphp#L14">line 14</a></div>
+        <div class="location">at         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/CantonSearchphp#L14">line 14</a></div>
         <code>                    
     <strong>__construct</strong>()
         </code>
@@ -160,7 +163,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_findByAppreviation">
-        <div class="location">at line         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/CantonSearchphp#L26">line 26</a></div>
+        <div class="location">at         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/CantonSearchphp#L26">line 26</a></div>
         <code>                    mixed
     <strong>findByAppreviation</strong>(string $abbreviation)
         </code>
@@ -170,7 +173,7 @@
     
 
                     <div class="method-description">
-                                    <p>Find Canton by Abbreviation.</p>                                </div>
+                                    <p>Find Canton by Abbreviation.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -200,7 +203,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_findByName">
-        <div class="location">at line         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/CantonSearchphp#L46">line 46</a></div>
+        <div class="location">at         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/CantonSearchphp#L46">line 46</a></div>
         <code>                    mixed
     <strong>findByName</strong>(string $name)
         </code>
@@ -210,7 +213,7 @@
     
 
                     <div class="method-description">
-                                    <p>Find Canton by Name.</p>                                </div>
+                                    <p>Find Canton by Name.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -229,36 +232,6 @@
         <tr>
             <td>mixed</td>
             <td>Returns an object or null, if no canton was found</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-            </div>
-                    <div class="method-item">
-                    <h3 id="method_getDataSet">
-        <div class="location">at line         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/CantonSearchphp#L74">line 74</a></div>
-        <code>                    <abbr title="Wnx\SwissCantons\stdClass">stdClass</abbr>
-    <strong>getDataSet</strong>()
-        </code>
-    </h3>
-    <div class="details">
-            
-    
-
-                    <div class="method-description">
-                                    <p>Read JSON Data.</p>                                </div>
-                <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table class="table table-condensed">
-        <tr>
-            <td><abbr title="Wnx\SwissCantons\stdClass">stdClass</abbr></td>
-            <td></td>
         </tr>
     </table>
 

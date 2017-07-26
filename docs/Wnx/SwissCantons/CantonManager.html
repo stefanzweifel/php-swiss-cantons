@@ -23,7 +23,10 @@
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
-                <form id="search-form" action="../../search.html" method="GET">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../search.html" method="GET">
             <span class="glyphicon glyphicon-search"></span>
             <input name="search"
                    class="typeahead form-control"
@@ -63,10 +66,7 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                                                            <li><a href="../../Wnx.html">Wnx</a></li>
-                                        <li><a href="../../Wnx/SwissCantons.html">SwissCantons</a></li>
-    
-                <li>CantonManager</li>
+                        <li><a href="../../Wnx.html">Wnx</a></li><li class="backslash">\</li><li><a href="../../Wnx/SwissCantons.html">SwissCantons</a></li><li class="backslash">\</li><li>CantonManager</li>
             </ol>
         </div>
                 <div id="page-content">
@@ -88,6 +88,27 @@
     
     
     
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_search">
+                                        protected                                        <abbr title="Wnx\SwissCantons\Wnx\SwissCantons\CantonSearch">CantonSearch</abbr>
+                </td>
+                <td>$search</td>
+                <td class="last">CantonSearch Instance.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_zipcodeSearch">
+                                        protected                                        <abbr title="Wnx\SwissCantons\Wnx\SwissCantons\ZipcodeSearch">ZipcodeSearch</abbr>
+                </td>
+                <td>$zipcodeSearch</td>
+                <td class="last">ZipcodeSearch Instance.</td>
+                <td></td>
+            </tr>
+            </table>
+
     
             <h2>Methods</h2>
 
@@ -141,7 +162,7 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/CantonManagerphp#L23">line 23</a></div>
+        <div class="location">at         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/CantonManagerphp#L23">line 23</a></div>
         <code>                    
     <strong>__construct</strong>()
         </code>
@@ -160,7 +181,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getByAppreviation">
-        <div class="location">at line         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/CantonManagerphp#L38">line 38</a></div>
+        <div class="location">at         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/CantonManagerphp#L38">line 38</a></div>
         <code>                    <a href="../../Wnx/SwissCantons/Canton.html"><abbr title="Wnx\SwissCantons\Canton">Canton</abbr></a>
     <strong>getByAppreviation</strong>(string $abbreviation)
         </code>
@@ -170,7 +191,7 @@
     
 
                     <div class="method-description">
-                                    <p>Get Canton by abbreviation.</p>                                </div>
+                                    <p>Get Canton by abbreviation.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -209,7 +230,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getByName">
-        <div class="location">at line         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/CantonManagerphp#L58">line 58</a></div>
+        <div class="location">at         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/CantonManagerphp#L58">line 58</a></div>
         <code>                    <a href="../../Wnx/SwissCantons/Canton.html"><abbr title="Wnx\SwissCantons\Canton">Canton</abbr></a>
     <strong>getByName</strong>(string $name)
         </code>
@@ -219,7 +240,7 @@
     
 
                     <div class="method-description">
-                                    <p>Get Canton by Name.</p>                                </div>
+                                    <p>Get Canton by Name.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -258,7 +279,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getByZipcode">
-        <div class="location">at line         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/CantonManagerphp#L78">line 78</a></div>
+        <div class="location">at         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/CantonManagerphp#L78">line 78</a></div>
         <code>                    <a href="../../Wnx/SwissCantons/Canton.html"><abbr title="Wnx\SwissCantons\Canton">Canton</abbr></a>
     <strong>getByZipcode</strong>(int $zipcode)
         </code>
@@ -268,7 +289,7 @@
     
 
                     <div class="method-description">
-                                    <p>Get Canton by Zipcode.</p>                                </div>
+                                    <p>Get Canton by Zipcode.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 

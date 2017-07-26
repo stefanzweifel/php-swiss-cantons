@@ -23,7 +23,10 @@
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
-                <form id="search-form" action="../search.html" method="GET">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../search.html" method="GET">
             <span class="glyphicon glyphicon-search"></span>
             <input name="search"
                    class="typeahead form-control"
@@ -63,9 +66,7 @@
                 <div class="namespace-breadcrumbs">
         <ol class="breadcrumb">
             <li><span class="label label-default">Namespace</span></li>
-                                                        <li><a href="../Wnx.html">Wnx</a></li>
-                                        <li><a href="../Wnx/SwissCantons.html">SwissCantons</a></li>
-    
+                    <li><a href="../Wnx.html">Wnx</a></li><li class="backslash">\</li><li><a href="../Wnx/SwissCantons.html">SwissCantons</a></li><li class="backslash">\</li>
         </ol>
     </div>
             <div id="page-content">
@@ -99,6 +100,15 @@
                     <div class="row">
                 <div class="col-md-6">
                                             <a href="../Wnx/SwissCantons/CantonSearch.html"><abbr title="Wnx\SwissCantons\CantonSearch">CantonSearch</abbr></a>
+                                            
+                </div>
+                <div class="col-md-6">
+                    
+                </div>
+            </div>
+                    <div class="row">
+                <div class="col-md-6">
+                                            <a href="../Wnx/SwissCantons/Cantons.html"><abbr title="Wnx\SwissCantons\Cantons">Cantons</abbr></a>
                                             
                 </div>
                 <div class="col-md-6">
