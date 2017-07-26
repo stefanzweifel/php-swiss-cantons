@@ -31,7 +31,7 @@ Route::get('/', function (Wnx\SwissCantons\CantonManager $cantonManager) {
     $canton = $cantonManager->getByAppreviation(Request::get('canton', 'ZH'));
     $cantonName = $canton->setLanguage('de')->getName();
 
-		return view('welcome', compact('cantonName'));
+	return view('welcome', compact('cantonName'));
 
 });
 ```
