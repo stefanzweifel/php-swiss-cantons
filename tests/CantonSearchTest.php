@@ -2,25 +2,19 @@
 
 namespace Wnx\SwissCantons\Tests;
 
+use Wnx\SwissCantons\Canton;
 use Wnx\SwissCantons\CantonSearch;
 
 class CantonSearchTest extends \PHPUnit_Framework_TestCase
 {
-    /** @test */
-    public function it_returns_json_source_as_array()
-    {
-        $cantonSearch = new CantonSearch();
-        $this->assertTrue(is_array($cantonSearch->getDataSet()));
-    }
-
     /** @test */
     public function it_finds_canton_by_abbreviation()
     {
         $cantonSearch = new CantonSearch();
         $canton = $cantonSearch->findByAppreviation('SH');
 
-        $this->assertInstanceOf(\stdClass::class, $canton);
-        $this->assertEquals('SH', $canton->abbreviation);
+        $this->assertInstanceOf(Canton::class, $canton);
+        $this->assertEquals('SH', $canton->getAbbreviation());
     }
 
     /** @test */
@@ -38,9 +32,9 @@ class CantonSearchTest extends \PHPUnit_Framework_TestCase
         $cantonSearch = new CantonSearch();
         $canton = $cantonSearch->findByName('Zürich');
 
-        $this->assertInstanceOf(\stdClass::class, $canton);
-        $this->assertEquals('ZH', $canton->abbreviation);
-        $this->assertEquals('Zürich', $canton->name->de);
+        $this->assertInstanceOf(Canton::class, $canton);
+        $this->assertEquals('ZH', $canton->getAbbreviation());
+        $this->assertEquals('Zürich', $canton->getNamesArray()['de']);
     }
 
     /** @test */

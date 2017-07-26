@@ -13,7 +13,7 @@ class CantonSearch
 
     public function __construct()
     {
-        $this->data = $this->getDataSet();
+        $this->data = (new Cantons)->getAll();
     }
 
     /**
@@ -25,8 +25,8 @@ class CantonSearch
      */
     public function findByAppreviation($abbreviation)
     {
-        $result = array_filter($this->data, function (\stdClass $value) use ($abbreviation) {
-            return $value->abbreviation === strtoupper($abbreviation);
+        $result = array_filter($this->data, function (Canton $value) use ($abbreviation) {
+            return $value->getAbbreviation() === strtoupper($abbreviation);
         });
 
         if (empty($result)) {
@@ -45,8 +45,8 @@ class CantonSearch
      */
     public function findByName($name)
     {
-        $result = array_filter($this->data, function ($item) use ($name) {
-            return in_array($name, (array) $item->name);
+        $result = array_filter($this->data, function (Canton $canton) use ($name) {
+            return in_array($name, (array) $canton->getNamesArray());
         });
 
         if (empty($result)) {
@@ -54,17 +54,5 @@ class CantonSearch
         }
 
         return reset($result);
-    }
-
-    /**
-     * Read JSON Data.
-     *
-     * @return stdClass
-     */
-    public function getDataSet()
-    {
-        $cantons = file_get_contents(__DIR__.'/data/cantons.json');
-
-        return json_decode($cantons);
     }
 }
