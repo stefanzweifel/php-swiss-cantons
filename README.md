@@ -116,11 +116,30 @@ Return the offical abbreviation for the given Canton.
 $canton->getAbbreviation(); // e.g. ZH
 ```
 
+## `Cantons`
+
+This class is used internally but can also be used in your own project if you need a list of all cantons
+
+### `getAll()`
+
+```php
+$cantons->getAll(); // Array of `Cantons` objects
+```
+
+### `getAllAsArray($defaultLanguage = 'en')`
+
+If you need a list of Cantons for a select input this is the method for you. Just pass the desired language to the method and you will get a simple one dimensional array of all cantons.
+
+```php
+$cantons->getAllAsArray(); // Array of cantons. Keys are abbreviations, values are canton names
+// [['ZH' => 'Zurich', 'GE' => 'Geneva']]
+```
+
 ## Security
 
 If you discover a security vulnerability within this package, please send an e-mail to hello@stefanzweifel.io. All security vulnerabilities will be promptly addressed.
 
-## Build Docs
+## Build Docs
 
 Docs are available [here](https://stefanzweifel.github.io/php-swiss-cantons/). They can be built with the following command.
 
