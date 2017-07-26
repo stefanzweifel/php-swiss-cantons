@@ -23,7 +23,10 @@
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
-                <form id="search-form" action="../../search.html" method="GET">
+                <script>
+            $('option[data-version="'+window.projectVersion+'"]').prop('selected', true);
+        </script>
+        <form id="search-form" action="../../search.html" method="GET">
             <span class="glyphicon glyphicon-search"></span>
             <input name="search"
                    class="typeahead form-control"
@@ -63,10 +66,7 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                                                            <li><a href="../../Wnx.html">Wnx</a></li>
-                                        <li><a href="../../Wnx/SwissCantons.html">SwissCantons</a></li>
-    
-                <li>Canton</li>
+                        <li><a href="../../Wnx.html">Wnx</a></li><li class="backslash">\</li><li><a href="../../Wnx/SwissCantons.html">SwissCantons</a></li><li class="backslash">\</li><li>Canton</li>
             </ol>
         </div>
                 <div id="page-content">
@@ -88,6 +88,43 @@
     
     
     
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_appreviation">
+                                        protected                                        string
+                </td>
+                <td>$appreviation</td>
+                <td class="last">Abbreviation for given Canton.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_names">
+                                        protected                                        array
+                </td>
+                <td>$names</td>
+                <td class="last">Array of available Names for given Canton.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_displayLanguage">
+                                        protected                                        string
+                </td>
+                <td>$displayLanguage</td>
+                <td class="last">Default Language used.</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_availableLanguages">
+                                        protected                                        array
+                </td>
+                <td>$availableLanguages</td>
+                <td class="last">Array of supported Languages.</td>
+                <td></td>
+            </tr>
+            </table>
+
     
             <h2>Methods</h2>
 
@@ -181,7 +218,7 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at line         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/Cantonphp#L37">line 37</a></div>
+        <div class="location">at         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/Cantonphp#L37">line 37</a></div>
         <code>                    
     <strong>__construct</strong>(<a target="_blank" href="http://php.net/stdClass">stdClass</a> $data)
         </code>
@@ -210,7 +247,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_setAbbreviation">
-        <div class="location">at line         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/Cantonphp#L50">line 50</a></div>
+        <div class="location">at         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/Cantonphp#L50">line 50</a></div>
         <code>                    string
     <strong>setAbbreviation</strong>(string $abbreviation)
         </code>
@@ -220,7 +257,7 @@
     
 
                     <div class="method-description">
-                                    <p>Set the abbreviation for given Canton.</p>                                </div>
+                                    <p>Set the abbreviation for given Canton.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -250,7 +287,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getAbbreviation">
-        <div class="location">at line         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/Cantonphp#L60">line 60</a></div>
+        <div class="location">at         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/Cantonphp#L60">line 60</a></div>
         <code>                    string
     <strong>getAbbreviation</strong>()
         </code>
@@ -260,7 +297,7 @@
     
 
                     <div class="method-description">
-                                    <p>Return Abbreviation for Canton.</p>                                </div>
+                                    <p>Return Abbreviation for Canton.</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -280,7 +317,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_setNames">
-        <div class="location">at line         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/Cantonphp#L72">line 72</a></div>
+        <div class="location">at         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/Cantonphp#L72">line 72</a></div>
         <code>                    array
     <strong>setNames</strong>(array $name)
         </code>
@@ -290,7 +327,7 @@
     
 
                     <div class="method-description">
-                                    <p>Add Name Array to Property.</p>                                </div>
+                                    <p>Add Name Array to Property.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -320,7 +357,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getName">
-        <div class="location">at line         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/Cantonphp#L82">line 82</a></div>
+        <div class="location">at         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/Cantonphp#L82">line 82</a></div>
         <code>                    string
     <strong>getName</strong>()
         </code>
@@ -330,7 +367,7 @@
     
 
                     <div class="method-description">
-                                    <p>Return Display Name for given Language.</p>                                </div>
+                                    <p>Return Display Name for given Language.</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -350,7 +387,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getNamesArray">
-        <div class="location">at line         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/Cantonphp#L92">line 92</a></div>
+        <div class="location">at         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/Cantonphp#L92">line 92</a></div>
         <code>                    array
     <strong>getNamesArray</strong>()
         </code>
@@ -360,7 +397,7 @@
     
 
                     <div class="method-description">
-                                    <p>It Returns the Raw Name Array.</p>                                </div>
+                                    <p>It Returns the Raw Name Array.</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>
@@ -380,7 +417,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_setLanguage">
-        <div class="location">at line         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/Cantonphp#L106">line 106</a></div>
+        <div class="location">at         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/Cantonphp#L106">line 106</a></div>
         <code>                    <a href="../../Wnx/SwissCantons/Canton.html"><abbr title="Wnx\SwissCantons\Canton">Canton</abbr></a>
     <strong>setLanguage</strong>(string $language)
         </code>
@@ -390,7 +427,7 @@
     
 
                     <div class="method-description">
-                                    <p>Set Language used to Display Canton Name.</p>                                </div>
+                                    <p>Set Language used to Display Canton Name.</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -429,7 +466,7 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_getLanguage">
-        <div class="location">at line         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/Cantonphp#L124">line 124</a></div>
+        <div class="location">at         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/Cantonphp#L124">line 124</a></div>
         <code>                    string
     <strong>getLanguage</strong>()
         </code>
@@ -439,7 +476,7 @@
     
 
                     <div class="method-description">
-                                    <p>Return Language used to Display Canton Name.</p>                                </div>
+                                    <p>Return Language used to Display Canton Name.</p>                                                </div>
                 <div class="tags">
             
                             <h4>Return Value</h4>

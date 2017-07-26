@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="index, follow, all" />
-    <title>Wnx\SwissCantons\ZipcodeSearch | PHP Swiss Cantons</title>
+    <title>Wnx\SwissCantons\Cantons | PHP Swiss Cantons</title>
 
             <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../../css/bootstrap-theme.min.css">
@@ -19,7 +19,7 @@
     
     </head>
 
-    <body id="class" data-name="class:Wnx_SwissCantons_ZipcodeSearch" data-root-path="../../">
+    <body id="class" data-name="class:Wnx_SwissCantons_Cantons" data-root-path="../../">
             <div id="content">
         <div id="left-column">
                 <div id="control-panel">
@@ -66,20 +66,20 @@
                         <div class="namespace-breadcrumbs">
             <ol class="breadcrumb">
                 <li><span class="label label-default">class</span></li>
-                        <li><a href="../../Wnx.html">Wnx</a></li><li class="backslash">\</li><li><a href="../../Wnx/SwissCantons.html">SwissCantons</a></li><li class="backslash">\</li><li>ZipcodeSearch</li>
+                        <li><a href="../../Wnx.html">Wnx</a></li><li class="backslash">\</li><li><a href="../../Wnx/SwissCantons.html">SwissCantons</a></li><li class="backslash">\</li><li>Cantons</li>
             </ol>
         </div>
                 <div id="page-content">
                 
     <div class="page-header">
         <h1>
-            ZipcodeSearch
+            Cantons
                 
         </h1>
     </div>
 
     <p>    class
-    <strong>ZipcodeSearch</strong>        (<a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/ZipcodeSearchphp">View source</a>)
+    <strong>Cantons</strong>        (<a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/Cantonsphp">View source</a>)
 </p>
 
         
@@ -92,11 +92,11 @@
 
             <table class="table table-condensed">
                     <tr>
-                <td class="type" id="property_data">
-                                        protected                                        <abbr title="Wnx\SwissCantons\stdClass">stdClass</abbr>
+                <td class="type" id="property_cantons">
+                                        protected                                        array
                 </td>
-                <td>$data</td>
-                <td class="last">Data Set used to search a Zipcode.</td>
+                <td>$cantons</td>
+                <td class="last">Array of Cantons</td>
                 <td></td>
             </tr>
             </table>
@@ -118,22 +118,22 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    mixed
+                    array
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_findbyZipcode">findbyZipcode</a>(int $zipcode)
+                    <a href="#method_getAll">getAll</a>()
         
-                                            <p>Find Data Set for a City by Zipcode.</p>                </div>
+                                            <p>Return all Cantons</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    <abbr title="Wnx\SwissCantons\stdClass">stdClass</abbr>
+                    Array
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_getDataSet">getDataSet</a>()
+                    <a href="#method_getAllAsArray">getAllAsArray</a>(string $defaultLanguage = &#039;en&#039;)
         
-                                            <p>Read Zipcode JSON Data.</p>                </div>
+                                            <p>Return all Cantons as a one dimensional array of abbreviation and names</p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -144,7 +144,7 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/ZipcodeSearchphp#L14">line 14</a></div>
+        <div class="location">at         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/Cantonsphp#L13">line 13</a></div>
         <code>                    
     <strong>__construct</strong>()
         </code>
@@ -162,10 +162,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_findbyZipcode">
-        <div class="location">at         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/ZipcodeSearchphp#L26">line 26</a></div>
-        <code>                    mixed
-    <strong>findbyZipcode</strong>(int $zipcode)
+                    <h3 id="method_getAll">
+        <div class="location">at         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/Cantonsphp#L22">line 22</a></div>
+        <code>                    array
+    <strong>getAll</strong>()
         </code>
     </h3>
     <div class="details">
@@ -173,25 +173,15 @@
     
 
                     <div class="method-description">
-                                    <p>Find Data Set for a City by Zipcode.</p>                                                </div>
+                                    <p>Return all Cantons</p>                                                </div>
                 <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>int</td>
-                <td>$zipcode</td>
-                <td></td>
-            </tr>
-            </table>
-
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td>mixed</td>
-            <td>Returns an object or null if no result was found</td>
+            <td>array</td>
+            <td>of Wnx\SwissCantons\Canton</td>
         </tr>
     </table>
 
@@ -202,10 +192,10 @@
 
             </div>
                     <div class="method-item">
-                    <h3 id="method_getDataSet">
-        <div class="location">at         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/ZipcodeSearchphp#L44">line 44</a></div>
-        <code>                    <abbr title="Wnx\SwissCantons\stdClass">stdClass</abbr>
-    <strong>getDataSet</strong>()
+                    <h3 id="method_getAllAsArray">
+        <div class="location">at         <a href="https://github.com/stefanzweifel/php-swiss-cantons/blob/mastersrc/Cantonsphp#L42">line 42</a></div>
+        <code>                    Array
+    <strong>getAllAsArray</strong>(string $defaultLanguage = &#039;en&#039;)
         </code>
     </h3>
     <div class="details">
@@ -213,14 +203,24 @@
     
 
                     <div class="method-description">
-                                    <p>Read Zipcode JSON Data.</p>                                                </div>
+                                    <p>Return all Cantons as a one dimensional array of abbreviation and names</p>                                                </div>
                 <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$defaultLanguage</td>
+                <td></td>
+            </tr>
+            </table>
+
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td><abbr title="Wnx\SwissCantons\stdClass">stdClass</abbr></td>
+            <td>Array</td>
             <td></td>
         </tr>
     </table>

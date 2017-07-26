@@ -43,7 +43,7 @@ class CantonManager
             throw new Exception("Couldn't find Canton for given appreviation.");
         }
 
-        return new Canton($result);
+        return $result;
     }
 
     /**
@@ -63,7 +63,7 @@ class CantonManager
             throw new Exception("Couldn't find Canton for given Name {$name}.");
         }
 
-        return new Canton($result);
+        return $result;
     }
 
     /**
