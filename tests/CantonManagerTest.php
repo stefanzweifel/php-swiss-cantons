@@ -2,9 +2,10 @@
 
 namespace Wnx\SwissCantons\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Wnx\SwissCantons\CantonManager;
 
-class CantonManagerTest extends \PHPUnit_Framework_TestCase
+class CantonManagerTest extends TestCase
 {
     /** @test */
     public function it_returns_correct_canton_instance_for_abbreviation()

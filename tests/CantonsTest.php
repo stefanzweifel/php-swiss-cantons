@@ -3,9 +3,10 @@
 namespace Wnx\SwissCantons\Tests;
 
 use Exception;
+use PHPUnit\Framework\TestCase;
 use Wnx\SwissCantons\Cantons;
 
-class CantonsTest extends \PHPUnit_Framework_TestCase
+class CantonsTest extends TestCase
 {
     /** @test */
     public function it_returns_json_source_as_array()
@@ -49,7 +50,7 @@ class CantonsTest extends \PHPUnit_Framework_TestCase
     /** @test */
     public function it_throws_an_exception_if_passed_langauge_is_not_available()
     {
-        $this->setExpectedException(Exception::class);
+        $this->expectException(Exception::class);
 
         $cantons = (new Cantons())->getAllAsArray('foo');
     }

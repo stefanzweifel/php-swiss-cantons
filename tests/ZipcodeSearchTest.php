@@ -2,9 +2,10 @@
 
 namespace Wnx\SwissCantons\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Wnx\SwissCantons\ZipcodeSearch;
 
-class ZipcodeSearchTest extends \PHPUnit_Framework_TestCase
+class ZipcodeSearchTest extends TestCase
 {
     /** @test */
     public function it_returns_dataset_as_array()
