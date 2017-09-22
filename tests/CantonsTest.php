@@ -50,7 +50,7 @@ class CantonsTest extends TestCase
     /** @test */
     public function it_throws_an_exception_if_passed_langauge_is_not_available()
     {
-        $this->expectException(Exception::class);;
+        $this->expectException(Exception::class);
 
         $cantons = (new Cantons())->getAllAsArray('foo');
     }
