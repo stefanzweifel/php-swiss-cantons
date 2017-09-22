@@ -2,9 +2,10 @@
 
 namespace Wnx\SwissCantons\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Wnx\SwissCantons\Canton;
 
-class CantonTest extends \PHPUnit_Framework_TestCase
+class CantonTest extends TestCase
 {
     /**
      * Build an Example Dataset.

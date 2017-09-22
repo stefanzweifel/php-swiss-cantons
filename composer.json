@@ -22,9 +22,9 @@
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "4.*",
-        "codeclimate/php-test-reporter": "dev-master",
-        "sami/sami": "*"
+        "phpunit/phpunit": "6.*",
+        "sami/sami": "*",
+        "php-coveralls/php-coveralls": "^1.0"
     },
     "autoload-dev": {
         "psr-4": {

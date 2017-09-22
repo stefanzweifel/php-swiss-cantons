@@ -2,10 +2,11 @@
 
 namespace Wnx\SwissCantons\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Wnx\SwissCantons\Canton;
 use Wnx\SwissCantons\CantonSearch;
 
-class CantonSearchTest extends \PHPUnit_Framework_TestCase
+class CantonSearchTest extends TestCase
 {
     /** @test */
     public function it_finds_canton_by_abbreviation()
