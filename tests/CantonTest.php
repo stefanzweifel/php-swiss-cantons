@@ -2,8 +2,8 @@
 
 namespace Wnx\SwissCantons\Tests;
 
-use PHPUnit\Framework\TestCase;
 use Wnx\SwissCantons\Canton;
+use PHPUnit\Framework\TestCase;
 
 class CantonTest extends TestCase
 {

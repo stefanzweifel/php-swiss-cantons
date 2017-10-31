@@ -3,8 +3,8 @@
 namespace Wnx\SwissCantons\Tests;
 
 use Exception;
-use PHPUnit\Framework\TestCase;
 use Wnx\SwissCantons\Cantons;
+use PHPUnit\Framework\TestCase;
 
 class CantonsTest extends TestCase
 {
