@@ -35,12 +35,12 @@ class CantonManager
      *
      * @return Canton
      */
-    public function getByAppreviation($abbreviation)
+    public function getByAbbreviation($abbreviation)
     {
-        $result = $this->search->findByAppreviation($abbreviation);
+        $result = $this->search->findByAbbreviation($abbreviation);
 
         if (is_null($result)) {
-            throw new Exception("Couldn't find Canton for given appreviation.");
+            throw new Exception("Couldn't find Canton for given abbreviation.");
         }
 
         return $result;
@@ -83,6 +83,6 @@ class CantonManager
             throw new Exception("Couldn't find Canton for given Zipcode: {$zipcode}.");
         }
 
-        return $this->getByAppreviation($result->canton);
+        return $this->getByAbbreviation($result->canton);
     }
 }

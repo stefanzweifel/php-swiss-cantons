@@ -12,7 +12,7 @@ class CantonSearchTest extends TestCase
     public function it_finds_canton_by_abbreviation()
     {
         $cantonSearch = new CantonSearch();
-        $canton = $cantonSearch->findByAppreviation('SH');
+        $canton = $cantonSearch->findByAbbreviation('SH');
 
         $this->assertInstanceOf(Canton::class, $canton);
         $this->assertEquals('SH', $canton->getAbbreviation());
@@ -22,7 +22,7 @@ class CantonSearchTest extends TestCase
     public function it_returns_null_if_no_canton_for_abbreviation_was_found()
     {
         $cantonSearch = new CantonSearch();
-        $canton = $cantonSearch->findByAppreviation('foo');
+        $canton = $cantonSearch->findByAbbreviation('foo');
 
         $this->assertNull($canton);
     }

@@ -11,7 +11,7 @@ class CantonManagerTest extends TestCase
     public function it_returns_correct_canton_instance_for_abbreviation()
     {
         $canton = new CantonManager();
-        $canton = $canton->getByAppreviation('ZH');
+        $canton = $canton->getByAbbreviation('ZH');
 
         $this->assertEquals(
             'Zürich',
@@ -24,19 +24,19 @@ class CantonManagerTest extends TestCase
     {
         $cantonManager = new CantonManager();
 
-        $canton = $cantonManager->getByAppreviation('zh');
+        $canton = $cantonManager->getByAbbreviation('zh');
         $this->assertEquals(
             'Zürich',
             $canton->setLanguage('de')->getName()
         );
 
-        $canton = $cantonManager->getByAppreviation('gr');
+        $canton = $cantonManager->getByAbbreviation('gr');
         $this->assertEquals(
             'Graubünden',
             $canton->setLanguage('de')->getName()
         );
 
-        $canton = $cantonManager->getByAppreviation('sh');
+        $canton = $cantonManager->getByAbbreviation('sh');
         $this->assertEquals(
             'Schaffhausen',
             $canton->setLanguage('de')->getName()
@@ -47,10 +47,10 @@ class CantonManagerTest extends TestCase
      * @test
      * @expectedException     Exception
      */
-    public function it_throws_exception_if_no_canton_for_appreviation_is_found()
+    public function it_throws_exception_if_no_canton_for_abbreviation_is_found()
     {
         $canton = new CantonManager();
-        $result = $canton->getByAppreviation('FOO');
+        $result = $canton->getByAbbreviation('FOO');
     }
 
     /** @test */

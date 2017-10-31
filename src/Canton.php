@@ -11,7 +11,7 @@ class Canton
      *
      * @var string
      */
-    protected $appreviation;
+    protected $abbreviation;
 
     /**
      * Array of available Names for given Canton.
@@ -49,7 +49,7 @@ class Canton
      */
     public function setAbbreviation($abbreviation)
     {
-        return $this->appreviation = $abbreviation;
+        return $this->abbreviation = $abbreviation;
     }
 
     /**
@@ -59,7 +59,7 @@ class Canton
      */
     public function getAbbreviation()
     {
-        return $this->appreviation;
+        return $this->abbreviation;
     }
 
     /**
