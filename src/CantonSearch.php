@@ -23,7 +23,7 @@ class CantonSearch
      *
      * @return mixed Returns an object or null, if no canton was found
      */
-    public function findByAppreviation($abbreviation)
+    public function findByAbbreviation($abbreviation)
     {
         $result = array_filter($this->data, function (Canton $value) use ($abbreviation) {
             return $value->getAbbreviation() === strtoupper($abbreviation);

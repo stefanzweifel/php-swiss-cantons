@@ -29,7 +29,7 @@ Use the `CantonManager`  Class to interact with this package. Below you find an 
 ```php
 Route::get('/', function (Wnx\SwissCantons\CantonManager $cantonManager) {
 
-    $canton = $cantonManager->getByAppreviation(Request::get('canton', 'ZH'));
+    $canton = $cantonManager->getByAbbreviation(Request::get('canton', 'ZH'));
     $cantonName = $canton->setLanguage('de')->getName();
 
 	return view('welcome', compact('cantonName'));
@@ -43,14 +43,14 @@ Route::get('/', function (Wnx\SwissCantons\CantonManager $cantonManager) {
 
 Use the `CantonManager` to find a Canton. It will return a new Instance of `Canton` or will throw an `Exception` if it could't find anything.
 
-### `getByAppreviation()`
+### `getByAbbreviation()`
 
 Find a Canton by its abbreviation. See [this list](https://en.wikipedia.org/wiki/Cantons_of_Switzerland#List) for available abbreviations.
 
 ```php
 $cantonManager = new Wnx\SwissCantons\CantonManager();
 
-$canton = $cantonManager->getByAppreviation('GR');
+$canton = $cantonManager->getByAbbreviation('GR');
 // $canton is an instance of Wnx\SwissCantons\Canton
 ```
 
