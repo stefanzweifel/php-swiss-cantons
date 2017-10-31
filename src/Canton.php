@@ -107,7 +107,7 @@ class Canton
     {
         $language = strtolower($language);
 
-        if (!in_array($language, $this->availableLanguages)) {
+        if (! in_array($language, $this->availableLanguages)) {
             throw new Exception('Invalid Language Provided. Supported languages: '.implode(',', $this->availableLanguages));
         }
 
