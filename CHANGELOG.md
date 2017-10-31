@@ -1,5 +1,9 @@
 # CHANGE LOG
 
+## v2.0.0 (2017-10-31)
+
+- Fix silly typo (appreviation => abbreviation) which causes breaking changes ([#21](https://github.com/stefanzweifel/php-swiss-cantons/pull/21))
+
 ## V1.4.0 (2017-07-26)
 
 - Add a new `Cantons` class to generate a list of all Swiss Cantons ([#18](https://github.com/stefanzweifel/php-swiss-cantons/pull/18))
