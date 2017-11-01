@@ -1,5 +1,9 @@
 # CHANGE LOG
 
+## v2.0.1 (2017-11-01)
+
+- Fix Typo for "Fribourg"
+
 ## v2.0.0 (2017-10-31)
 
 - Fix silly typo (appreviation => abbreviation) which causes breaking changes ([#21](https://github.com/stefanzweifel/php-swiss-cantons/pull/21))
