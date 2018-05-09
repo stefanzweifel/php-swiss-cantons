@@ -148,7 +148,7 @@ composer build:docs
 ## Data Sources
 
 - [https://en.wikipedia.org/wiki/Cantons_of_Switzerland](https://en.wikipedia.org/wiki/Cantons_of_Switzerland)
-- [Zipcodes / Amtliches Ortschaftenverzeichnis der Schweiz](http://www.cadastre.ch/internet/kataster/de/home/services/service/plz.html)
+- [Zipcodes / Amtliches Ortschaftenverzeichnis der Schweiz](https://www.cadastre.ch/de/services/service/plz.html)
 
 ## License
 
