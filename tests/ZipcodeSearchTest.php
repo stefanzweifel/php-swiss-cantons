@@ -46,6 +46,15 @@ class ZipcodeSearchTest extends TestCase
     }
 
     /** @test */
+    public function it_finds_lichtenstein_zipcodes()
+    {
+        $zipcodeSearch = new ZipcodeSearch();
+        $result = $zipcodeSearch->findByZipcode(9494);
+
+        $this->assertEquals('LI', $result->canton);
+    }
+
+    /** @test */
     public function it_does_not_find_result_if_zipcode_is_passed_as_a_string()
     {
         $zipcodeSearch = new ZipcodeSearch();
