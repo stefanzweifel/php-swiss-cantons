@@ -92,4 +92,14 @@ class CantonManagerTest extends TestCase
         $canton = new CantonManager();
         $result = $canton->getByZipcode(8000);
     }
+
+    /**
+     * @test
+     * @expectedException     Exception
+     */
+    public function it_throws_exception_if_lichtenstein_zipcode_is_searched_for()
+    {
+        $canton = new CantonManager();
+        $result = $canton->getByZipcode(9494);
+    }
 }
