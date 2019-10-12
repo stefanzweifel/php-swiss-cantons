@@ -4,7 +4,6 @@
 
 [![Build Status](https://travis-ci.org/stefanzweifel/php-swiss-cantons.svg?branch=master)](https://travis-ci.org/stefanzweifel/php-swiss-cantons)
 [![Coverage Status](https://coveralls.io/repos/github/stefanzweifel/php-swiss-cantons/badge.svg?branch=add-coverage-report)](https://coveralls.io/github/stefanzweifel/php-swiss-cantons?branch=add-coverage-report)
-[![StyleCI](https://styleci.io/repos/62249401/shield)](https://styleci.io/repos/62249401)
 [![Latest Stable Version](https://poser.pugx.org/wnx/php-swiss-cantons/v/stable)](https://packagist.org/packages/wnx/php-swiss-cantons)
 [![Total Downloads](https://poser.pugx.org/wnx/php-swiss-cantons/downloads)](https://packagist.org/packages/wnx/php-swiss-cantons)
 [![License](https://poser.pugx.org/wnx/php-swiss-cantons/license)](https://packagist.org/packages/wnx/php-swiss-cantons)
