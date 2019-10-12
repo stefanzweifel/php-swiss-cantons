@@ -2,6 +2,7 @@
 
 namespace Wnx\SwissCantons\Tests;
 
+use Exception;
 use Wnx\SwissCantons\Canton;
 use PHPUnit\Framework\TestCase;
 
@@ -44,12 +45,11 @@ class CantonTest extends TestCase
         $this->assertEquals('de', $canton->getLanguage());
     }
 
-    /**
-     * @test
-     * @expectedException     Exception
-     */
+    /** @test */
     public function it_only_allows_national_languages()
     {
+        $this->expectException(Exception::class);
+
         $canton = new Canton($this->getExampleCanton());
         $canton->setLanguage('es');
     }

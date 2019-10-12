@@ -2,6 +2,7 @@
 
 namespace Wnx\SwissCantons\Tests;
 
+use Exception;
 use PHPUnit\Framework\TestCase;
 use Wnx\SwissCantons\CantonManager;
 
@@ -43,12 +44,11 @@ class CantonManagerTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     * @expectedException     Exception
-     */
+    /** @test */
     public function it_throws_exception_if_no_canton_for_abbreviation_is_found()
     {
+        $this->expectException(Exception::class);
+
         $canton = new CantonManager();
         $result = $canton->getByAbbreviation('FOO');
     }
@@ -62,12 +62,11 @@ class CantonManagerTest extends TestCase
         $this->assertEquals('ZH', $result->getAbbreviation());
     }
 
-    /**
-     * @test
-     * @expectedException     Exception
-     */
+    /** @test */
     public function it_throws_exception_if_not_canton_for_name_is_found()
     {
+        $this->expectException(Exception::class);
+
         $canton = new CantonManager();
         $result = $canton->getByName('FOO');
     }
@@ -83,22 +82,20 @@ class CantonManagerTest extends TestCase
         $this->assertEquals('Berne', $result->setLanguage('en')->getName());
     }
 
-    /**
-     * @test
-     * @expectedException     Exception
-     */
+    /** @test */
     public function it_throws_exception_if_no_canton_for_zipcode_could_be_found()
     {
+        $this->expectException(Exception::class);
+
         $canton = new CantonManager();
         $result = $canton->getByZipcode(8000);
     }
 
-    /**
-     * @test
-     * @expectedException     Exception
-     */
+    /** @test */
     public function it_throws_exception_if_lichtenstein_zipcode_is_searched_for()
     {
+        $this->expectException(Exception::class);
+
         $canton = new CantonManager();
         $result = $canton->getByZipcode(9494);
     }

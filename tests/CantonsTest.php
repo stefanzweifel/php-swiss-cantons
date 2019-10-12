@@ -34,8 +34,11 @@ class CantonsTest extends TestCase
     {
         $cantons = (new Cantons())->getAllAsArray();
 
-        $this->assertArraySubset(['SH' => 'Schaffhouse'], $cantons);
-        $this->assertArraySubset(['ZH' => 'Zurich'], $cantons);
+        $this->assertArrayHasKey('SH', $cantons);
+        $this->assertEquals('Schaffhouse', $cantons['SH']);
+
+        $this->assertArrayHasKey('ZH', $cantons);
+        $this->assertEquals('Zurich', $cantons['ZH']);
     }
 
     /** @test */
@@ -43,8 +46,11 @@ class CantonsTest extends TestCase
     {
         $cantons = (new Cantons())->getAllAsArray('de');
 
-        $this->assertArraySubset(['SH' => 'Schaffhausen'], $cantons);
-        $this->assertArraySubset(['ZH' => 'Zürich'], $cantons);
+        $this->assertArrayHasKey('SH', $cantons);
+        $this->assertEquals('Schaffhausen', $cantons['SH']);
+
+        $this->assertArrayHasKey('ZH', $cantons);
+        $this->assertEquals('Zürich', $cantons['ZH']);
     }
 
     /** @test */
