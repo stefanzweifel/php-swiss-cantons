@@ -1,16 +1,29 @@
+cache:
+  directories:
+    - $HOME/.composer/cache
+
 language: php
 
+sudo: false
+
+dist: trusty
+
 php:
-  - 7
-  - 7.1
   - 7.2
   - 7.3
+  - nightly
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - php: nightly
+
 
 before_script:
   - travis_retry composer self-update
-  - travis_retry composer install --prefer-source --no-interaction --dev
+  - travis_retry composer install --prefer-dist --no-interaction --no-suggest
 
-script: vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+script: vendor/bin/phpunit
 
 after_success:
   - travis_retry php vendor/bin/coveralls
