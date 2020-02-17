@@ -11852,12 +11852,6 @@
  {
    "city_name": "Le Locle",
    "zipcode": 2400,
-   "community_name": "",
-   "canton": ""
- },
- {
-   "city_name": "Le Locle",
-   "zipcode": 2400,
    "community_name": "Le Locle",
    "canton": "NE"
  },
