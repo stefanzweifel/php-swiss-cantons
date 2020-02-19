@@ -27,10 +27,10 @@ class Canton
      */
     protected array $availableLanguages = ['de', 'fr', 'it', 'en', 'rm'];
 
-    public function __construct(stdClass $data)
+    public function __construct(array $data)
     {
-        $this->setAbbreviation($data->abbreviation);
-        $this->setNames((array) $data->name);
+        $this->setAbbreviation($data['abbreviation']);
+        $this->setNames($data['name']);
     }
 
     public function setAbbreviation(string $abbreviation): string
@@ -58,8 +58,6 @@ class Canton
 
     /**
      * It Returns the Raw Name Array.
-     *
-     * @return array
      */
     public function getNamesArray(): array
     {
@@ -75,7 +73,7 @@ class Canton
     {
         $language = strtolower($language);
 
-        if (! in_array($language, $this->availableLanguages)) {
+        if (in_array($language, $this->availableLanguages) === false) {
             throw new Exception('Invalid Language Provided. Supported languages: '.implode(',', $this->availableLanguages));
         }
 

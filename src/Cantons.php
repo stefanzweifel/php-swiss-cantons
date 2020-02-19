@@ -18,16 +18,9 @@ class Cantons
      */
     public function getAll(): array
     {
-        $cantons = $this->cantons;
-        $resultArray = [];
-
-        foreach ($cantons as $canton) {
-            $canton = new Canton($canton);
-
-            $resultArray[] = $canton;
-        }
-
-        return $resultArray;
+        return array_map(function ($canton) {
+            return new Canton($canton);
+        }, $this->cantons);
     }
 
     /**
