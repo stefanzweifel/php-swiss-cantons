@@ -38,12 +38,12 @@ class ZipcodeSearchTest extends TestCase
     }
 
     /** @test */
-    public function it_finds_lichtenstein_zipcodes()
+    public function it_does_not_find_liechtenstein_zipcodes()
     {
         $zipcodeSearch = new ZipcodeSearch();
 
         $result = $zipcodeSearch->findByZipcode(9494);
 
-        $this->assertEquals('LI', $result['canton']);
+        $this->assertNull($result);
     }
 }
