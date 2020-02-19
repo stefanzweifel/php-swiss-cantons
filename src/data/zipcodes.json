@@ -1350,12 +1350,6 @@
    "canton": "VS"
  },
  {
-   "city_name": "Balzers",
-   "zipcode": 9496,
-   "community_name": "Balzers",
-   "canton": "LI"
- },
- {
    "city_name": "Banco",
    "zipcode": 6981,
    "community_name": "Bedigliora",
@@ -6666,12 +6660,6 @@
    "canton": "UR"
  },
  {
-   "city_name": "Eschen",
-   "zipcode": 9492,
-   "community_name": "Eschen",
-   "canton": "LI"
- },
- {
    "city_name": "Eschenbach LU",
    "zipcode": 6274,
    "community_name": "Eschenbach (LU)",
@@ -7834,12 +7822,6 @@
    "zipcode": 3236,
    "community_name": "Gampelen",
    "canton": "BE"
- },
- {
-   "city_name": "Gamprin-Bendern",
-   "zipcode": 9487,
-   "community_name": "Gamprin",
-   "canton": "LI"
  },
  {
    "city_name": "Gams",
@@ -13530,12 +13512,6 @@
    "canton": "VD"
  },
  {
-   "city_name": "Mauren FL",
-   "zipcode": 9493,
-   "community_name": "Mauren",
-   "canton": "LI"
- },
- {
    "city_name": "Mauren TG",
    "zipcode": 8576,
    "community_name": "Berg (TG)",
@@ -14998,12 +14974,6 @@
    "zipcode": 1669,
    "community_name": "Haut-Intyamon",
    "canton": "FR"
- },
- {
-   "city_name": "Nendeln",
-   "zipcode": 9485,
-   "community_name": "Eschen",
-   "canton": "LI"
  },
  {
    "city_name": "Nennigkofen",
@@ -16752,12 +16722,6 @@
    "canton": "GE"
  },
  {
-   "city_name": "Planken",
-   "zipcode": 9498,
-   "community_name": "Planken",
-   "canton": "LI"
- },
- {
    "city_name": "Plasselb",
    "zipcode": 1737,
    "community_name": "Plasselb",
@@ -18438,12 +18402,6 @@
    "canton": "SG"
  },
  {
-   "city_name": "Ruggell",
-   "zipcode": 9491,
-   "community_name": "Ruggell",
-   "canton": "LI"
- },
- {
    "city_name": "Rumendingen",
    "zipcode": 3472,
    "community_name": "Rumendingen",
@@ -19164,18 +19122,6 @@
    "canton": "TI"
  },
  {
-   "city_name": "Schaan",
-   "zipcode": 9494,
-   "community_name": "Schaan",
-   "canton": "LI"
- },
- {
-   "city_name": "Schaanwald",
-   "zipcode": 9486,
-   "community_name": "Mauren",
-   "canton": "LI"
- },
- {
    "city_name": "Schachen LU",
    "zipcode": 6105,
    "community_name": "Werthenstein",
@@ -19276,12 +19222,6 @@
    "zipcode": 7419,
    "community_name": "Domleschg",
    "canton": "GR"
- },
- {
-   "city_name": "Schellenberg",
-   "zipcode": 9488,
-   "community_name": "Schellenberg",
-   "canton": "LI"
  },
  {
    "city_name": "Schelten",
@@ -21864,18 +21804,6 @@
    "canton": "VS"
  },
  {
-   "city_name": "Triesen",
-   "zipcode": 9495,
-   "community_name": "Triesen",
-   "canton": "LI"
- },
- {
-   "city_name": "Triesenberg",
-   "zipcode": 9497,
-   "community_name": "Triesenberg",
-   "canton": "LI"
- },
- {
    "city_name": "Trimbach",
    "zipcode": 4632,
    "community_name": "Trimbach",
@@ -22528,12 +22456,6 @@
    "zipcode": 7314,
    "community_name": "Pfäfers",
    "canton": "SG"
- },
- {
-   "city_name": "Vaduz",
-   "zipcode": 9490,
-   "community_name": "Vaduz",
-   "canton": "LI"
  },
  {
    "city_name": "Vaglio",
