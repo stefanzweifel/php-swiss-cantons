@@ -4,14 +4,11 @@ namespace Wnx\SwissCantons;
 
 class Cantons
 {
-    /**
-     * Array of Cantons.
-     */
     protected array $cantons;
 
     public function __construct()
     {
-        $this->cantons = json_decode(file_get_contents(__DIR__.'/data/cantons.json'));
+        $this->cantons = json_decode(file_get_contents(__DIR__.'/data/cantons.json'), true);
     }
 
     /**

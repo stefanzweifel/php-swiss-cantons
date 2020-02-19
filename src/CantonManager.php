@@ -61,6 +61,6 @@ class CantonManager
             throw new Exception("Couldn't find Canton for given Zipcode: {$zipcode}.");
         }
 
-        return $this->getByAbbreviation($result->canton);
+        return $this->getByAbbreviation($result['canton']);
     }
 }

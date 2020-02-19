@@ -20,9 +20,9 @@ class ZipcodeSearchTest extends TestCase
         $zipcodeSearch = new ZipcodeSearch();
         $result = $zipcodeSearch->findByZipcode(3005);
 
-        $this->assertInstanceOf(\stdClass::class, $result);
-        $this->assertEquals('BE', $result->canton);
-        $this->assertEquals('Bern', $result->community_name);
+        $this->assertIsArray($result);
+        $this->assertEquals('BE', $result['canton']);
+        $this->assertEquals('Bern', $result['community_name']);
     }
 
     /** @test */
@@ -31,9 +31,9 @@ class ZipcodeSearchTest extends TestCase
         $zipcodeSearch = new ZipcodeSearch();
         $result = $zipcodeSearch->findByZipcode('3005');
 
-        $this->assertInstanceOf(\stdClass::class, $result);
-        $this->assertEquals('BE', $result->canton);
-        $this->assertEquals('Bern', $result->community_name);
+        $this->assertIsArray($result);
+        $this->assertEquals('BE', $result['canton']);
+        $this->assertEquals('Bern', $result['community_name']);
     }
 
     /** @test */
@@ -51,6 +51,6 @@ class ZipcodeSearchTest extends TestCase
         $zipcodeSearch = new ZipcodeSearch();
         $result = $zipcodeSearch->findByZipcode(9494);
 
-        $this->assertEquals('LI', $result->canton);
+        $this->assertEquals('LI', $result['canton']);
     }
 }

@@ -4,12 +4,7 @@ namespace Wnx\SwissCantons;
 
 class ZipcodeSearch
 {
-    /**
-     * Data Set used to search a Zipcode.
-     *
-     * @var stdClass
-     */
-    protected $data;
+    protected array $data;
 
     public function __construct()
     {
@@ -25,11 +20,11 @@ class ZipcodeSearch
      */
     public function findbyZipcode(int $zipcode)
     {
-        $result = array_filter($this->data, function (\stdClass $value) use ($zipcode) {
-            return $value->zipcode === intval($zipcode);
+        $result = array_filter($this->data, function (array $value) use ($zipcode) {
+            return $value['zipcode'] === intval($zipcode);
         });
 
-        if (empty($result)) {
+        if (count($result) === 0) {
             return;
         }
 
@@ -41,10 +36,10 @@ class ZipcodeSearch
      *
      * @return stdClass
      */
-    public function getDataSet()
+    public function getDataSet(): array
     {
         $zipcodes = file_get_contents(__DIR__.'/data/zipcodes.json');
 
-        return json_decode($zipcodes);
+        return json_decode($zipcodes, true);
     }
 }
