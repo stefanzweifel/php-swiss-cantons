@@ -1,48 +1,32 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Wnx\SwissCantons;
 
 class Cantons
 {
-    /**
-     * Array of Cantons.
-     *
-     * @var array
-     */
-    protected $cantons;
+    protected array $cantons;
 
     public function __construct()
     {
-        $this->cantons = json_decode(file_get_contents(__DIR__.'/data/cantons.json'));
+        $this->cantons = json_decode(file_get_contents(__DIR__.'/data/cantons.json'), true);
     }
 
     /**
      * Return all Cantons.
      *
-     * @return array of Wnx\SwissCantons\Canton
+     * @return array<Wnx\SwissCantons\Canton>
      */
-    public function getAll()
+    public function getAll(): array
     {
-        $cantons = $this->cantons;
-        $resultArray = [];
-
-        foreach ($cantons as $canton) {
-            $canton = new Canton($canton);
-
-            $resultArray[] = $canton;
-        }
-
-        return $resultArray;
+        return array_map(function ($canton) {
+            return new Canton($canton);
+        }, $this->cantons);
     }
 
     /**
      * Return all Cantons as a one dimensional array of abbreviation and names.
-     *
-     * @param string $defaultLanguage
-     *
-     * @return array
      */
-    public function getAllAsArray($defaultLanguage = 'en')
+    public function getAllAsArray(string $defaultLanguage = 'en'): array
     {
         $cantons = $this->getAll();
         $resultArray = [];
