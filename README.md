@@ -134,14 +134,6 @@ $cantons->getAllAsArray(); // Array of cantons. Keys are abbreviations, values a
 
 If you discover a security vulnerability within this package, please send an e-mail to hello@stefanzweifel.io. All security vulnerabilities will be promptly addressed.
 
-## Build Docs
-
-Docs are available [here](https://stefanzweifel.github.io/php-swiss-cantons/). They can be built with the following command.
-
-```shell
-composer build:docs
-```
-
 ## Data Sources
 
 - [https://en.wikipedia.org/wiki/Cantons_of_Switzerland](https://en.wikipedia.org/wiki/Cantons_of_Switzerland)

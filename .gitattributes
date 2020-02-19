@@ -12,5 +12,4 @@
 /README.md          export-ignore
 /phpunit.xml        export-ignore
 /.github            export-ignore
-/docs               export-ignore
 /tests              export-ignore

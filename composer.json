@@ -21,7 +21,6 @@
     },
     "require-dev": {
         "phpunit/phpunit": "9.*",
-        "sami/sami": "*",
         "friendsofphp/php-cs-fixer": "^2.15"
     },
     "autoload": {
@@ -33,9 +32,6 @@
         "psr-4": {
             "Wnx\\SwissCantons\\Tests\\": "tests/"
         }
-    },
-    "scripts": {
-        "build:docs": "./vendor/bin/sami.php update .sami_config.php"
     },
     "license": "MIT"
 }
