@@ -53,13 +53,4 @@ class ZipcodeSearchTest extends TestCase
 
         $this->assertEquals('LI', $result->canton);
     }
-
-    /** @test */
-    public function it_does_not_find_result_if_zipcode_is_passed_as_a_string()
-    {
-        $zipcodeSearch = new ZipcodeSearch();
-        $result = $zipcodeSearch->findByZipcode('FooBar');
-
-        $this->assertEquals(null, $result);
-    }
 }
