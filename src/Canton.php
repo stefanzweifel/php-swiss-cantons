@@ -6,6 +6,24 @@ use Exception;
 
 class Canton
 {
+    public const LANG_GERMAN = 'de';
+
+    public const LANG_FRENCH = 'fr';
+
+    public const LANG_ITALIAN = 'it';
+
+    public const LANG_ENGLISH = 'en';
+
+    public const LANG_ROMANSH = 'rm';
+
+    protected const AVAILABLE_LANGUAGES = [
+        self::LANG_GERMAN,
+        self::LANG_FRENCH,
+        self::LANG_ITALIAN,
+        self::LANG_ENGLISH,
+        self::LANG_ROMANSH,
+    ];
+
     /**
      * Abbreviation for given Canton.
      */
@@ -19,12 +37,7 @@ class Canton
     /**
      * Default Language used.
      */
-    protected string $displayLanguage = 'en';
-
-    /**
-     * Array of supported Languages.
-     */
-    protected array $availableLanguages = ['de', 'fr', 'it', 'en', 'rm'];
+    protected string $displayLanguage = self::LANG_ENGLISH;
 
     public function __construct(array $data)
     {
@@ -72,8 +85,8 @@ class Canton
     {
         $language = strtolower($language);
 
-        if (in_array($language, $this->availableLanguages) === false) {
-            throw new Exception('Invalid Language Provided. Supported languages: '.implode(',', $this->availableLanguages));
+        if (in_array($language, self::AVAILABLE_LANGUAGES) === false) {
+            throw new Exception('Invalid Language Provided. Supported languages: '.implode(',', self::AVAILABLE_LANGUAGES));
         }
 
         $this->displayLanguage = $language;
