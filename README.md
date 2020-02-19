@@ -10,35 +10,35 @@ Using Javascript? There's a [port of this package available](https://github.com/
 
 ## Installation
 
-### Composer
+The easiest way to install the package is by using composer. The package requires PHP 7.4.
 
 ```shell
 composer require "wnx/php-swiss-cantons"
 ```
 
-### Download
-
-If you don't have access to `composer` you can also download the latest release from the [releases tab](https://github.com/stefanzweifel/php-swiss-cantons/releases). Place the unzipped files in your project. **Don't forget to autoload all files within the `src` directory.**
-
 ## Usage
 Use the `CantonManager`  Class to interact with this package. Below you find an example how you can use with in the Laravel Framework. Further you find all public API methods for `CantonManager` and `Canton`.
 
 ```php
-Route::get('/', function (Wnx\SwissCantons\CantonManager $cantonManager) {
+<?php 
 
-    $canton = $cantonManager->getByAbbreviation(Request::get('canton', 'ZH'));
-    $cantonName = $canton->setLanguage('de')->getName();
+use Wnx\SwissCantons\CantonManager;
 
-	return view('welcome', compact('cantonName'));
+$cantonManager = new CantonManager();
 
-});
+// Instance of \Wnx\SwissCantons\Canton
+$canton = $cantonManager->getByAbbreviation('zh');
+$canton = $cantonManager->getByName('Zurigo');
+$canton = $cantonManager->getByZipcode(8000);
+
+// "Zürich"
+$cantonName = $canton->setLanguage('de')->getName();
+
 ```
-
-> This example would work on http://localhost/?canton=BE. It would search for a canton with the abbreviation „BE“ and would  pass the German Canton name (Bern) to the view `welcome.blade`.
 
 ## `CantonManager`
 
-Use the `CantonManager` to find a Canton. It will return a new Instance of `Canton` or will throw an `Exception` if it could't find anything.
+Use the `CantonManager` to find a Canton. It will return a new Instance of `Canton` or throws an `Exception` if no Canton could be found for the abbreviation, name or zipcode.
 
 ### `getByAbbreviation()`
 
@@ -96,7 +96,7 @@ $canton->setLanguage('fr')->getName();
 
 
 ### `getName()`
-Return the Name for the given Canton. If the method is used without calling the `setLanguage()` Method first it will return the name in English.
+Return the Name for the given Canton. If the method is used without calling the `setLanguage()` method first, it will return the name in English.
 
 ```php
 $canton->getName(); // Grisons
@@ -116,18 +116,31 @@ $canton->getAbbreviation(); // e.g. ZH
 This class is used internally but can also be used in your own project if you need a list of all cantons
 
 ### `getAll()`
+Returns an array containg `Wnx\SwissCantons\Canton` objects.
 
 ```php
-$cantons->getAll(); // Array of `Cantons` objects
+use Wnx\SwissCantons\Cantons;
+
+$cantons = (new Cantons)->getAll();
 ```
 
 ### `getAllAsArray($defaultLanguage = 'en')`
-
-If you need a list of Cantons for a select input this is the method for you. Just pass the desired language to the method and you will get a simple one dimensional array of all cantons.
+Returns a one dimensionl array of all Cantons. The key is the abbreviation. The value will be the translated name of the Canton.
+The default language is English. Pass one of the valid languages to the method, to localize the names.
 
 ```php
-$cantons->getAllAsArray(); // Array of cantons. Keys are abbreviations, values are canton names
-// [['ZH' => 'Zurich', 'GE' => 'Geneva']]
+use Wnx\SwissCantons\Cantons;
+
+$cantons = (new Cantons)->getAllAsArray('en');
+
+$cantonsAsArray = $cantons->getAllAsArray(); 
+
+// var_dump($cantonsAsArray);
+// [
+//     'ZH' => 'Zurich', 
+//     'GE' => 'Geneva',
+//     // ...
+// ]
 ```
 
 ## Security
@@ -139,6 +152,15 @@ If you discover a security vulnerability within this package, please send an e-m
 - [https://en.wikipedia.org/wiki/Cantons_of_Switzerland](https://en.wikipedia.org/wiki/Cantons_of_Switzerland)
 - [Zipcodes / Amtliches Ortschaftenverzeichnis der Schweiz](https://www.cadastre.ch/de/services/service/plz.html)
 
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/stefanzweifel/laravel-stats/tags).
+
+## Credits
+
+* [Stefan Zweifel](https://github.com/stefanzweifel)
+* [All Contributors](https://github.com/stefanzweifel/php-swiss-cantons/graphs/contributors)
+
 ## License
 
-MIT
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
