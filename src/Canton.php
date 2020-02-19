@@ -2,84 +2,56 @@
 
 namespace Wnx\SwissCantons;
 
+use stdClass;
 use Exception;
 
 class Canton
 {
     /**
      * Abbreviation for given Canton.
-     *
-     * @var string
      */
-    protected $abbreviation;
+    protected string $abbreviation;
 
     /**
      * Array of available Names for given Canton.
-     *
-     * @var array
      */
-    protected $names = [];
+    protected array $names = [];
 
     /**
      * Default Language used.
-     *
-     * @var string
      */
-    protected $displayLanguage = 'en';
+    protected string $displayLanguage = 'en';
 
     /**
      * Array of supported Languages.
-     *
-     * @var array
      */
-    protected $availableLanguages = ['de', 'fr', 'it', 'en', 'rm'];
+    protected array $availableLanguages = ['de', 'fr', 'it', 'en', 'rm'];
 
-    public function __construct(\stdClass $data)
+    public function __construct(stdClass $data)
     {
         $this->setAbbreviation($data->abbreviation);
         $this->setNames((array) $data->name);
     }
 
-    /**
-     * Set the abbreviation for given Canton.
-     *
-     * @param string $abbreviation
-     *
-     * @return string
-     */
-    public function setAbbreviation($abbreviation)
+    public function setAbbreviation(string $abbreviation): string
     {
         return $this->abbreviation = $abbreviation;
     }
 
-    /**
-     * Return Abbreviation for Canton.
-     *
-     * @return string
-     */
-    public function getAbbreviation()
+    public function getAbbreviation(): string
     {
         return $this->abbreviation;
     }
 
-    /**
-     * Add Name Array to Property.
-     *
-     * @param array $name
-     *
-     * @return array
-     */
-    public function setNames(array $name)
+    public function setNames(array $names): array
     {
-        return $this->names = $name;
+        return $this->names = $names;
     }
 
     /**
      * Return Display Name for given Language.
-     *
-     * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->names[$this->getLanguage()];
     }
@@ -89,7 +61,7 @@ class Canton
      *
      * @return array
      */
-    public function getNamesArray()
+    public function getNamesArray(): array
     {
         return $this->names;
     }
@@ -97,13 +69,9 @@ class Canton
     /**
      * Set Language used to Display Canton Name.
      *
-     * @param string $language
-     *
      * @throws Exception Throws Exception if a not supported language string was provided
-     *
-     * @return Canton
      */
-    public function setLanguage($language)
+    public function setLanguage(string $language): Canton
     {
         $language = strtolower($language);
 
@@ -118,10 +86,8 @@ class Canton
 
     /**
      * Return Language used to Display Canton Name.
-     *
-     * @return string
      */
-    public function getLanguage()
+    public function getLanguage(): string
     {
         return $this->displayLanguage;
     }

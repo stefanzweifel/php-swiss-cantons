@@ -6,10 +6,8 @@ class Cantons
 {
     /**
      * Array of Cantons.
-     *
-     * @var array
      */
-    protected $cantons;
+    protected array $cantons;
 
     public function __construct()
     {
@@ -19,9 +17,9 @@ class Cantons
     /**
      * Return all Cantons.
      *
-     * @return array of Wnx\SwissCantons\Canton
+     * @return array<Wnx\SwissCantons\Canton>
      */
-    public function getAll()
+    public function getAll(): array
     {
         $cantons = $this->cantons;
         $resultArray = [];
@@ -37,12 +35,8 @@ class Cantons
 
     /**
      * Return all Cantons as a one dimensional array of abbreviation and names.
-     *
-     * @param string $defaultLanguage
-     *
-     * @return array
      */
-    public function getAllAsArray($defaultLanguage = 'en')
+    public function getAllAsArray(string $defaultLanguage = 'en'): array
     {
         $cantons = $this->getAll();
         $resultArray = [];

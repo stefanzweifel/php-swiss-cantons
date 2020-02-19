@@ -2,6 +2,8 @@
 
 namespace Wnx\SwissCantons;
 
+use stdClass;
+
 class CantonSearch
 {
     /**
@@ -23,7 +25,7 @@ class CantonSearch
      *
      * @return mixed Returns an object or null, if no canton was found
      */
-    public function findByAbbreviation($abbreviation)
+    public function findByAbbreviation(string $abbreviation)
     {
         $result = array_filter($this->data, function (Canton $value) use ($abbreviation) {
             return $value->getAbbreviation() === strtoupper($abbreviation);
@@ -43,7 +45,7 @@ class CantonSearch
      *
      * @return mixed Returns an object or null, if no canton was found
      */
-    public function findByName($name)
+    public function findByName(string $name)
     {
         $result = array_filter($this->data, function (Canton $canton) use ($name) {
             return in_array($name, (array) $canton->getNamesArray());

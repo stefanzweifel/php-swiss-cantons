@@ -23,7 +23,7 @@ class ZipcodeSearch
      *
      * @return mixed Returns an object or null if no result was found
      */
-    public function findbyZipcode($zipcode)
+    public function findbyZipcode(int $zipcode)
     {
         $result = array_filter($this->data, function (\stdClass $value) use ($zipcode) {
             return $value->zipcode === intval($zipcode);

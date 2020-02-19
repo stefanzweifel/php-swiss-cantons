@@ -3,22 +3,14 @@
 namespace Wnx\SwissCantons;
 
 use Exception;
+use Wnx\SwissCantons\CantonSearch;
+use Wnx\SwissCantons\ZipcodeSearch;
 
 class CantonManager
 {
-    /**
-     * CantonSearch Instance.
-     *
-     * @var Wnx\SwissCantons\CantonSearch
-     */
-    protected $search;
+    protected CantonSearch $search;
 
-    /**
-     * ZipcodeSearch Instance.
-     *
-     * @var Wnx\SwissCantons\ZipcodeSearch
-     */
-    protected $zipcodeSearch;
+    protected ZipcodeSearch $zipcodeSearch;
 
     public function __construct()
     {
@@ -29,13 +21,9 @@ class CantonManager
     /**
      * Get Canton by abbreviation.
      *
-     * @param string $abbreviation
-     *
      * @throws Exception Throws Exception if no Canton was found
-     *
-     * @return Canton
      */
-    public function getByAbbreviation($abbreviation)
+    public function getByAbbreviation(string $abbreviation): Canton
     {
         $result = $this->search->findByAbbreviation($abbreviation);
 
@@ -49,13 +37,9 @@ class CantonManager
     /**
      * Get Canton by Name.
      *
-     * @param string $name
-     *
      * @throws Exception Throws Exception if not Canton was found
-     *
-     * @return Canton
      */
-    public function getByName($name)
+    public function getByName(string $name): Canton
     {
         $result = $this->search->findByName($name);
 
@@ -69,13 +53,9 @@ class CantonManager
     /**
      * Get Canton by Zipcode.
      *
-     * @param int $zipcode
-     *
      * @throws Exception if not Canton was found
-     *
-     * @return Canton
      */
-    public function getByZipcode($zipcode)
+    public function getByZipcode(int $zipcode): Canton
     {
         $result = $this->zipcodeSearch->findByZipcode($zipcode);
 
