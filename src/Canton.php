@@ -2,7 +2,6 @@
 
 namespace Wnx\SwissCantons;
 
-use stdClass;
 use Exception;
 
 class Canton

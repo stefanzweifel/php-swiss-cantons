@@ -4,17 +4,17 @@ namespace Wnx\SwissCantons;
 
 class CantonSearch
 {
-    protected array $dataset;
+    protected array $dataSet;
 
     public function __construct()
     {
-        $this->dataset = (new Cantons())->getAll();
+        $this->dataSet = (new Cantons())->getAll();
     }
 
     public function findByAbbreviation(string $abbreviation): ?Canton
     {
-        $result = array_filter($this->dataset, function (Canton $value) use ($abbreviation) {
-            return $value->getAbbreviation() === strtoupper($abbreviation);
+        $result = array_filter($this->dataSet, function (Canton $canton) use ($abbreviation) {
+            return $canton->getAbbreviation() === strtoupper($abbreviation);
         });
 
         if (count($result) === 0) {
@@ -26,7 +26,7 @@ class CantonSearch
 
     public function findByName(string $name): ?Canton
     {
-        $result = array_filter($this->dataset, function (Canton $canton) use ($name) {
+        $result = array_filter($this->dataSet, function (Canton $canton) use ($name) {
             return in_array($name, $canton->getNamesArray());
         });
 

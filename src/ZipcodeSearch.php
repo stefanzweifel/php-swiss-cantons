@@ -4,42 +4,31 @@ namespace Wnx\SwissCantons;
 
 class ZipcodeSearch
 {
-    protected array $data;
+    protected array $dataSet;
 
     public function __construct()
     {
-        $this->data = $this->getDataSet();
+        $this->dataSet = $this->getDataSet();
     }
 
     /**
      * Find Data Set for a City by Zipcode.
-     *
-     * @param int $zipcode
-     *
-     * @return mixed Returns an object or null if no result was found
      */
-    public function findbyZipcode(int $zipcode)
+    public function findbyZipcode(int $zipcode): ?array
     {
-        $result = array_filter($this->data, function (array $value) use ($zipcode) {
-            return $value['zipcode'] === intval($zipcode);
+        $result = array_filter($this->dataSet, function (array $city) use ($zipcode) {
+            return $city['zipcode'] === intval($zipcode);
         });
 
         if (count($result) === 0) {
-            return;
+            return null;
         }
 
         return reset($result);
     }
 
-    /**
-     * Read Zipcode JSON Data.
-     *
-     * @return stdClass
-     */
     public function getDataSet(): array
     {
-        $zipcodes = file_get_contents(__DIR__.'/data/zipcodes.json');
-
-        return json_decode($zipcodes, true);
+        return json_decode(file_get_contents(__DIR__.'/data/zipcodes.json'), true);
     }
 }
