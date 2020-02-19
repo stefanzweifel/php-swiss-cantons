@@ -4,7 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/stefanzweifel/php-swiss-cantons/compare/2.0.1...HEAD)
+## [Unreleased](https://github.com/stefanzweifel/php-swiss-cantons/compare/3.0.0...HEAD)
+
+## [v2.2.0](https://github.com/stefanzweifel/php-swiss-cantons/compare/2.1.0...2.0.0) - 2020-02-xx
+
+### Changed
+- Replace most of the internal doc blocks with Type Hints, Return Type and Property Types
+- Internally, data sets are now always cast to arrays instead of objects
+- Update README with better examples on how to use the package
+- Switch from Travis to GitHub Actions for testing
+
+### Removed
+- Drop support for PHP 7.2
+- Drop support for PHP 7.3
+- Remove Code documentation folder `/docs`
 
 ## [v2.1.0](https://github.com/stefanzweifel/php-swiss-cantons/compare/2.0.1...2.1.0) - 2020-02-19
 
