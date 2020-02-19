@@ -3,8 +3,6 @@
 namespace Wnx\SwissCantons;
 
 use Exception;
-use Wnx\SwissCantons\CantonSearch;
-use Wnx\SwissCantons\ZipcodeSearch;
 
 class CantonManager
 {
