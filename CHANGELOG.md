@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased](https://github.com/stefanzweifel/php-swiss-cantons/compare/3.0.0...HEAD)
 
-## [v3.0.0](https://github.com/stefanzweifel/php-swiss-cantons/compare/2.1.0...3.0.0) - 2020-02-xx
+## [v3.0.0](https://github.com/stefanzweifel/php-swiss-cantons/compare/2.1.0...3.0.0) - 2020-02-22
 
 ### Changed
 - Replace most of the internal doc blocks with Type Hints, Return Type and Property Types
