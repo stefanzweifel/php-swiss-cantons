@@ -2,7 +2,6 @@
 
 namespace Wnx\SwissCantons\Tests;
 
-use Exception;
 use PHPUnit\Framework\TestCase;
 use Wnx\SwissCantons\CantonManager;
 use Wnx\SwissCantons\Exceptions\CantonException;

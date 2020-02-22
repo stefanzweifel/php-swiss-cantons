@@ -2,7 +2,6 @@
 
 namespace Wnx\SwissCantons;
 
-use Exception;
 use Wnx\SwissCantons\Exceptions\InvalidLanguageException;
 
 class Canton

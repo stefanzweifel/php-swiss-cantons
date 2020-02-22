@@ -2,7 +2,6 @@
 
 namespace Wnx\SwissCantons\Tests;
 
-use Exception;
 use PHPUnit\Framework\TestCase;
 use Wnx\SwissCantons\Canton;
 use Wnx\SwissCantons\Exceptions\InvalidLanguageException;
