@@ -3,6 +3,7 @@
 namespace Wnx\SwissCantons;
 
 use Exception;
+use Wnx\SwissCantons\Exceptions\CantonException;
 
 class CantonManager
 {
@@ -19,14 +20,14 @@ class CantonManager
     /**
      * Get Canton by abbreviation.
      *
-     * @throws Exception Throws Exception if no Canton was found
+     * @throws \Wnx\SwissCantons\Exceptions\CantonException
      */
     public function getByAbbreviation(string $abbreviation): Canton
     {
         $result = $this->search->findByAbbreviation($abbreviation);
 
         if (is_null($result)) {
-            throw new Exception("Couldn't find Canton for given abbreviation.");
+            throw CantonException::notFoundForAbbreviation($abbreviation);
         }
 
         return $result;
@@ -35,14 +36,14 @@ class CantonManager
     /**
      * Get Canton by Name.
      *
-     * @throws Exception Throws Exception if not Canton was found
+     * @throws \Wnx\SwissCantons\Exceptions\CantonException
      */
     public function getByName(string $name): Canton
     {
         $result = $this->search->findByName($name);
 
         if (is_null($result)) {
-            throw new Exception("Couldn't find Canton for given Name {$name}.");
+            throw CantonException::notFoundForName($name);
         }
 
         return $result;
@@ -58,7 +59,7 @@ class CantonManager
         $result = $this->zipcodeSearch->findByZipcode($zipcode);
 
         if (is_null($result)) {
-            throw new Exception("Couldn't find Canton for given Zipcode: {$zipcode}.");
+            throw CantonException::notFoundForZipcode($zipcode);
         }
 
         return $this->getByAbbreviation($result['canton']);

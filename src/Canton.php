@@ -3,6 +3,7 @@
 namespace Wnx\SwissCantons;
 
 use Exception;
+use Wnx\SwissCantons\Exceptions\InvalidLanguageException;
 
 class Canton
 {
@@ -16,7 +17,7 @@ class Canton
 
     public const LANG_ROMANSH = 'rm';
 
-    protected const AVAILABLE_LANGUAGES = [
+    public const AVAILABLE_LANGUAGES = [
         self::LANG_GERMAN,
         self::LANG_FRENCH,
         self::LANG_ITALIAN,
@@ -79,14 +80,14 @@ class Canton
     /**
      * Set Language used to Display Canton Name.
      *
-     * @throws Exception Throws Exception if a not supported language string was provided
+     * @throws \Wnx\SwissCantons\Exceptions\InvalidLanguageException
      */
     public function setLanguage(string $language): Canton
     {
         $language = strtolower($language);
 
         if (in_array($language, self::AVAILABLE_LANGUAGES) === false) {
-            throw new Exception('Invalid Language Provided. Supported languages: '.implode(',', self::AVAILABLE_LANGUAGES));
+            throw new InvalidLanguageException;
         }
 
         $this->displayLanguage = $language;
