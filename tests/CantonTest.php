@@ -1,21 +1,16 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Wnx\SwissCantons\Tests;
 
-use Exception;
-use Wnx\SwissCantons\Canton;
 use PHPUnit\Framework\TestCase;
+use Wnx\SwissCantons\Canton;
+use Wnx\SwissCantons\Exceptions\InvalidLanguageException;
 
 class CantonTest extends TestCase
 {
-    /**
-     * Build an Example Dataset.
-     *
-     * @return object
-     */
-    protected function getExampleCanton()
+    protected function getExampleCanton(): array
     {
-        return (object) [
+        return [
             'abbreviation' => 'ZH',
             'name'         => [
                 'de' => 'Zürich',
@@ -48,7 +43,7 @@ class CantonTest extends TestCase
     /** @test */
     public function it_only_allows_national_languages()
     {
-        $this->expectException(Exception::class);
+        $this->expectException(InvalidLanguageException::class);
 
         $canton = new Canton($this->getExampleCanton());
         $canton->setLanguage('es');
@@ -67,7 +62,10 @@ class CantonTest extends TestCase
     {
         $canton = new Canton($this->getExampleCanton());
 
-        $this->assertEquals($this->getExampleCanton()->name, $canton->getNamesArray());
+        $this->assertEquals(
+            $this->getExampleCanton()['name'],
+            $canton->getNamesArray()
+        );
     }
 
     /** @test */

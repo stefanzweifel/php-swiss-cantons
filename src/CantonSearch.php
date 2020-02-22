@@ -1,56 +1,37 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Wnx\SwissCantons;
 
 class CantonSearch
 {
-    /**
-     * Data Set used to search a Canton.
-     *
-     * @var stdClass
-     */
-    protected $data;
+    protected array $dataSet;
 
     public function __construct()
     {
-        $this->data = (new Cantons())->getAll();
+        $this->dataSet = (new Cantons())->getAll();
     }
 
-    /**
-     * Find Canton by Abbreviation.
-     *
-     * @param string $abbreviation
-     *
-     * @return mixed Returns an object or null, if no canton was found
-     */
-    public function findByAbbreviation($abbreviation)
+    public function findByAbbreviation(string $abbreviation): ?Canton
     {
-        $result = array_filter($this->data, function (Canton $value) use ($abbreviation) {
-            return $value->getAbbreviation() === strtoupper($abbreviation);
+        $result = array_filter($this->dataSet, function (Canton $canton) use ($abbreviation) {
+            return $canton->getAbbreviation() === strtoupper($abbreviation);
         });
 
-        if (empty($result)) {
-            return;
+        if (count($result) === 0) {
+            return null;
         }
 
         return reset($result);
     }
 
-    /**
-     * Find Canton by Name.
-     *
-     * @param string $name
-     *
-     * @return mixed Returns an object or null, if no canton was found
-     */
-    public function findByName($name)
+    public function findByName(string $name): ?Canton
     {
-        $result = array_filter($this->data, function (Canton $canton) use ($name) {
-            return in_array($name, (array) $canton->getNamesArray());
+        $result = array_filter($this->dataSet, function (Canton $canton) use ($name) {
+            return in_array($name, $canton->getNamesArray());
         });
 
-        if (empty($result)) {
-            return;
+        if (count($result) === 0) {
+            return null;
         }
 
         return reset($result);
