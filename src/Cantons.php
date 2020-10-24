@@ -14,7 +14,7 @@ class Cantons
     /**
      * Return all Cantons.
      *
-     * @return array<Wnx\SwissCantons\Canton>
+     * @return array<Canton>
      */
     public function getAll(): array
     {
@@ -25,12 +25,17 @@ class Cantons
 
     /**
      * Return all Cantons as a one dimensional array of abbreviation and names.
+     *
+     * @param string $defaultLanguage
+     * @return array
+     * @throws Exceptions\InvalidLanguageException
      */
     public function getAllAsArray(string $defaultLanguage = Canton::LANG_ENGLISH): array
     {
         $cantons = $this->getAll();
         $resultArray = [];
 
+        /** @var Canton $canton */
         foreach ($cantons as $canton) {
             $canton->setLanguage($defaultLanguage);
             $resultArray[$canton->getAbbreviation()] = $canton->getName();

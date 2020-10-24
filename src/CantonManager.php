@@ -20,7 +20,9 @@ class CantonManager
     /**
      * Get Canton by abbreviation.
      *
-     * @throws \Wnx\SwissCantons\Exceptions\CantonException
+     * @param string $abbreviation
+     * @return Canton
+     * @throws CantonException
      */
     public function getByAbbreviation(string $abbreviation): Canton
     {
@@ -36,7 +38,9 @@ class CantonManager
     /**
      * Get Canton by Name.
      *
-     * @throws \Wnx\SwissCantons\Exceptions\CantonException
+     * @param string $name
+     * @return Canton
+     * @throws CantonException
      */
     public function getByName(string $name): Canton
     {
@@ -52,7 +56,9 @@ class CantonManager
     /**
      * Get Canton by Zipcode.
      *
-     * @throws Exception if not Canton was found
+     * @param int $zipcode
+     * @return Canton
+     * @throws CantonException
      */
     public function getByZipcode(int $zipcode): Canton
     {
