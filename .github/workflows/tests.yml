@@ -24,6 +24,9 @@ jobs:
           coverage: pcov
           tools: composer:v2
 
+      - name: Run composer install
+        run: composer install -n --prefer-dist
+
       - name: Execute tests
         run: vendor/bin/phpunit --coverage-text --coverage-clover=coverage.xml
 
