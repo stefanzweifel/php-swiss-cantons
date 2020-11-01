@@ -4,7 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/stefanzweifel/php-swiss-cantons/compare/3.0.0...HEAD)
+## [Unreleased](https://github.com/stefanzweifel/php-swiss-cantons/compare/3.1.0...HEAD)
+
+## [v3.1.0](https://github.com/stefanzweifel/php-swiss-cantons/compare/3.0.0...3.1.0) - 2020-11-01
+
+### Added
+- Add Support for PHP 8 [#36](https://github.com/stefanzweifel/php-swiss-cantons/pull/36)
+
 
 ## [v3.0.0](https://github.com/stefanzweifel/php-swiss-cantons/compare/2.1.0...3.0.0) - 2020-02-22
 
