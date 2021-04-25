@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [v4.0.0](https://github.com/stefanzweifel/php-swiss-cantons/compare/3.1.0...4.0.0) - 2021-04-25
 **Note:** The public API of the package didn't change, but the zipcodes dataset now uses data from the Swiss Post (instead of the Swiss cadastral system website). The detection of the canton for a zipcode still works the same as before. 
 
-If you've been using `zipcodes.json` directly, please see [#38](https://github.com/stefanzweifel/php-swiss-cantons/pull/38) for details.t
+If you've been using `zipcodes.json` directly, please see [#38](https://github.com/stefanzweifel/php-swiss-cantons/pull/38) for details.
 
 ### Changed
 - Update Zipcodes Dataset to 2021 [#38](https://github.com/stefanzweifel/php-swiss-cantons/pull/38)
