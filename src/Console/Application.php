@@ -8,10 +8,9 @@ class Application extends ConsoleApplication
 {
     public function __construct()
     {
-        parent::__construct('Wnx\Emoji package generator', '1.0.0');
+        parent::__construct('PHP Swiss Cantons', '4.0.0');
 
         $command = new UpdateZipcodeDatasetCommand();
         $this->add($command);
-        // $this->setDefaultCommand($command->getName());
     }
 }
