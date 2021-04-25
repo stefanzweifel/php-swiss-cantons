@@ -10,7 +10,7 @@ class Application extends ConsoleApplication
     {
         parent::__construct('Wnx\Emoji package generator', '1.0.0');
 
-        $command = new UpdateZipcodeDataSetCommand();
+        $command = new UpdateZipcodeDatasetCommand();
         $this->add($command);
         // $this->setDefaultCommand($command->getName());
     }

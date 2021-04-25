@@ -11,7 +11,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class UpdateZipcodeDataSetCommand extends Command
+class UpdateZipcodeDatasetCommand extends Command
 {
     public const PATH_TO_CSV = __DIR__ . '/../data/zipcodes.csv';
     public const PATH_TO_JSON = __DIR__ . '/../data/zipcodes.json';
@@ -19,7 +19,7 @@ class UpdateZipcodeDataSetCommand extends Command
     protected function configure(): void
     {
         $this
-            ->setName('update-zipcode-data-set')
+            ->setName('update-zipcode-dataset')
             ->setDescription('Fetch latest dataset from Swiss Post');
     }
 
