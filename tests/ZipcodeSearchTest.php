@@ -24,7 +24,7 @@ class ZipcodeSearchTest extends TestCase
 
         $this->assertIsArray($result);
         $this->assertEquals('BE', $result['canton']);
-        $this->assertEquals('Bern', $result['community_name']);
+        $this->assertEquals('Bern', $result['city']);
     }
 
     /** @test */
