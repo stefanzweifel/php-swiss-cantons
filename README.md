@@ -6,7 +6,7 @@
 [![Total Downloads](https://poser.pugx.org/wnx/php-swiss-cantons/downloads)](https://packagist.org/packages/wnx/php-swiss-cantons)
 [![License](https://poser.pugx.org/wnx/php-swiss-cantons/license)](https://packagist.org/packages/wnx/php-swiss-cantons)
 
-Using Javascript? There's a [port of this package available](https://github.com/stefanzweifel/js-swiss-cantons).
+Using Javascript? Check out [@stefanzweifel/js-swiss-cantons](https://github.com/stefanzweifel/js-swiss-cantons).
 
 ## Installation
 
@@ -26,7 +26,7 @@ use Wnx\SwissCantons\CantonManager;
 
 $cantonManager = new CantonManager();
 
-// Instance of \Wnx\SwissCantons\Canton
+/** @var \Wnx\SwissCantons\Canton $canton */
 $canton = $cantonManager->getByAbbreviation('zh');
 $canton = $cantonManager->getByName('Zurigo');
 $canton = $cantonManager->getByZipcode(8000);
@@ -47,8 +47,8 @@ Find a Canton by its abbreviation. See [this list](https://en.wikipedia.org/wiki
 ```php
 $cantonManager = new Wnx\SwissCantons\CantonManager();
 
+/** @var \Wnx\SwissCantons\Canton $canton */
 $canton = $cantonManager->getByAbbreviation('GR');
-// $canton is an instance of Wnx\SwissCantons\Canton
 ```
 
 ### `getByName()`
@@ -58,8 +58,8 @@ Search for a Canton by it's name. The name must exactly match one of the transla
 ```php
 $cantonManager = new Wnx\SwissCantons\CantonManager();
 
+/** @var \Wnx\SwissCantons\Canton $canton */
 $canton = $cantonManager->getByName('Zürich');
-// $canton is an instance of Wnx\SwissCantons\Canton
 ```
 
 ### `getByZipcode()`
@@ -69,8 +69,8 @@ Search for a Canton by a zipcode.
 ```php
 $cantonManager = new Wnx\SwissCantons\CantonManager();
 
+/** @var \Wnx\SwissCantons\Canton $canton */
 $canton = $cantonManager->getByZipcode(3005);
-// $canton is an instance of Wnx\SwissCantons\Canton
 ```
 
 ## `Canton`
@@ -150,7 +150,7 @@ If you discover a security vulnerability within this package, please send an e-m
 ## Data Sources
 
 - [https://en.wikipedia.org/wiki/Cantons_of_Switzerland](https://en.wikipedia.org/wiki/Cantons_of_Switzerland)
-- [Zipcodes / Amtliches Ortschaftenverzeichnis der Schweiz](https://www.cadastre.ch/de/services/service/plz.html)
+- [Zipcodes / Swiss Post](https://swisspost.opendatasoft.com/explore/dataset/plz_verzeichnis_v2/information/)
 
 ## Versioning
 

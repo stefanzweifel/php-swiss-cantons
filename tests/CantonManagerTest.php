@@ -88,7 +88,7 @@ class CantonManagerTest extends TestCase
         $this->expectException(CantonException::class);
 
         $canton = new CantonManager();
-        $result = $canton->getByZipcode(8000);
+        $result = $canton->getByZipcode(9999);
     }
 
     /** @test */
