@@ -20,7 +20,7 @@ class UpdateZipcodeDatasetCommand extends Command
     {
         $this
             ->setName('update-zipcode-dataset')
-            ->setDescription('Fetch latest dataset from Swiss Post');
+            ->setDescription('Fetch dataset from Swiss Post and create zipcodes.json file');
     }
 
     /**
@@ -68,7 +68,6 @@ class UpdateZipcodeDatasetCommand extends Command
         $csv->setHeaderOffset(0);
 
         return Statement::create()
-            ->where(fn ($record) => ! in_array($record['PLZ_TYP'], [30, 80], true))
             ->where(fn ($record) => $record['KANTON'] !== 'FL')
             ->process($csv);
     }
