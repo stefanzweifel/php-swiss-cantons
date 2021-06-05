@@ -79,8 +79,6 @@ class Canton
     /**
      * Set Language used to Display Canton Name.
      *
-     * @param string $language
-     * @return Canton
      * @throws InvalidLanguageException
      */
     public function setLanguage(string $language): Canton

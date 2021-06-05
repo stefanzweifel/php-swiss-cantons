@@ -13,9 +13,6 @@ class ZipcodeSearch
 
     /**
      * Find Data Set for a City by Zipcode.
-     *
-     * @param int $zipcode
-     * @return array|null
      */
     public function findbyZipcode(int $zipcode): ?array
     {

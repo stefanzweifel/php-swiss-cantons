@@ -24,9 +24,6 @@ class UpdateZipcodeDatasetCommand extends Command
     }
 
     /**
-     * @param InputInterface $input
-     * @param OutputInterface $output
-     * @return int
      * @throws Exception
      * @throws InvalidArgument
      */
@@ -57,7 +54,6 @@ class UpdateZipcodeDatasetCommand extends Command
     }
 
     /**
-     * @return TabularDataReader
      * @throws Exception
      * @throws InvalidArgument
      */
@@ -72,9 +68,6 @@ class UpdateZipcodeDatasetCommand extends Command
             ->process($csv);
     }
 
-    /**
-     * @param TabularDataReader $records
-     */
     protected function generateZipcodesFiles(TabularDataReader $records): void
     {
         $data = [];

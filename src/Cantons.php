@@ -26,8 +26,6 @@ class Cantons
     /**
      * Return all Cantons as a one dimensional array of abbreviation and names.
      *
-     * @param string $defaultLanguage
-     * @return array
      * @throws Exceptions\InvalidLanguageException
      */
     public function getAllAsArray(string $defaultLanguage = Canton::LANG_ENGLISH): array
