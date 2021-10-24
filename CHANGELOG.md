@@ -4,11 +4,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/stefanzweifel/php-swiss-cantons/compare/4.0.0...HEAD)
+## [Unreleased](https://github.com/stefanzweifel/php-swiss-cantons/compare/4.1.0...HEAD)
 
 > TBD
 
-## [v4.0.0](https://github.com/stefanzweifel/php-swiss-cantons/compare/3.1.0...4.0.0) - 2021-04-25
+## [4.1.0](https://github.com/stefanzweifel/php-swiss-cantons/compare/4.0.0...4.1.0) - 2021-10-24
+
+### Changed
+
+- Update dataset [b7ce524b0978494fd0316fc2b1050cd1170dddbd](https://github.com/stefanzweifel/php-swiss-cantons/commit/b7ce524b0978494fd0316fc2b1050cd1170dddbd)
+- Sort dataset by zipcode and name [3328e3db702efec94aec006266be7224d7e33598](https://github.com/stefanzweifel/php-swiss-cantons/commit/3328e3db702efec94aec006266be7224d7e33598)
+
+## [4.0.0](https://github.com/stefanzweifel/php-swiss-cantons/compare/3.1.0...4.0.0) - 2021-04-25
 **Note:** The public API of the package didn't change, but the zipcodes dataset now uses data from the Swiss Post (instead of the Swiss cadastral system website). The detection of the canton for a zipcode still works the same as before. 
 
 If you've been using `zipcodes.json` directly, please see [#38](https://github.com/stefanzweifel/php-swiss-cantons/pull/38) for details.
@@ -16,13 +23,13 @@ If you've been using `zipcodes.json` directly, please see [#38](https://github.c
 ### Changed
 - Update Zipcodes Dataset to 2021 [#38](https://github.com/stefanzweifel/php-swiss-cantons/pull/38)
 
-## [v3.1.0](https://github.com/stefanzweifel/php-swiss-cantons/compare/3.0.0...3.1.0) - 2020-11-01
+## [3.1.0](https://github.com/stefanzweifel/php-swiss-cantons/compare/3.0.0...3.1.0) - 2020-11-01
 
 ### Added
 - Add Support for PHP 8 [#36](https://github.com/stefanzweifel/php-swiss-cantons/pull/36)
 
 
-## [v3.0.0](https://github.com/stefanzweifel/php-swiss-cantons/compare/2.1.0...3.0.0) - 2020-02-22
+## [3.0.0](https://github.com/stefanzweifel/php-swiss-cantons/compare/2.1.0...3.0.0) - 2020-02-22
 
 ### Changed
 - Replace most of the internal doc blocks with Type Hints, Return Type and Property Types
@@ -37,7 +44,7 @@ If you've been using `zipcodes.json` directly, please see [#38](https://github.c
 - Drop support for PHP 7.3
 - Remove Code documentation folder `/docs`
 
-## [v2.1.0](https://github.com/stefanzweifel/php-swiss-cantons/compare/2.0.1...2.1.0) - 2020-02-19
+## [2.1.0](https://github.com/stefanzweifel/php-swiss-cantons/compare/2.0.1...2.1.0) - 2020-02-19
 
 ### Removed
 - Drop support for PHP 7.0
