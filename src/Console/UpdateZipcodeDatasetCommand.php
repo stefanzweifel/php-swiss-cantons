@@ -65,6 +65,12 @@ class UpdateZipcodeDatasetCommand extends Command
 
         return Statement::create()
             ->where(fn ($record) => $record['KANTON'] !== 'FL')
+            ->orderBy(function (array $recordA, array $recordB): int {
+                if ($recordA['POSTLEITZAHL'] === $recordB["POSTLEITZAHL"]) {
+                    return $recordA['ORTBEZ27'] <=> $recordB['ORTBEZ27'];
+                }
+                return $recordA['POSTLEITZAHL'] <=> $recordB['POSTLEITZAHL'];
+            })
             ->process($csv);
     }
 
