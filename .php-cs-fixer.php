@@ -1,11 +1,15 @@
 <?php
 
+use PhpCsFixer\Config;
+
 $finder = Symfony\Component\Finder\Finder::create()
     ->notPath('vendor')
     ->in(__DIR__)
     ->name('*.php');
 
-return PhpCsFixer\Config::create()
+$config = new Config();
+
+return $config
     ->setRiskyAllowed(true)
     ->setRules([
         '@PSR2' => true,

@@ -5,3 +5,4 @@ build
 cache
 .phpunit.result.cache
 .php_cs.cache
+.php-cs-fixer.cache
