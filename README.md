@@ -145,7 +145,7 @@ $cantonsAsArray = $cantons->getAllAsArray();
 
 ## Security
 
-If you discover a security vulnerability within this package, please send an e-mail to hello@stefanzweifel.io. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this package, please send an e-mail to stefan@stefanzweifel.dev. All security vulnerabilities will be promptly addressed.
 
 ## Data Sources
 
