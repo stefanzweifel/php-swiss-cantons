@@ -3,15 +3,13 @@
 namespace Wnx\SwissCantons\Tests;
 
 use Exception;
+use PHPUnit\Framework\Attributes\Test;
 use Wnx\SwissCantons\Cantons;
 use PHPUnit\Framework\TestCase;
 
 class CantonsTest extends TestCase
 {
-    /**
-     * @return void
-     */
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_returns_json_source_as_array()
     {
         $cantons = new Cantons();
@@ -19,7 +17,7 @@ class CantonsTest extends TestCase
         $this->assertTrue(is_array($cantons->getAll()));
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_contains_abbreviation_and_name()
     {
         $cantons = (new Cantons())->getAll();
@@ -32,7 +30,7 @@ class CantonsTest extends TestCase
         $this->assertArrayHasKey('en', $cantons[0]->getNamesArray());
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_returns_an_array_with_abbreviation_as_key_and_name_as_value()
     {
         $cantons = (new Cantons())->getAllAsArray();
@@ -44,7 +42,7 @@ class CantonsTest extends TestCase
         $this->assertEquals('Zurich', $cantons['ZH']);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_returns_an_array_with_abbreviation_and_name_but_in_a_different_language()
     {
         $cantons = (new Cantons())->getAllAsArray('de');
@@ -56,7 +54,7 @@ class CantonsTest extends TestCase
         $this->assertEquals('Zürich', $cantons['ZH']);
     }
 
-    #[\PHPUnit\Framework\Attributes\Test]
+    #[Test]
     public function it_throws_an_exception_if_passed_langauge_is_not_available()
     {
         $this->expectException(Exception::class);
