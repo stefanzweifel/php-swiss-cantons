@@ -8,7 +8,7 @@ class Cantons
 
     public function __construct()
     {
-        $this->cantons = json_decode(file_get_contents(__DIR__.'/data/cantons.json'), true);
+        $this->cantons = json_decode(file_get_contents(__DIR__.'/data/cantons.json'), true, 512, JSON_THROW_ON_ERROR);
     }
 
     /**
@@ -18,9 +18,7 @@ class Cantons
      */
     public function getAll(): array
     {
-        return array_map(function ($canton) {
-            return new Canton($canton);
-        }, $this->cantons);
+        return array_map(fn($canton) => new Canton($canton), $this->cantons);
     }
 
     /**
