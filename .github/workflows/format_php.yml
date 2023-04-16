@@ -13,9 +13,6 @@ jobs:
       with:
         ref: ${{ github.head_ref }}
 
-    - name: Install
-      run: composer install
-
     - name: Run php-cs-fixer
       uses: docker://oskarstark/php-cs-fixer-ga
 

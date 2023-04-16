@@ -2,12 +2,13 @@
 
 namespace Wnx\SwissCantons\Tests;
 
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Wnx\SwissCantons\ZipcodeSearch;
 
 class ZipcodeSearchTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_returns_dataset_as_array()
     {
         $cantonSearch = new ZipcodeSearch();
@@ -15,7 +16,7 @@ class ZipcodeSearchTest extends TestCase
         $this->assertIsArray($cantonSearch->getDataSet());
     }
 
-    /** @test */
+    #[Test]
     public function it_finds_canton_by_zipcode()
     {
         $zipcodeSearch = new ZipcodeSearch();
@@ -27,7 +28,7 @@ class ZipcodeSearchTest extends TestCase
         $this->assertEquals('Bern', $result['city']);
     }
 
-    /** @test */
+    #[Test]
     public function it_does_not_find_result_for_not_available_zipcode()
     {
         $zipcodeSearch = new ZipcodeSearch();
@@ -37,7 +38,7 @@ class ZipcodeSearchTest extends TestCase
         $this->assertEquals(null, $result);
     }
 
-    /** @test */
+    #[Test]
     public function it_does_not_find_liechtenstein_zipcodes()
     {
         $zipcodeSearch = new ZipcodeSearch();

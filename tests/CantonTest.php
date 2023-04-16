@@ -2,6 +2,7 @@
 
 namespace Wnx\SwissCantons\Tests;
 
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Wnx\SwissCantons\Canton;
 use Wnx\SwissCantons\Exceptions\InvalidLanguageException;
@@ -22,7 +23,7 @@ class CantonTest extends TestCase
         ];
     }
 
-    /** @test */
+    #[Test]
     public function it_sets_language()
     {
         $canton = new Canton($this->getExampleCanton());
@@ -31,7 +32,7 @@ class CantonTest extends TestCase
         $this->assertEquals('fr', $canton->getLanguage());
     }
 
-    /** @test */
+    #[Test]
     public function it_transformers_uppercase_language_string_to_lowercase()
     {
         $canton = new Canton($this->getExampleCanton());
@@ -40,7 +41,7 @@ class CantonTest extends TestCase
         $this->assertEquals('de', $canton->getLanguage());
     }
 
-    /** @test */
+    #[Test]
     public function it_only_allows_national_languages()
     {
         $this->expectException(InvalidLanguageException::class);
@@ -49,7 +50,7 @@ class CantonTest extends TestCase
         $canton->setLanguage('es');
     }
 
-    /** @test */
+    #[Test]
     public function it_sets_and_returns_abbreviation()
     {
         $canton = new Canton($this->getExampleCanton());
@@ -57,7 +58,7 @@ class CantonTest extends TestCase
         $this->assertEquals('ZH', $canton->getAbbreviation());
     }
 
-    /** @test */
+    #[Test]
     public function it_sets_names_array()
     {
         $canton = new Canton($this->getExampleCanton());
@@ -68,7 +69,7 @@ class CantonTest extends TestCase
         );
     }
 
-    /** @test */
+    #[Test]
     public function it_returns_correct_name_for_given_language()
     {
         $canton = new Canton($this->getExampleCanton());
