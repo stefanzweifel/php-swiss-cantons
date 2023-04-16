@@ -13,8 +13,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class UpdateZipcodeDatasetCommand extends Command
 {
-    public const PATH_TO_CSV = __DIR__ . '/../data/zipcodes.csv';
-    public const PATH_TO_JSON = __DIR__ . '/../data/zipcodes.json';
+    final public const PATH_TO_CSV = __DIR__ . '/../data/zipcodes.csv';
+    final public const PATH_TO_JSON = __DIR__ . '/../data/zipcodes.json';
 
     protected function configure(): void
     {

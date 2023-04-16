@@ -2,13 +2,14 @@
 
 namespace Wnx\SwissCantons\Tests;
 
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Wnx\SwissCantons\CantonManager;
 use Wnx\SwissCantons\Exceptions\CantonException;
 
 class CantonManagerTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_returns_correct_canton_instance_for_abbreviation()
     {
         $canton = new CantonManager();
@@ -20,7 +21,7 @@ class CantonManagerTest extends TestCase
         );
     }
 
-    /** @test */
+    #[Test]
     public function it_returns_correct_canton_if_abbreviation_is_lowercase()
     {
         $cantonManager = new CantonManager();
@@ -44,7 +45,7 @@ class CantonManagerTest extends TestCase
         );
     }
 
-    /** @test */
+    #[Test]
     public function it_throws_exception_if_no_canton_for_abbreviation_is_found()
     {
         $this->expectException(CantonException::class);
@@ -53,7 +54,7 @@ class CantonManagerTest extends TestCase
         $result = $canton->getByAbbreviation('FOO');
     }
 
-    /** @test */
+    #[Test]
     public function it_returns_correct_canton_instance_for_name()
     {
         $canton = new CantonManager();
@@ -62,7 +63,7 @@ class CantonManagerTest extends TestCase
         $this->assertEquals('ZH', $result->getAbbreviation());
     }
 
-    /** @test */
+    #[Test]
     public function it_throws_exception_if_not_canton_for_name_is_found()
     {
         $this->expectException(CantonException::class);
@@ -71,7 +72,7 @@ class CantonManagerTest extends TestCase
         $result = $canton->getByName('FOO');
     }
 
-    /** @test */
+    #[Test]
     public function it_returns_canton_for_zipcode()
     {
         $canton = new CantonManager();
@@ -82,7 +83,7 @@ class CantonManagerTest extends TestCase
         $this->assertEquals('Berne', $result->setLanguage('en')->getName());
     }
 
-    /** @test */
+    #[Test]
     public function it_throws_exception_if_no_canton_for_zipcode_could_be_found()
     {
         $this->expectException(CantonException::class);
@@ -91,7 +92,7 @@ class CantonManagerTest extends TestCase
         $result = $canton->getByZipcode(9999);
     }
 
-    /** @test */
+    #[Test]
     public function it_throws_exception_if_lichtenstein_zipcode_is_searched_for()
     {
         $this->expectException(CantonException::class);

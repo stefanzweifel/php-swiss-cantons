@@ -6,17 +6,17 @@ use Wnx\SwissCantons\Exceptions\InvalidLanguageException;
 
 class Canton
 {
-    public const LANG_GERMAN = 'de';
+    final public const LANG_GERMAN = 'de';
 
-    public const LANG_FRENCH = 'fr';
+    final public const LANG_FRENCH = 'fr';
 
-    public const LANG_ITALIAN = 'it';
+    final public const LANG_ITALIAN = 'it';
 
-    public const LANG_ENGLISH = 'en';
+    final public const LANG_ENGLISH = 'en';
 
-    public const LANG_ROMANSH = 'rm';
+    final public const LANG_ROMANSH = 'rm';
 
-    public const AVAILABLE_LANGUAGES = [
+    final public const AVAILABLE_LANGUAGES = [
         self::LANG_GERMAN,
         self::LANG_FRENCH,
         self::LANG_ITALIAN,

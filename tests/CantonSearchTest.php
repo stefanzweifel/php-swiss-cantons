@@ -2,13 +2,14 @@
 
 namespace Wnx\SwissCantons\Tests;
 
+use PHPUnit\Framework\Attributes\Test;
 use Wnx\SwissCantons\Canton;
 use PHPUnit\Framework\TestCase;
 use Wnx\SwissCantons\CantonSearch;
 
 class CantonSearchTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_finds_canton_by_abbreviation()
     {
         $cantonSearch = new CantonSearch();
@@ -18,7 +19,7 @@ class CantonSearchTest extends TestCase
         $this->assertEquals('SH', $canton->getAbbreviation());
     }
 
-    /** @test */
+    #[Test]
     public function it_returns_null_if_no_canton_for_abbreviation_was_found()
     {
         $cantonSearch = new CantonSearch();
@@ -27,7 +28,7 @@ class CantonSearchTest extends TestCase
         $this->assertNull($canton);
     }
 
-    /** @test */
+    #[Test]
     public function it_finds_canton_by_name()
     {
         $cantonSearch = new CantonSearch();
@@ -38,7 +39,7 @@ class CantonSearchTest extends TestCase
         $this->assertEquals('Zürich', $canton->getNamesArray()['de']);
     }
 
-    /** @test */
+    #[Test]
     public function it_returns_null_if_no_canton_for_name_was_found()
     {
         $cantonSearch = new CantonSearch();
