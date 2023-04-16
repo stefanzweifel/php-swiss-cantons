@@ -18,7 +18,7 @@ class Cantons
      */
     public function getAll(): array
     {
-        return array_map(fn($canton) => new Canton($canton), $this->cantons);
+        return array_map(fn ($canton) => new Canton($canton), $this->cantons);
     }
 
     /**

@@ -16,7 +16,7 @@ class ZipcodeSearch
      */
     public function findbyZipcode(int $zipcode): ?array
     {
-        $result = array_filter($this->dataSet, fn(array $city) => $city['zipcode'] === intval($zipcode));
+        $result = array_filter($this->dataSet, fn (array $city) => $city['zipcode'] === intval($zipcode));
 
         if (count($result) === 0) {
             return null;
