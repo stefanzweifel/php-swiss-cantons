@@ -1,5 +1,5 @@
 name-template: 'v$RESOLVED_VERSION'
-tag-template: 'v$RESOLVED_VERSION'
+tag-template: '$RESOLVED_VERSION'
 template: |
   $CHANGES
 change-template: '- $TITLE ([#$NUMBER](https://github.com/stefanzweifel/php-swiss-cantons/pull/$NUMBER))'
