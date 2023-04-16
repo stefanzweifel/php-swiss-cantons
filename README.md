@@ -10,7 +10,7 @@ Using Javascript? Check out [@stefanzweifel/js-swiss-cantons](https://github.com
 
 ## Installation
 
-The easiest way to install the package is by using composer. The package requires PHP 7.4.
+The easiest way to install the package is by using composer. The package requires PHP 8.2.
 
 ```shell
 composer require "wnx/php-swiss-cantons"
