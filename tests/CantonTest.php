@@ -24,7 +24,7 @@ class CantonTest extends TestCase
     }
 
     #[Test]
-    public function it_sets_language()
+    public function it_sets_language(): void
     {
         $canton = new Canton($this->getExampleCanton());
         $canton->setLanguage('fr');
@@ -33,7 +33,7 @@ class CantonTest extends TestCase
     }
 
     #[Test]
-    public function it_transformers_uppercase_language_string_to_lowercase()
+    public function it_transformers_uppercase_language_string_to_lowercase(): void
     {
         $canton = new Canton($this->getExampleCanton());
         $canton->setLanguage('DE');
@@ -42,7 +42,7 @@ class CantonTest extends TestCase
     }
 
     #[Test]
-    public function it_only_allows_national_languages()
+    public function it_only_allows_national_languages(): void
     {
         $this->expectException(InvalidLanguageException::class);
 
@@ -51,7 +51,7 @@ class CantonTest extends TestCase
     }
 
     #[Test]
-    public function it_sets_and_returns_abbreviation()
+    public function it_sets_and_returns_abbreviation(): void
     {
         $canton = new Canton($this->getExampleCanton());
 
@@ -59,7 +59,7 @@ class CantonTest extends TestCase
     }
 
     #[Test]
-    public function it_sets_names_array()
+    public function it_sets_names_array(): void
     {
         $canton = new Canton($this->getExampleCanton());
 
@@ -70,7 +70,7 @@ class CantonTest extends TestCase
     }
 
     #[Test]
-    public function it_returns_correct_name_for_given_language()
+    public function it_returns_correct_name_for_given_language(): void
     {
         $canton = new Canton($this->getExampleCanton());
 

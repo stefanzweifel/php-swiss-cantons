@@ -10,7 +10,7 @@ use Wnx\SwissCantons\Exceptions\CantonException;
 class CantonManagerTest extends TestCase
 {
     #[Test]
-    public function it_returns_correct_canton_instance_for_abbreviation()
+    public function it_returns_correct_canton_instance_for_abbreviation(): void
     {
         $canton = new CantonManager();
         $canton = $canton->getByAbbreviation('ZH');
@@ -22,7 +22,7 @@ class CantonManagerTest extends TestCase
     }
 
     #[Test]
-    public function it_returns_correct_canton_if_abbreviation_is_lowercase()
+    public function it_returns_correct_canton_if_abbreviation_is_lowercase(): void
     {
         $cantonManager = new CantonManager();
 
@@ -46,7 +46,7 @@ class CantonManagerTest extends TestCase
     }
 
     #[Test]
-    public function it_throws_exception_if_no_canton_for_abbreviation_is_found()
+    public function it_throws_exception_if_no_canton_for_abbreviation_is_found(): void
     {
         $this->expectException(CantonException::class);
 
@@ -55,7 +55,7 @@ class CantonManagerTest extends TestCase
     }
 
     #[Test]
-    public function it_returns_correct_canton_instance_for_name()
+    public function it_returns_correct_canton_instance_for_name(): void
     {
         $canton = new CantonManager();
         $result = $canton->getByName('Zürich');
@@ -64,7 +64,7 @@ class CantonManagerTest extends TestCase
     }
 
     #[Test]
-    public function it_throws_exception_if_not_canton_for_name_is_found()
+    public function it_throws_exception_if_not_canton_for_name_is_found(): void
     {
         $this->expectException(CantonException::class);
 
@@ -73,7 +73,7 @@ class CantonManagerTest extends TestCase
     }
 
     #[Test]
-    public function it_returns_canton_for_zipcode()
+    public function it_returns_canton_for_zipcode(): void
     {
         $canton = new CantonManager();
         $result = $canton->getByZipcode(3005);
@@ -84,7 +84,7 @@ class CantonManagerTest extends TestCase
     }
 
     #[Test]
-    public function it_throws_exception_if_no_canton_for_zipcode_could_be_found()
+    public function it_throws_exception_if_no_canton_for_zipcode_could_be_found(): void
     {
         $this->expectException(CantonException::class);
 
@@ -93,7 +93,7 @@ class CantonManagerTest extends TestCase
     }
 
     #[Test]
-    public function it_throws_exception_if_lichtenstein_zipcode_is_searched_for()
+    public function it_throws_exception_if_lichtenstein_zipcode_is_searched_for(): void
     {
         $this->expectException(CantonException::class);
 

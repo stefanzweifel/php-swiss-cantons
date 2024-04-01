@@ -10,7 +10,7 @@ use Wnx\SwissCantons\CantonSearch;
 class CantonSearchTest extends TestCase
 {
     #[Test]
-    public function it_finds_canton_by_abbreviation()
+    public function it_finds_canton_by_abbreviation(): void
     {
         $cantonSearch = new CantonSearch();
         $canton = $cantonSearch->findByAbbreviation('SH');
@@ -20,7 +20,7 @@ class CantonSearchTest extends TestCase
     }
 
     #[Test]
-    public function it_returns_null_if_no_canton_for_abbreviation_was_found()
+    public function it_returns_null_if_no_canton_for_abbreviation_was_found(): void
     {
         $cantonSearch = new CantonSearch();
         $canton = $cantonSearch->findByAbbreviation('foo');
@@ -29,7 +29,7 @@ class CantonSearchTest extends TestCase
     }
 
     #[Test]
-    public function it_finds_canton_by_name()
+    public function it_finds_canton_by_name(): void
     {
         $cantonSearch = new CantonSearch();
         $canton = $cantonSearch->findByName('Zürich');
@@ -40,7 +40,7 @@ class CantonSearchTest extends TestCase
     }
 
     #[Test]
-    public function it_returns_null_if_no_canton_for_name_was_found()
+    public function it_returns_null_if_no_canton_for_name_was_found(): void
     {
         $cantonSearch = new CantonSearch();
         $canton = $cantonSearch->findByName('foo');
