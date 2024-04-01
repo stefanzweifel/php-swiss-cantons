@@ -9,7 +9,7 @@ use Wnx\SwissCantons\ZipcodeSearch;
 class ZipcodeSearchTest extends TestCase
 {
     #[Test]
-    public function it_returns_dataset_as_array()
+    public function it_returns_dataset_as_array(): void
     {
         $cantonSearch = new ZipcodeSearch();
 
@@ -17,7 +17,7 @@ class ZipcodeSearchTest extends TestCase
     }
 
     #[Test]
-    public function it_finds_canton_by_zipcode()
+    public function it_finds_canton_by_zipcode(): void
     {
         $zipcodeSearch = new ZipcodeSearch();
 
@@ -29,7 +29,7 @@ class ZipcodeSearchTest extends TestCase
     }
 
     #[Test]
-    public function it_does_not_find_result_for_not_available_zipcode()
+    public function it_does_not_find_result_for_not_available_zipcode(): void
     {
         $zipcodeSearch = new ZipcodeSearch();
 
@@ -39,7 +39,7 @@ class ZipcodeSearchTest extends TestCase
     }
 
     #[Test]
-    public function it_does_not_find_liechtenstein_zipcodes()
+    public function it_does_not_find_liechtenstein_zipcodes(): void
     {
         $zipcodeSearch = new ZipcodeSearch();
 

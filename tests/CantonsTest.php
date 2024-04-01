@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 class CantonsTest extends TestCase
 {
     #[Test]
-    public function it_returns_json_source_as_array()
+    public function it_returns_json_source_as_array(): void
     {
         $cantons = new Cantons();
 
@@ -18,7 +18,7 @@ class CantonsTest extends TestCase
     }
 
     #[Test]
-    public function it_contains_abbreviation_and_name()
+    public function it_contains_abbreviation_and_name(): void
     {
         $cantons = (new Cantons())->getAll();
 
@@ -31,7 +31,7 @@ class CantonsTest extends TestCase
     }
 
     #[Test]
-    public function it_returns_an_array_with_abbreviation_as_key_and_name_as_value()
+    public function it_returns_an_array_with_abbreviation_as_key_and_name_as_value(): void
     {
         $cantons = (new Cantons())->getAllAsArray();
 
@@ -43,7 +43,7 @@ class CantonsTest extends TestCase
     }
 
     #[Test]
-    public function it_returns_an_array_with_abbreviation_and_name_but_in_a_different_language()
+    public function it_returns_an_array_with_abbreviation_and_name_but_in_a_different_language(): void
     {
         $cantons = (new Cantons())->getAllAsArray('de');
 
@@ -55,7 +55,7 @@ class CantonsTest extends TestCase
     }
 
     #[Test]
-    public function it_throws_an_exception_if_passed_langauge_is_not_available()
+    public function it_throws_an_exception_if_passed_langauge_is_not_available(): void
     {
         $this->expectException(Exception::class);
 
