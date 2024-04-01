@@ -25,7 +25,8 @@
         "friendsofphp/php-cs-fixer": "^3",
         "league/csv": "^9.7",
         "symfony/console": "^6.0",
-        "rector/rector": "^0.15.24"
+        "rector/rector": "^0.15.24",
+        "phpstan/phpstan": "^1.10"
     },
     "autoload": {
         "psr-4": {
