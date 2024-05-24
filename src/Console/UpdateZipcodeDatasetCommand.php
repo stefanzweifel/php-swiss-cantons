@@ -104,6 +104,8 @@ class UpdateZipcodeDatasetCommand extends Command
                     // Handle potential errors during move operation
                     throw new \Exception("Error moving file: " . $file->getPathname());
                 }
+
+                return;
             }
         }
     }
