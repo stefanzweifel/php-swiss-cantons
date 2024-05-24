@@ -2,31 +2,30 @@
 
 namespace Wnx\SwissCantons;
 
-use Wnx\SwissCantons\Exceptions\CantonException;
+use Wnx\SwissCantons\Exceptions\CantonNotFoundException;
 
 class CantonManager
 {
     protected CantonSearch $search;
-
-    protected ZipcodeSearch $zipcodeSearch;
+    protected CitySearch $citySearch;
 
     public function __construct()
     {
         $this->search = new CantonSearch();
-        $this->zipcodeSearch = new ZipcodeSearch();
+        $this->citySearch = new CitySearch();
     }
 
     /**
      * Get Canton by abbreviation.
      *
-     * @throws CantonException
+     * @throws CantonNotFoundException
      */
     public function getByAbbreviation(string $abbreviation): Canton
     {
         $result = $this->search->findByAbbreviation($abbreviation);
 
         if (is_null($result)) {
-            throw CantonException::notFoundForAbbreviation($abbreviation);
+            throw CantonNotFoundException::notFoundForAbbreviation($abbreviation);
         }
 
         return $result;
@@ -35,32 +34,47 @@ class CantonManager
     /**
      * Get Canton by Name.
      *
-     * @throws CantonException
+     * @throws CantonNotFoundException
      */
     public function getByName(string $name): Canton
     {
         $result = $this->search->findByName($name);
 
         if (is_null($result)) {
-            throw CantonException::notFoundForName($name);
+            throw CantonNotFoundException::notFoundForName($name);
         }
 
         return $result;
     }
 
     /**
-     * Get Canton by Zipcode.
+     * Get possible Cantons with a Zipcode.
      *
-     * @throws CantonException
+     * @param int $zipcode
+     * @return Canton[]
+     * @throws CantonNotFoundException
      */
-    public function getByZipcode(int $zipcode): Canton
+    public function getByZipcode(int $zipcode): array
     {
-        $result = $this->zipcodeSearch->findByZipcode($zipcode);
+        $cities = $this->citySearch->findByZipcode($zipcode);
 
-        if (is_null($result)) {
-            throw CantonException::notFoundForZipcode($zipcode);
+        // Get cantons abbreviations
+        $cantonAbbreviations = array_column($cities, 'canton');
+
+        // Remove duplicates
+        $cantonAbbreviations = array_unique($cantonAbbreviations);
+
+        // Search cantons by abbreviation
+        $cantons = array_map(fn (string $abbreviation) => $this->search->findByAbbreviation($abbreviation), $cantonAbbreviations);
+
+        // Call 'array_filter' without callback to remove null values
+        $cantons = array_filter($cantons);
+
+        if (empty($cantons)) {
+            throw CantonNotFoundException::notFoundForZipcode($zipcode);
         }
 
-        return $this->getByAbbreviation($result['canton']);
+        return $cantons;
     }
+
 }

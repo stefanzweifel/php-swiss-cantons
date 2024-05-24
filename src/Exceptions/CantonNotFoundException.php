@@ -4,7 +4,7 @@ namespace Wnx\SwissCantons\Exceptions;
 
 use Exception;
 
-class CantonException extends Exception
+class CantonNotFoundException extends Exception
 {
     public static function notFoundForAbbreviation(string $abbreviation): self
     {

@@ -4,8 +4,9 @@ namespace Wnx\SwissCantons\Tests;
 
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Wnx\SwissCantons\Canton;
 use Wnx\SwissCantons\CantonManager;
-use Wnx\SwissCantons\Exceptions\CantonException;
+use Wnx\SwissCantons\Exceptions\CantonNotFoundException;
 
 class CantonManagerTest extends TestCase
 {
@@ -48,7 +49,7 @@ class CantonManagerTest extends TestCase
     #[Test]
     public function it_throws_exception_if_no_canton_for_abbreviation_is_found(): void
     {
-        $this->expectException(CantonException::class);
+        $this->expectException(CantonNotFoundException::class);
 
         $canton = new CantonManager();
         $result = $canton->getByAbbreviation('FOO');
@@ -66,7 +67,7 @@ class CantonManagerTest extends TestCase
     #[Test]
     public function it_throws_exception_if_not_canton_for_name_is_found(): void
     {
-        $this->expectException(CantonException::class);
+        $this->expectException(CantonNotFoundException::class);
 
         $canton = new CantonManager();
         $result = $canton->getByName('FOO');
@@ -78,15 +79,19 @@ class CantonManagerTest extends TestCase
         $canton = new CantonManager();
         $result = $canton->getByZipcode(3005);
 
-        $this->assertEquals('BE', $result->getAbbreviation());
-        $this->assertEquals('Bern', $result->setLanguage('de')->getName());
-        $this->assertEquals('Berne', $result->setLanguage('en')->getName());
+        $this->assertCount(1, $result);
+
+        $canton = $result[0];
+
+        $this->assertEquals('BE', $canton->getAbbreviation());
+        $this->assertEquals('Bern', $canton->setLanguage('de')->getName());
+        $this->assertEquals('Berne', $canton->setLanguage('en')->getName());
     }
 
     #[Test]
     public function it_throws_exception_if_no_canton_for_zipcode_could_be_found(): void
     {
-        $this->expectException(CantonException::class);
+        $this->expectException(CantonNotFoundException::class);
 
         $canton = new CantonManager();
         $result = $canton->getByZipcode(9999);
@@ -95,9 +100,24 @@ class CantonManagerTest extends TestCase
     #[Test]
     public function it_throws_exception_if_lichtenstein_zipcode_is_searched_for(): void
     {
-        $this->expectException(CantonException::class);
+        $this->expectException(CantonNotFoundException::class);
 
         $canton = new CantonManager();
         $result = $canton->getByZipcode(9494);
+    }
+
+    #[Test]
+    public function it_returns_different_cantons_for_zipcode_1290(): void
+    {
+        $canton = new CantonManager();
+
+        // Zipcode 1290 refers to Versoix in Geneva and Chavanne-des-Bois in Vaud
+        $result = $canton->getByZipcode(1290);
+
+        $this->assertCount(2, $result);
+
+        $cantonAbbreviations = array_map(fn (Canton $canton) => $canton->getAbbreviation(), $result);
+        $this->assertContains('VD', $cantonAbbreviations);
+        $this->assertContains('GE', $cantonAbbreviations);
     }
 }
