@@ -11,9 +11,9 @@ class CitySearchTest extends TestCase
     #[Test]
     public function it_returns_dataset_as_array(): void
     {
-        $cantonSearch = new CitySearch();
+        $citySearch = new CitySearch();
 
-        $this->assertIsArray($cantonSearch->getDataSet());
+        $this->assertIsArray($citySearch->getDataSet());
     }
 
     #[Test]

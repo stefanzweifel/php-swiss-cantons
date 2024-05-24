@@ -23,4 +23,10 @@ class CantonNotFoundException extends Exception
         /** @phpstan-ignore-next-line */
         return new static("Couldn't find Canton for given zipcode: {$zipcode}");
     }
+
+    public static function notFoundForZipcodeAndCity(int $zipcode, string $city): self
+    {
+        /** @phpstan-ignore-next-line */
+        return new static("Couldn't find Canton for given zipcode and city name: {$zipcode}, {$city}");
+    }
 }

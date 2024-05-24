@@ -13,8 +13,8 @@ class CantonManagerTest extends TestCase
     #[Test]
     public function it_returns_correct_canton_instance_for_abbreviation(): void
     {
-        $canton = new CantonManager();
-        $canton = $canton->getByAbbreviation('ZH');
+        $cantonManager = new CantonManager();
+        $canton = $cantonManager->getByAbbreviation('ZH');
 
         $this->assertEquals(
             'Zürich',
@@ -76,8 +76,8 @@ class CantonManagerTest extends TestCase
     #[Test]
     public function it_returns_canton_for_zipcode(): void
     {
-        $canton = new CantonManager();
-        $result = $canton->getByZipcode(3005);
+        $cantonManager = new CantonManager();
+        $result = $cantonManager->getByZipcode(3005);
 
         $this->assertCount(1, $result);
 
@@ -102,22 +102,62 @@ class CantonManagerTest extends TestCase
     {
         $this->expectException(CantonNotFoundException::class);
 
-        $canton = new CantonManager();
-        $result = $canton->getByZipcode(9494);
+        $cantonManager = new CantonManager();
+        $result = $cantonManager->getByZipcode(9494);
     }
 
     #[Test]
     public function it_returns_different_cantons_for_zipcode_1290(): void
     {
-        $canton = new CantonManager();
+        $cantonManager = new CantonManager();
 
         // Zipcode 1290 refers to Versoix in Geneva and Chavanne-des-Bois in Vaud
-        $result = $canton->getByZipcode(1290);
+        $result = $cantonManager->getByZipcode(1290);
 
         $this->assertCount(2, $result);
 
         $cantonAbbreviations = array_map(fn (Canton $canton) => $canton->getAbbreviation(), $result);
         $this->assertContains('VD', $cantonAbbreviations);
         $this->assertContains('GE', $cantonAbbreviations);
+    }
+
+    #[Test]
+    public function it_finds_single_canton_with_zipcode_and_city(): void
+    {
+        $cantonManager = new CantonManager();
+
+        $canton = $cantonManager->findOneBy(1290, 'Versoix');
+
+        $this->assertEquals('GE', $canton->getAbbreviation());
+    }
+
+    #[Test]
+    public function it_finds_single_canton_with_zipcode(): void
+    {
+        $cantonManager = new CantonManager();
+
+        $canton = $cantonManager->findOneBy(1003);
+
+        $this->assertEquals('VD', $canton->getAbbreviation());
+    }
+
+    #[Test]
+    public function it_throws_exception_if_no_single_canton_for_zipcode_could_be_found(): void
+    {
+        $this->expectException(CantonNotFoundException::class);
+
+        $canton = new CantonManager();
+
+        $canton->findOneBy(9999);
+    }
+
+    #[Test]
+    public function it_throws_exception_if_no_canton_for_zipcode_and_city_could_be_found(): void
+    {
+        $this->expectException(CantonNotFoundException::class);
+
+        $canton = new CantonManager();
+
+        $canton->findOneBy(1290, 'Lausanne');
     }
 }

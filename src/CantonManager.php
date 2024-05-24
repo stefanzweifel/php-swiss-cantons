@@ -77,4 +77,33 @@ class CantonManager
         return $cantons;
     }
 
+    /**
+     * @param int $zipcode
+     * @param ?string $cityName
+     * @return Canton
+     * @throws CantonNotFoundException
+     */
+    public function findOneBy(int $zipcode, ?string $cityName = null): Canton
+    {
+        $cities = $this->citySearch->findByZipcode($zipcode);
+
+        if (1 === count($cities)) {
+            return $this->search->findByAbbreviation($cities[0]['canton'])
+                ?? throw CantonNotFoundException::notFoundForZipcode($zipcode);
+        }
+
+        if (null !== $cityName) {
+            foreach ($cities as $city) {
+                if ($city['city'] === $cityName) {
+                    return $this->search->findByAbbreviation($city['canton'])
+                        ?? throw CantonNotFoundException::notFoundForZipcodeAndCity($zipcode, $cityName);
+                }
+            }
+
+            throw CantonNotFoundException::notFoundForZipcodeAndCity($zipcode, $cityName);
+        }
+
+        throw CantonNotFoundException::notFoundForZipcode($zipcode);
+    }
+
 }
