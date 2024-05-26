@@ -131,7 +131,7 @@ class UpdateZipcodeDatasetCommand extends Command
 
         foreach ($records as $zipcodeRecord) {
             $data[] = [
-                'city' => $zipcodeRecord['Gemeindename'],
+                'city' => $zipcodeRecord['Ortschaftsname'],
                 'zipcode' => (int) $zipcodeRecord['PLZ'],
                 'canton' => $zipcodeRecord['Kantonskürzel'],
             ];
