@@ -1,7 +1,6 @@
 name: Data Update
 
 on: 
-  push:
   workflow_dispatch:
   schedule:
     - cron: "0 14 20 * *"
@@ -23,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: composer update --prefer-dist --no-interaction
 
-      - name: asdasd
+      - name: Update Dataset
         run: php app update-cities-dataset
         
       - name: Create Pull Request
