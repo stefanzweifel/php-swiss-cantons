@@ -75,7 +75,7 @@ class UpdateZipcodeDatasetCommand extends Command
 
         // Open the destination file for writing in binary mode
         $fileHandler = fopen('/tmp/dataset.zip', 'wb');
-        if (!$fileHandler) {
+        if (! $fileHandler) {
             throw new RuntimeException("Failed to open file for writing: '/tmp/dataset.zip'");
         }
 
@@ -100,7 +100,7 @@ class UpdateZipcodeDatasetCommand extends Command
         foreach ($iterator as $file) {
             if ($file->isFile() && pathinfo($file->getPathname(), PATHINFO_EXTENSION) === 'csv') {
                 $destinationFile = self::PATH_TO_CSV;
-                if (!rename($file->getPathname(), $destinationFile)) {
+                if (! rename($file->getPathname(), $destinationFile)) {
                     // Handle potential errors during move operation
                     throw new \Exception("Error moving file: " . $file->getPathname());
                 }
@@ -130,10 +130,18 @@ class UpdateZipcodeDatasetCommand extends Command
         $data = [];
 
         foreach ($records as $zipcodeRecord) {
+            $city = $zipcodeRecord['Ortschaftsname'];
+            $zipcode = (int)$zipcodeRecord['PLZ'];
+            $canton = $zipcodeRecord['Kantonskürzel'];
+
+            if ($this->shouldRecordBeIgnored($city, $zipcode, $canton)) {
+                continue;
+            }
+
             $data[] = [
-                'city' => $zipcodeRecord['Ortschaftsname'],
-                'zipcode' => (int) $zipcodeRecord['PLZ'],
-                'canton' => $zipcodeRecord['Kantonskürzel'],
+                'city' => $city,
+                'zipcode' => $zipcode,
+                'canton' => $canton,
             ];
         }
 
@@ -144,5 +152,14 @@ class UpdateZipcodeDatasetCommand extends Command
     {
         unlink('/tmp/dataset.zip');
         unlink(self::PATH_TO_CSV);
+    }
+
+    protected function shouldRecordBeIgnored(string $city, int $zipcode, string $canton): bool
+    {
+        if ($zipcode === 1290 && $city === 'Versoix' && $canton === 'VD') {
+            return true;
+        }
+
+        return false;
     }
 }
