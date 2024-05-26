@@ -5,9 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/stefanzweifel/php-swiss-cantons/compare/v5.0.0...HEAD)
+## [Unreleased](https://github.com/stefanzweifel/php-swiss-cantons/compare/v5.0.1...HEAD)
 
 > TBD
+
+## [v5.0.1](https://github.com/stefanzweifel/php-swiss-cantons/compare/v5.0.0...v5.0.1) - 2024-05-26
+
+### Changed
+
+- Add Github Actions Workflow to update City dataset automatically ([#48](https://github.com/stefanzweifel/php-swiss-cantons/pull/48))
+
+### Fixed
+
+- Ignore Versoix VD in dataset ([#49](https://github.com/stefanzweifel/php-swiss-cantons/pull/49))
 
 ## [v5.0.0](https://github.com/stefanzweifel/php-swiss-cantons/compare/v4.4.0...v5.0.0) - 2024-05-26
 
