@@ -126,7 +126,7 @@ class CantonManagerTest extends TestCase
     {
         $cantonManager = new CantonManager();
 
-        $canton = $cantonManager->findOneBy(1290, 'Versoix');
+        $canton = $cantonManager->getByZipcodeAndCity(1290, 'Versoix');
 
         $this->assertEquals('GE', $canton->getAbbreviation());
     }
@@ -136,7 +136,7 @@ class CantonManagerTest extends TestCase
     {
         $cantonManager = new CantonManager();
 
-        $canton = $cantonManager->findOneBy(1003);
+        $canton = $cantonManager->getByZipcodeAndCity(1003);
 
         $this->assertEquals('VD', $canton->getAbbreviation());
     }
@@ -148,7 +148,7 @@ class CantonManagerTest extends TestCase
 
         $canton = new CantonManager();
 
-        $canton->findOneBy(9999);
+        $canton->getByZipcodeAndCity(9999);
     }
 
     #[Test]
@@ -158,6 +158,6 @@ class CantonManagerTest extends TestCase
 
         $canton = new CantonManager();
 
-        $canton->findOneBy(1290, 'Lausanne');
+        $canton->getByZipcodeAndCity(1290, 'Lausanne');
     }
 }

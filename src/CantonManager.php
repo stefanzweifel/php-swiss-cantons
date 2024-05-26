@@ -83,7 +83,7 @@ class CantonManager
      * @return Canton
      * @throws CantonNotFoundException
      */
-    public function findOneBy(int $zipcode, ?string $cityName = null): Canton
+    public function getByZipcodeAndCity(int $zipcode, ?string $cityName = null): Canton
     {
         $cities = $this->citySearch->findByZipcode($zipcode);
 

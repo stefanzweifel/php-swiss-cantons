@@ -73,7 +73,7 @@ $cantonManager = new Wnx\SwissCantons\CantonManager();
 $cantons = $cantonManager->getByZipcode(3005);
 ```
 
-### `findOneBy()`
+### `getByZipcodeAndCity()`
 
 Find Canton by a given zipcode and optionally by a city name.
 
@@ -81,8 +81,8 @@ Find Canton by a given zipcode and optionally by a city name.
 $cantonManager = new Wnx\SwissCantons\CantonManager();
 
 /** @var \Wnx\SwissCantons\Canton $canton */
-$canton = $cantonManager->findOneBy(1003);
-$canton = $cantonManager->findOneBy(1290, 'Lausanne');
+$canton = $cantonManager->getByZipcodeAndCity(1003);
+$canton = $cantonManager->getByZipcodeAndCity(1290, 'Lausanne');
 ```
 
 ## `Canton`
