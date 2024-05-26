@@ -53,7 +53,7 @@ $canton = $cantonManager->getByAbbreviation('GR');
 
 ### `getByName()`
 
-Search for a Canton by it's name. The name must exactly match one of the translations of the Canton (German, French, Italian, Romansh or English).
+Search for a Canton by its name. The name must exactly match one of the translations of the Canton (German, French, Italian, Romansh or English).
 
 ```php
 $cantonManager = new Wnx\SwissCantons\CantonManager();
@@ -64,13 +64,25 @@ $canton = $cantonManager->getByName('Zürich');
 
 ### `getByZipcode()`
 
-Search for a Canton by a zipcode.
+Returns an array of possible Cantons for a given Zipcode. (Some zipcodes are shared between multiple Cantons).
+
+```php
+$cantonManager = new Wnx\SwissCantons\CantonManager();
+
+/** @var \Wnx\SwissCantons\Canton[] $cantons */
+$cantons = $cantonManager->getByZipcode(3005);
+```
+
+### `findOneBy()`
+
+Find Canton by a given zipcode and optionally by a city name.
 
 ```php
 $cantonManager = new Wnx\SwissCantons\CantonManager();
 
 /** @var \Wnx\SwissCantons\Canton $canton */
-$canton = $cantonManager->getByZipcode(3005);
+$canton = $cantonManager->findOneBy(1003);
+$canton = $cantonManager->findOneBy(1290, 'Lausanne');
 ```
 
 ## `Canton`
