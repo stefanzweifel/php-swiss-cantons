@@ -5,9 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/stefanzweifel/php-swiss-cantons/compare/v4.4.0...HEAD)
+## [Unreleased](https://github.com/stefanzweifel/php-swiss-cantons/compare/v5.0.0...HEAD)
 
 > TBD
+
+## [v5.0.0](https://github.com/stefanzweifel/php-swiss-cantons/compare/v4.4.0...v5.0.0) - 2024-05-26
+
+### Breaking Changes
+
+**Public**
+
+- The signature of `getByZipcode()` changed. The method now returns an array of possible Cantons instead of the first Canton that matched. (Some zipcodes can belong to multiple cantons. For example 1290)
+- A new `getByZipcodeAndCity()` method has been added that accepts a zipcode and optionally a city name to drill down the search further.
+
+**Internal**
+
+- `ZipcodeSearch`-class has been renamed to `CitySearch`
+- `zipcodes.json` has been renamed to `cities.json`
+
+### Added
+
+- Update cities.json dataset ([#47](https://github.com/stefanzweifel/php-swiss-cantons/pull/47))
+- Handle multiple cities and cantons per zipcode ([#47](https://github.com/stefanzweifel/php-swiss-cantons/pull/47))
+
+### Changed
+
+- Replace Psalm with Phpstan ([#45](https://github.com/stefanzweifel/php-swiss-cantons/pull/45))
 
 ## [v4.4.0](https://github.com/stefanzweifel/php-swiss-cantons/compare/v4.3.0...v4.4.0) - 2023-10-16
 
