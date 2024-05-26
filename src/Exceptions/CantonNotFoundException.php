@@ -4,7 +4,7 @@ namespace Wnx\SwissCantons\Exceptions;
 
 use Exception;
 
-class CantonException extends Exception
+class CantonNotFoundException extends Exception
 {
     public static function notFoundForAbbreviation(string $abbreviation): self
     {
@@ -22,5 +22,11 @@ class CantonException extends Exception
     {
         /** @phpstan-ignore-next-line */
         return new static("Couldn't find Canton for given zipcode: {$zipcode}");
+    }
+
+    public static function notFoundForZipcodeAndCity(int $zipcode, string $city): self
+    {
+        /** @phpstan-ignore-next-line */
+        return new static("Couldn't find Canton for given zipcode and city name: {$zipcode}, {$city}");
     }
 }

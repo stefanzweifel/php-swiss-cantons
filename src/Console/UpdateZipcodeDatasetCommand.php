@@ -7,20 +7,34 @@ use League\Csv\InvalidArgument;
 use League\Csv\Reader;
 use League\Csv\Statement;
 use League\Csv\TabularDataReader;
+use RecursiveDirectoryIterator;
+use RecursiveIteratorIterator;
+use RuntimeException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\HttpClient\HttpClient;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
+use ZipArchive;
 
 class UpdateZipcodeDatasetCommand extends Command
 {
-    final public const PATH_TO_CSV = __DIR__ . '/../data/zipcodes.csv';
-    final public const PATH_TO_JSON = __DIR__ . '/../data/zipcodes.json';
+    final public const PATH_TO_CSV = __DIR__ . '/../data/cities.csv';
+    final public const PATH_TO_JSON = __DIR__ . '/../data/cities.json';
+
+    private HttpClientInterface $httpClient;
+
+    public function __construct(?HttpClientInterface $httpClient = null)
+    {
+        parent::__construct();
+        $this->httpClient = $httpClient ?? HttpClient::create();
+    }
 
     protected function configure(): void
     {
         $this
-            ->setName('update-zipcode-dataset')
-            ->setDescription('Fetch dataset from Swiss Post and create zipcodes.json file');
+            ->setName('update-cities-dataset')
+            ->setDescription('Fetch dataset from Swiss Post and create cities.json file');
     }
 
     /**
@@ -32,7 +46,7 @@ class UpdateZipcodeDatasetCommand extends Command
         $output->writeln('🚧  Fetch dataset');
         $this->fetchDataset();
 
-        $output->writeln('🔮  Create zipcodes.json');
+        $output->writeln('🔮  Create cities.json');
         $records = $this->parseCsvDataset();
         $this->generateZipcodesFiles($records);
 
@@ -44,13 +58,56 @@ class UpdateZipcodeDatasetCommand extends Command
         return 0;
     }
 
+    /**
+     * @return void
+     * @throws \Throwable
+     */
     protected function fetchDataset(): void
     {
-        $urlToDataset = "https://swisspost.opendatasoft.com/explore/dataset/plz_verzeichnis_v2/download/?format=csv&timezone=Europe/Berlin&lang=de&use_labels_for_header=true&csv_separator=%3B";
+        $urlToDataset = "https://data.geo.admin.ch/ch.swisstopo-vd.ortschaftenverzeichnis_plz/ortschaftenverzeichnis_plz/ortschaftenverzeichnis_plz_2056.csv.zip";
 
-        $response = file_get_contents($urlToDataset);
+        $response = $this->httpClient->request('GET', $urlToDataset);
 
-        file_put_contents(self::PATH_TO_CSV, $response);
+        // Check for successful response (200 OK)
+        if ($response->getStatusCode() !== 200) {
+            throw new RuntimeException("Failed to download file. Status code: " . $response->getStatusCode());
+        }
+
+        // Open the destination file for writing in binary mode
+        $fileHandler = fopen('/tmp/dataset.zip', 'wb');
+        if (!$fileHandler) {
+            throw new RuntimeException("Failed to open file for writing: '/tmp/dataset.zip'");
+        }
+
+        foreach ($this->httpClient->stream($response) as $chunk) {
+            fwrite($fileHandler, $chunk->getContent());
+        }
+
+        fclose($fileHandler);
+
+        $zip = new ZipArchive();
+        $res = $zip->open('/tmp/dataset.zip');
+        if ($res) {
+            $zip->extractTo('/tmp/extracted_dataset');
+            $zip->close();
+        }
+
+        $iterator = new RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator('/tmp/extracted_dataset'),
+            RecursiveIteratorIterator::SELF_FIRST
+        );
+
+        foreach ($iterator as $file) {
+            if ($file->isFile() && pathinfo($file->getPathname(), PATHINFO_EXTENSION) === 'csv') {
+                $destinationFile = self::PATH_TO_CSV;
+                if (!rename($file->getPathname(), $destinationFile)) {
+                    // Handle potential errors during move operation
+                    throw new \Exception("Error moving file: " . $file->getPathname());
+                }
+
+                return;
+            }
+        }
     }
 
     /**
@@ -64,13 +121,7 @@ class UpdateZipcodeDatasetCommand extends Command
         $csv->setHeaderOffset(0);
 
         return Statement::create()
-            ->where(fn ($record) => $record['KANTON'] !== 'FL')
-            ->orderBy(function (array $recordA, array $recordB): int {
-                if ($recordA['POSTLEITZAHL'] === $recordB["POSTLEITZAHL"]) {
-                    return $recordA['ORTBEZ27'] <=> $recordB['ORTBEZ27'];
-                }
-                return $recordA['POSTLEITZAHL'] <=> $recordB['POSTLEITZAHL'];
-            })
+            ->where(fn ($record) => $record['Kantonskürzel'] !== '')
             ->process($csv);
     }
 
@@ -80,9 +131,9 @@ class UpdateZipcodeDatasetCommand extends Command
 
         foreach ($records as $zipcodeRecord) {
             $data[] = [
-                'city' => $zipcodeRecord['ORTBEZ27'],
-                'zipcode' => (int) $zipcodeRecord['POSTLEITZAHL'],
-                'canton' => $zipcodeRecord['KANTON'],
+                'city' => $zipcodeRecord['Ortschaftsname'],
+                'zipcode' => (int) $zipcodeRecord['PLZ'],
+                'canton' => $zipcodeRecord['Kantonskürzel'],
             ];
         }
 
@@ -91,6 +142,7 @@ class UpdateZipcodeDatasetCommand extends Command
 
     protected function cleanup(): void
     {
+        unlink('/tmp/dataset.zip');
         unlink(self::PATH_TO_CSV);
     }
 }
