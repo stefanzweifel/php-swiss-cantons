@@ -1,0 +1,32 @@
+name: Data Update
+
+on: 
+  workflow_dispatch:
+  schedule:
+    - cron: "0 14 20 * *"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo
+
+      - name: Install dependencies
+        run: composer update --prefer-dist --no-interaction
+
+      - name: Update Dataset
+        run: php app update-cities-dataset
+        
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          title: 'Cities Dataset has been updated'
+          branch: data-update
