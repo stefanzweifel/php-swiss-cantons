@@ -5,9 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/stefanzweifel/php-swiss-cantons/compare/v5.0.1...HEAD)
+## [Unreleased](https://github.com/stefanzweifel/php-swiss-cantons/compare/v5.0.2...HEAD)
 
 > TBD
+
+## [v5.0.2](https://github.com/stefanzweifel/php-swiss-cantons/compare/v5.0.1...v5.0.2) - 2024-05-27
+
+### Fixed
+
+- Add NotUniqueCantonException ([#50](https://github.com/stefanzweifel/php-swiss-cantons/pull/50))
 
 ## [v5.0.1](https://github.com/stefanzweifel/php-swiss-cantons/compare/v5.0.0...v5.0.1) - 2024-05-26
 
