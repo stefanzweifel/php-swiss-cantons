@@ -3,6 +3,7 @@
 namespace Wnx\SwissCantons;
 
 use Wnx\SwissCantons\Exceptions\CantonNotFoundException;
+use Wnx\SwissCantons\Exceptions\NotUniqueCantonException;
 
 class CantonManager
 {
@@ -81,29 +82,30 @@ class CantonManager
      * @param int $zipcode
      * @param ?string $cityName
      * @return Canton
-     * @throws CantonNotFoundException
+     * @throws CantonNotFoundException|NotUniqueCantonException
      */
     public function getByZipcodeAndCity(int $zipcode, ?string $cityName = null): Canton
     {
-        $cities = $this->citySearch->findByZipcode($zipcode);
+        $cantons = $this->getByZipcode($zipcode);
 
-        if (1 === count($cities)) {
-            return $this->search->findByAbbreviation($cities[0]['canton'])
-                ?? throw CantonNotFoundException::notFoundForZipcode($zipcode);
+        if (1 === count($cantons)) {
+            return $cantons[0];
         }
 
         if (null !== $cityName) {
+            $cities = $this->citySearch->findByZipcode($zipcode);
+
             foreach ($cities as $city) {
                 if ($city['city'] === $cityName) {
                     return $this->search->findByAbbreviation($city['canton'])
-                        ?? throw CantonNotFoundException::notFoundForZipcodeAndCity($zipcode, $cityName);
+                        ?? throw CantonNotFoundException::notFoundForAbbreviation($city['canton']);
                 }
             }
 
-            throw CantonNotFoundException::notFoundForZipcodeAndCity($zipcode, $cityName);
+            throw NotUniqueCantonException::notUniqueForZipcodeAndCity($zipcode, $cityName);
         }
 
-        throw CantonNotFoundException::notFoundForZipcode($zipcode);
+        throw NotUniqueCantonException::notUniqueForZipcode($zipcode);
     }
 
 }

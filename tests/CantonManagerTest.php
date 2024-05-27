@@ -7,6 +7,7 @@ use PHPUnit\Framework\TestCase;
 use Wnx\SwissCantons\Canton;
 use Wnx\SwissCantons\CantonManager;
 use Wnx\SwissCantons\Exceptions\CantonNotFoundException;
+use Wnx\SwissCantons\Exceptions\NotUniqueCantonException;
 
 class CantonManagerTest extends TestCase
 {
@@ -132,13 +133,23 @@ class CantonManagerTest extends TestCase
     }
 
     #[Test]
-    public function it_finds_single_canton_with_zipcode(): void
+    public function it_finds_single_canton_with_zipcode_for_one_city(): void
     {
         $cantonManager = new CantonManager();
 
         $canton = $cantonManager->getByZipcodeAndCity(1003);
 
         $this->assertEquals('VD', $canton->getAbbreviation());
+    }
+
+    #[Test]
+    public function it_finds_single_canton_with_zipcode_for_several_cities_in_same_canton(): void
+    {
+        $cantonManager = new CantonManager();
+
+        $canton = $cantonManager->getByZipcodeAndCity(8914);
+
+        $this->assertEquals('ZH', $canton->getAbbreviation());
     }
 
     #[Test]
@@ -154,10 +165,20 @@ class CantonManagerTest extends TestCase
     #[Test]
     public function it_throws_exception_if_no_canton_for_zipcode_and_city_could_be_found(): void
     {
-        $this->expectException(CantonNotFoundException::class);
+        $this->expectException(NotUniqueCantonException::class);
 
         $canton = new CantonManager();
 
         $canton->getByZipcodeAndCity(1290, 'Lausanne');
+    }
+
+    #[Test]
+    public function it_throws_exception_if_no_unique_canton_for_zipcode(): void
+    {
+        $this->expectException(NotUniqueCantonException::class);
+
+        $canton = new CantonManager();
+
+        $canton->getByZipcodeAndCity(1290);
     }
 }
