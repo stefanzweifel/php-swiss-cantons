@@ -1,7 +1,6 @@
 # 🇨🇭 PHP Swiss Cantons
 
 ![tests](https://github.com/stefanzweifel/php-swiss-cantons/workflows/tests/badge.svg)
-[![codecov](https://codecov.io/gh/stefanzweifel/php-swiss-cantons/branch/master/graph/badge.svg)](https://codecov.io/gh/stefanzweifel/php-swiss-cantons)
 [![Latest Stable Version](https://poser.pugx.org/wnx/php-swiss-cantons/v/stable)](https://packagist.org/packages/wnx/php-swiss-cantons)
 [![Total Downloads](https://poser.pugx.org/wnx/php-swiss-cantons/downloads)](https://packagist.org/packages/wnx/php-swiss-cantons)
 [![License](https://poser.pugx.org/wnx/php-swiss-cantons/license)](https://packagist.org/packages/wnx/php-swiss-cantons)
