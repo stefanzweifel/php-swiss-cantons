@@ -5,9 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/stefanzweifel/php-swiss-cantons/compare/v5.0.2...HEAD)
+## [Unreleased](https://github.com/stefanzweifel/php-swiss-cantons/compare/v5.1.0...HEAD)
 
 > TBD
+
+## [v5.1.0](https://github.com/stefanzweifel/php-swiss-cantons/compare/v5.0.2...v5.1.0) - 2024-11-13
+
+### Added
+
+- Add Support for PHP 8.4 ([#53](https://github.com/stefanzweifel/php-swiss-cantons/pull/53))
 
 ## [v5.0.2](https://github.com/stefanzweifel/php-swiss-cantons/compare/v5.0.1...v5.0.2) - 2024-05-27
 
