@@ -15,6 +15,8 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
+use Wnx\SwissCantons\Canton;
+use Wnx\SwissCantons\Cantons;
 use ZipArchive;
 
 class UpdateZipcodeDatasetCommand extends Command
@@ -129,6 +131,8 @@ class UpdateZipcodeDatasetCommand extends Command
     {
         $data = [];
 
+        $cantonsAbbreviations = array_map(fn (Canton $canton) => $canton->getAbbreviation(), (new Cantons())->getAll());
+
         foreach ($records as $zipcodeRecord) {
             $city = $zipcodeRecord['Ortschaftsname'];
             $zipcode = (int)$zipcodeRecord['PLZ'];
@@ -136,6 +140,12 @@ class UpdateZipcodeDatasetCommand extends Command
 
             if ($this->shouldRecordBeIgnored($city, $zipcode, $canton)) {
                 continue;
+            }
+
+            if (preg_match('/ ([A-Z]{2})$/', $city, $matches)) {
+                if (in_array($matches[1], $cantonsAbbreviations)) {
+                    $city = substr($city, 0, -3);
+                }
             }
 
             $data[] = [
