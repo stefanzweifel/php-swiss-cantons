@@ -1835,11 +1835,6 @@
         "canton": "ZH"
     },
     {
-        "city": "Langnau am Albis",
-        "zipcode": 8135,
-        "canton": "ZH"
-    },
-    {
         "city": "Sihlbrugg Station",
         "zipcode": 8135,
         "canton": "ZH"
@@ -3512,11 +3507,6 @@
     {
         "city": "M\u00fclchi",
         "zipcode": 3317,
-        "canton": "BE"
-    },
-    {
-        "city": "R\u00fcdtligen",
-        "zipcode": 3422,
         "canton": "BE"
     },
     {
@@ -5437,11 +5427,6 @@
     {
         "city": "Toffen",
         "zipcode": 3125,
-        "canton": "BE"
-    },
-    {
-        "city": "Kaufdorf",
-        "zipcode": 3126,
         "canton": "BE"
     },
     {
@@ -7590,6 +7575,11 @@
         "canton": "LU"
     },
     {
+        "city": "Fischbach LU",
+        "zipcode": 6145,
+        "canton": "LU"
+    },
+    {
         "city": "Grossdietwil",
         "zipcode": 6146,
         "canton": "LU"
@@ -7597,6 +7587,11 @@
     {
         "city": "Altb\u00fcron",
         "zipcode": 6147,
+        "canton": "LU"
+    },
+    {
+        "city": "Ebersecken",
+        "zipcode": 6245,
         "canton": "LU"
     },
     {
@@ -7917,6 +7912,11 @@
     {
         "city": "Fl\u00fcelen",
         "zipcode": 6454,
+        "canton": "UR"
+    },
+    {
+        "city": "Altdorf UR",
+        "zipcode": 6460,
         "canton": "UR"
     },
     {
@@ -8690,13 +8690,33 @@
         "canton": "NW"
     },
     {
+        "city": "Kriens",
+        "zipcode": 6010,
+        "canton": "NW"
+    },
+    {
+        "city": "Eigenthal",
+        "zipcode": 6013,
+        "canton": "NW"
+    },
+    {
         "city": "Hergiswil NW",
         "zipcode": 6052,
         "canton": "NW"
     },
     {
+        "city": "Stans",
+        "zipcode": 6370,
+        "canton": "NW"
+    },
+    {
         "city": "Oberdorf NW",
         "zipcode": 6370,
+        "canton": "NW"
+    },
+    {
+        "city": "Buochs",
+        "zipcode": 6374,
         "canton": "NW"
     },
     {
@@ -8741,6 +8761,11 @@
     },
     {
         "city": "F\u00fcrigen",
+        "zipcode": 6363,
+        "canton": "NW"
+    },
+    {
+        "city": "B\u00fcrgenstock",
         "zipcode": 6363,
         "canton": "NW"
     },
@@ -11030,11 +11055,6 @@
         "canton": "SO"
     },
     {
-        "city": "Neuendorf",
-        "zipcode": 4623,
-        "canton": "SO"
-    },
-    {
         "city": "Oberbuchsiten",
         "zipcode": 4625,
         "canton": "SO"
@@ -12125,6 +12145,11 @@
         "canton": "BL"
     },
     {
+        "city": "Duggingen",
+        "zipcode": 4202,
+        "canton": "BL"
+    },
+    {
         "city": "Allschwil",
         "zipcode": 4123,
         "canton": "BL"
@@ -13077,6 +13102,11 @@
     {
         "city": "Hemmental",
         "zipcode": 8231,
+        "canton": "SH"
+    },
+    {
+        "city": "Schleitheim",
+        "zipcode": 8226,
         "canton": "SH"
     },
     {
@@ -14230,6 +14260,11 @@
         "canton": "SG"
     },
     {
+        "city": "Berschis",
+        "zipcode": 8892,
+        "canton": "SG"
+    },
+    {
         "city": "Flums Hochwiese",
         "zipcode": 8893,
         "canton": "SG"
@@ -15015,6 +15050,11 @@
         "canton": "SG"
     },
     {
+        "city": "Flawil",
+        "zipcode": 9230,
+        "canton": "SG"
+    },
+    {
         "city": "Degersheim",
         "zipcode": 9113,
         "canton": "SG"
@@ -15152,6 +15192,16 @@
     {
         "city": "Oberb\u00fcren",
         "zipcode": 9245,
+        "canton": "SG"
+    },
+    {
+        "city": "Sonnental",
+        "zipcode": 9245,
+        "canton": "SG"
+    },
+    {
+        "city": "Zuzwil SG",
+        "zipcode": 9524,
         "canton": "SG"
     },
     {
@@ -15343,6 +15393,11 @@
         "city": "Bernhardzell",
         "zipcode": 9304,
         "canton": "SG"
+    },
+    {
+        "city": "Parpan",
+        "zipcode": 7076,
+        "canton": "GR"
     },
     {
         "city": "Valbella",
@@ -15690,6 +15745,11 @@
         "canton": "GR"
     },
     {
+        "city": "Valendas",
+        "zipcode": 7122,
+        "canton": "GR"
+    },
+    {
         "city": "Castrisch",
         "zipcode": 7126,
         "canton": "GR"
@@ -15727,11 +15787,6 @@
     {
         "city": "Ruschein",
         "zipcode": 7154,
-        "canton": "GR"
-    },
-    {
-        "city": "Ladir",
-        "zipcode": 7155,
         "canton": "GR"
     },
     {
@@ -16250,6 +16305,11 @@
         "canton": "GR"
     },
     {
+        "city": "Silvaplana-Surlej",
+        "zipcode": 7513,
+        "canton": "GR"
+    },
+    {
         "city": "St. Moritz",
         "zipcode": 7500,
         "canton": "GR"
@@ -16590,6 +16650,11 @@
         "canton": "GR"
     },
     {
+        "city": "Furna",
+        "zipcode": 7232,
+        "canton": "GR"
+    },
+    {
         "city": "Jenaz",
         "zipcode": 7233,
         "canton": "GR"
@@ -16772,6 +16837,11 @@
     {
         "city": "Litzir\u00fcti",
         "zipcode": 7058,
+        "canton": "GR"
+    },
+    {
+        "city": "Davos Dorf",
+        "zipcode": 7260,
         "canton": "GR"
     },
     {
@@ -18240,6 +18310,11 @@
         "canton": "AG"
     },
     {
+        "city": "Muri AG",
+        "zipcode": 5630,
+        "canton": "AG"
+    },
+    {
         "city": "Buttwil",
         "zipcode": 5632,
         "canton": "AG"
@@ -18337,6 +18412,16 @@
     {
         "city": "Fenkrieden",
         "zipcode": 5645,
+        "canton": "AG"
+    },
+    {
+        "city": "Inwil",
+        "zipcode": 6034,
+        "canton": "AG"
+    },
+    {
+        "city": "Ballwil",
+        "zipcode": 6275,
         "canton": "AG"
     },
     {
@@ -20530,16 +20615,6 @@
         "canton": "TI"
     },
     {
-        "city": "Tenero",
-        "zipcode": 6598,
-        "canton": "TI"
-    },
-    {
-        "city": "Muralto",
-        "zipcode": 6600,
-        "canton": "TI"
-    },
-    {
         "city": "Brione sopra Minusio",
         "zipcode": 6645,
         "canton": "TI"
@@ -20562,6 +20637,16 @@
     {
         "city": "Muralto",
         "zipcode": 6600,
+        "canton": "TI"
+    },
+    {
+        "city": "Muralto",
+        "zipcode": 6600,
+        "canton": "TI"
+    },
+    {
+        "city": "Locarno",
+        "zipcode": 6605,
         "canton": "TI"
     },
     {
@@ -20605,6 +20690,11 @@
         "canton": "TI"
     },
     {
+        "city": "Intragna",
+        "zipcode": 6655,
+        "canton": "TI"
+    },
+    {
         "city": "Loco",
         "zipcode": 6661,
         "canton": "TI"
@@ -20642,6 +20732,16 @@
     {
         "city": "Cugnasco",
         "zipcode": 6516,
+        "canton": "TI"
+    },
+    {
+        "city": "Contone",
+        "zipcode": 6594,
+        "canton": "TI"
+    },
+    {
+        "city": "Riazzino",
+        "zipcode": 6595,
         "canton": "TI"
     },
     {
@@ -20845,8 +20945,18 @@
         "canton": "TI"
     },
     {
+        "city": "Bedano",
+        "zipcode": 6930,
+        "canton": "TI"
+    },
+    {
         "city": "Cureglia",
         "zipcode": 6944,
+        "canton": "TI"
+    },
+    {
+        "city": "Origlio",
+        "zipcode": 6945,
         "canton": "TI"
     },
     {
@@ -21090,6 +21200,11 @@
         "canton": "TI"
     },
     {
+        "city": "Agno",
+        "zipcode": 6982,
+        "canton": "TI"
+    },
+    {
         "city": "Magliaso",
         "zipcode": 6983,
         "canton": "TI"
@@ -21152,6 +21267,11 @@
     {
         "city": "Savosa",
         "zipcode": 6942,
+        "canton": "TI"
+    },
+    {
+        "city": "Porza",
+        "zipcode": 6948,
         "canton": "TI"
     },
     {
@@ -21222,6 +21342,11 @@
     {
         "city": "Corticiasca",
         "zipcode": 6958,
+        "canton": "TI"
+    },
+    {
+        "city": "Curtina",
+        "zipcode": 6959,
         "canton": "TI"
     },
     {
@@ -21375,11 +21500,6 @@
         "canton": "TI"
     },
     {
-        "city": "Capolago",
-        "zipcode": 6825,
-        "canton": "TI"
-    },
-    {
         "city": "Balerna",
         "zipcode": 6828,
         "canton": "TI"
@@ -21397,11 +21517,6 @@
     {
         "city": "Mendrisio",
         "zipcode": 6850,
-        "canton": "TI"
-    },
-    {
-        "city": "Somazzo",
-        "zipcode": 6872,
         "canton": "TI"
     },
     {
@@ -21447,11 +21562,6 @@
     {
         "city": "Seseglio",
         "zipcode": 6832,
-        "canton": "TI"
-    },
-    {
-        "city": "Balerna",
-        "zipcode": 6828,
         "canton": "TI"
     },
     {
@@ -21527,6 +21637,11 @@
     {
         "city": "Morbio Inferiore",
         "zipcode": 6834,
+        "canton": "TI"
+    },
+    {
+        "city": "Balerna",
+        "zipcode": 6828,
         "canton": "TI"
     },
     {
@@ -21645,6 +21760,11 @@
         "canton": "TI"
     },
     {
+        "city": "Linescio",
+        "zipcode": 6682,
+        "canton": "TI"
+    },
+    {
         "city": "Cerentino",
         "zipcode": 6683,
         "canton": "TI"
@@ -21672,6 +21792,11 @@
     {
         "city": "Linescio",
         "zipcode": 6682,
+        "canton": "TI"
+    },
+    {
+        "city": "Avegno",
+        "zipcode": 6670,
         "canton": "TI"
     },
     {
@@ -22235,6 +22360,11 @@
         "canton": "VD"
     },
     {
+        "city": "Misery",
+        "zipcode": 1721,
+        "canton": "VD"
+    },
+    {
         "city": "Cudrefin",
         "zipcode": 1588,
         "canton": "VD"
@@ -22690,6 +22820,16 @@
         "canton": "VD"
     },
     {
+        "city": "Bullet",
+        "zipcode": 1453,
+        "canton": "VD"
+    },
+    {
+        "city": "Mauborget",
+        "zipcode": 1453,
+        "canton": "VD"
+    },
+    {
         "city": "Grandson",
         "zipcode": 1422,
         "canton": "VD"
@@ -22890,11 +23030,6 @@
         "canton": "VD"
     },
     {
-        "city": "Le Mont-sur-Lausanne",
-        "zipcode": 1052,
-        "canton": "VD"
-    },
-    {
         "city": "Cugy VD",
         "zipcode": 1053,
         "canton": "VD"
@@ -23016,11 +23151,6 @@
     },
     {
         "city": "Rivaz",
-        "zipcode": 1071,
-        "canton": "VD"
-    },
-    {
-        "city": "Chexbres",
         "zipcode": 1071,
         "canton": "VD"
     },
@@ -23322,6 +23452,11 @@
     {
         "city": "Bussy-sur-Moudon",
         "zipcode": 1514,
+        "canton": "VD"
+    },
+    {
+        "city": "Moudon",
+        "zipcode": 1510,
         "canton": "VD"
     },
     {
@@ -23662,6 +23797,11 @@
     {
         "city": "Tr\u00e9lex",
         "zipcode": 1270,
+        "canton": "VD"
+    },
+    {
+        "city": "Grens",
+        "zipcode": 1274,
         "canton": "VD"
     },
     {
@@ -24305,26 +24445,6 @@
         "canton": "VD"
     },
     {
-        "city": "Puidoux",
-        "zipcode": 1070,
-        "canton": "VD"
-    },
-    {
-        "city": "Chexbres",
-        "zipcode": 1071,
-        "canton": "VD"
-    },
-    {
-        "city": "St-Saphorin (Lavaux)",
-        "zipcode": 1071,
-        "canton": "VD"
-    },
-    {
-        "city": "Granges (Veveyse)",
-        "zipcode": 1614,
-        "canton": "VD"
-    },
-    {
         "city": "Le Mont-P\u00e8lerin",
         "zipcode": 1801,
         "canton": "VD"
@@ -24332,11 +24452,6 @@
     {
         "city": "Chardonne",
         "zipcode": 1803,
-        "canton": "VD"
-    },
-    {
-        "city": "Jongny",
-        "zipcode": 1805,
         "canton": "VD"
     },
     {
@@ -24995,6 +25110,11 @@
         "canton": "VS"
     },
     {
+        "city": "Bourg-St-Pierre",
+        "zipcode": 1946,
+        "canton": "VS"
+    },
+    {
         "city": "Orsi\u00e8res",
         "zipcode": 1937,
         "canton": "VS"
@@ -25150,6 +25270,11 @@
         "canton": "VS"
     },
     {
+        "city": "Fiesch",
+        "zipcode": 3984,
+        "canton": "VS"
+    },
+    {
         "city": "Grengiols",
         "zipcode": 3993,
         "canton": "VS"
@@ -25221,6 +25346,11 @@
     },
     {
         "city": "St-L\u00e9onard",
+        "zipcode": 1958,
+        "canton": "VS"
+    },
+    {
+        "city": "Uvrier",
         "zipcode": 1958,
         "canton": "VS"
     },
@@ -25430,8 +25560,18 @@
         "canton": "VS"
     },
     {
+        "city": "Gruben",
+        "zipcode": 3946,
+        "canton": "VS"
+    },
+    {
         "city": "Ergisch",
         "zipcode": 3947,
+        "canton": "VS"
+    },
+    {
+        "city": "Oberems",
+        "zipcode": 3948,
         "canton": "VS"
     },
     {
@@ -25490,6 +25630,11 @@
         "canton": "VS"
     },
     {
+        "city": "Gruben",
+        "zipcode": 3946,
+        "canton": "VS"
+    },
+    {
         "city": "Oberems",
         "zipcode": 3948,
         "canton": "VS"
@@ -25497,6 +25642,11 @@
     {
         "city": "Salgesch",
         "zipcode": 3970,
+        "canton": "VS"
+    },
+    {
+        "city": "Mi\u00e8ge",
+        "zipcode": 3972,
         "canton": "VS"
     },
     {
@@ -25520,7 +25670,17 @@
         "canton": "VS"
     },
     {
+        "city": "Steg VS",
+        "zipcode": 3940,
+        "canton": "VS"
+    },
+    {
         "city": "Gampel",
+        "zipcode": 3945,
+        "canton": "VS"
+    },
+    {
+        "city": "Niedergampel",
         "zipcode": 3945,
         "canton": "VS"
     },
@@ -25625,6 +25785,11 @@
         "canton": "VS"
     },
     {
+        "city": "Saxon",
+        "zipcode": 1907,
+        "canton": "VS"
+    },
+    {
         "city": "Martigny",
         "zipcode": 1920,
         "canton": "VS"
@@ -25632,6 +25797,11 @@
     {
         "city": "Chemin",
         "zipcode": 1927,
+        "canton": "VS"
+    },
+    {
+        "city": "Ravoire",
+        "zipcode": 1928,
         "canton": "VS"
     },
     {
@@ -25662,6 +25832,11 @@
     {
         "city": "La Tzoumaz",
         "zipcode": 1918,
+        "canton": "VS"
+    },
+    {
+        "city": "Ovronnaz",
+        "zipcode": 1911,
         "canton": "VS"
     },
     {
@@ -25830,6 +26005,11 @@
         "canton": "VS"
     },
     {
+        "city": "Martisberg",
+        "zipcode": 3994,
+        "canton": "VS"
+    },
+    {
         "city": "Binn",
         "zipcode": 3996,
         "canton": "VS"
@@ -25860,6 +26040,11 @@
         "canton": "VS"
     },
     {
+        "city": "Baltschieder",
+        "zipcode": 3937,
+        "canton": "VS"
+    },
+    {
         "city": "Ausserberg",
         "zipcode": 3938,
         "canton": "VS"
@@ -25877,6 +26062,11 @@
     {
         "city": "B\u00fcrchen",
         "zipcode": 3935,
+        "canton": "VS"
+    },
+    {
+        "city": "Raron",
+        "zipcode": 3942,
         "canton": "VS"
     },
     {
@@ -25922,6 +26112,11 @@
     {
         "city": "Hohtenn",
         "zipcode": 3949,
+        "canton": "VS"
+    },
+    {
+        "city": "Visp",
+        "zipcode": 3930,
         "canton": "VS"
     },
     {
@@ -26025,11 +26220,6 @@
         "canton": "VS"
     },
     {
-        "city": "Monthey",
-        "zipcode": 1870,
-        "canton": "VS"
-    },
-    {
         "city": "Les Giettes",
         "zipcode": 1871,
         "canton": "VS"
@@ -26052,6 +26242,11 @@
     {
         "city": "Evionnaz",
         "zipcode": 1902,
+        "canton": "VS"
+    },
+    {
+        "city": "Martigny",
+        "zipcode": 1920,
         "canton": "VS"
     },
     {
@@ -26147,11 +26342,6 @@
     {
         "city": "Lens",
         "zipcode": 1978,
-        "canton": "VS"
-    },
-    {
-        "city": "Crans-Montana",
-        "zipcode": 3963,
         "canton": "VS"
     },
     {
@@ -26390,6 +26580,11 @@
         "canton": "VS"
     },
     {
+        "city": "Anz\u00e8re",
+        "zipcode": 1972,
+        "canton": "VS"
+    },
+    {
         "city": "Arbaz",
         "zipcode": 1974,
         "canton": "VS"
@@ -26535,6 +26730,11 @@
         "canton": "VS"
     },
     {
+        "city": "Ausserberg",
+        "zipcode": 3938,
+        "canton": "VS"
+    },
+    {
         "city": "Saas-Balen",
         "zipcode": 3908,
         "canton": "VS"
@@ -26562,6 +26762,11 @@
     {
         "city": "Lalden",
         "zipcode": 3931,
+        "canton": "VS"
+    },
+    {
+        "city": "Baltschieder",
+        "zipcode": 3937,
         "canton": "VS"
     },
     {
@@ -28035,6 +28240,11 @@
         "canton": "JU"
     },
     {
+        "city": "Roggenburg",
+        "zipcode": 2814,
+        "canton": "JU"
+    },
+    {
         "city": "Rossemaison",
         "zipcode": 2842,
         "canton": "JU"
@@ -28295,11 +28505,6 @@
         "canton": "JU"
     },
     {
-        "city": "Damphreux",
-        "zipcode": 2933,
-        "canton": "JU"
-    },
-    {
         "city": "Cornol",
         "zipcode": 2952,
         "canton": "JU"
@@ -28422,11 +28627,6 @@
     {
         "city": "Ocourt",
         "zipcode": 2889,
-        "canton": "JU"
-    },
-    {
-        "city": "Courgenay",
-        "zipcode": 2950,
         "canton": "JU"
     },
     {
